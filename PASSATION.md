@@ -16,21 +16,24 @@ installations en double). Celui qui prend la main ajoute une ligne ici, dans un 
 | 2026-11-12 | Refonte terminée en v130 (voir l'archive). Serveur principal en v131 (installée le jour même par un mainteneur) ; v132 à v135 publiées ; serveur pilote vu en v124 : **les v125 à v131 y restent à installer** |
 | 2026-11-12 | Dossier de la refonte fermé après la revue du plan : v136 publiée (le dernier GET qui agissait). Serveur principal en v135, serveur pilote en v124. Personne n'a la main |
 | 2026-11-12 | Préparation de la publication du code : v137 (la mise à jour suit `main`, sans jeton GitHub). Voir « Passage au dépôt public » |
+| 2026-11-12 | **Code publié** : dépôt public `Switchboarders/SwitchBoard`, branche `main`, v137. L'ancien dépôt privé est devenu `SwitchBoard-archive` (privé, figé, avec ses issues). Les 2 serveurs en v137. Personne n'a la main |
 
-## Où on en est (2026-11-12)
+## Où on en est (2026-11-12, publication)
 
-Le code est en **v137**, sur `main`. Dans le dépôt privé, `SwitchBoard2.0` et `main` restent identiques jusqu'au passage au dépôt
-public : les serveurs d'avant la v137 suivent `SwitchBoard2.0`, ceux d'après suivent `main`. Dernier état connu des serveurs :
-- **Serveur pilote** (cPanel, MariaDB 10.11, aucun comité actif) : v124. Les crons appellent le PHP par son chemin complet : ils marchent sans changement.
-- **Serveur principal** (Docker, MariaDB 12, les comités réels) : **v135 installée le 2026-11-12** par un mainteneur. Vu après l'installation : un vrai changement de garde
-  à 13 h (21 appels à voip.ms, aucun échec) ; au dernier relevé (22 h 20, heure du conteneur), le passage du cron de sonnerie traite les 15 comités
-  sans échec et aucune erreur PHP n'est au journal. Son dépôt `Docker/` est à jour. Pas de `BD.sql` à sa racine.
+Le code est en **v137**, sur `main` du dépôt public. L'ancien dépôt privé, `SwitchBoard-archive`, est figé : on n'y pousse plus rien.
+Dernier état connu des serveurs :
+- **Serveur pilote** (cPanel, MariaDB 10.11, aucun comité actif) : **v137 installée le 2026-11-12** par un mainteneur. Les crons appellent le PHP par son chemin
+  complet : ils marchent sans changement.
+- **Serveur principal** (Docker, MariaDB 12, les comités réels) : **v137 installée le 2026-11-12** par un mainteneur. Vu après l'installation : le cron de sonnerie
+  traite les 15 comités sans échec ; après la publication, la vérification de mise à jour lit le dépôt public (« disponible sur GitHub : 137 », son jeton est
+  accepté). Un vrai changement de garde en v135 a été observé le 2026-11-12 à 13 h (21 appels à voip.ms, aucun échec). Son dossier `Docker/` est encore un clone
+  de l'ancien dépôt (voir l'étape 10 ci-dessous). Pas de `BD.sql` à sa racine.
 - **Incident en cours, hors du code** : depuis 12 h 50 le 2026-11-12, le serveur principal n'atteint plus `outlook.office.com` ni `smtp.office365.com` (IPv4 ;
   `login.microsoftonline.com` répond). Les comités dont l'agenda est chez Microsoft tournent sur l'agenda en cache : la garde change aux heures prévues, mais une
   modification faite dans leur agenda après la panne n'est pas vue. Les courriels sortants (alertes, rapports) échouent. À voir avec l'hébergeur ; à régler avant le
   1er décembre (rapports mensuels).
 
-Les v125 à v135 sont faites sur le serveur principal (les v136 et v137 y restent à installer) ; toutes restent à installer sur le pilote (sans SQL : la version saute directement à la v137). Après l'installation :
+Toutes les versions jusqu'à la v137 sont installées sur les deux serveurs. Ce qu'on vérifie après chacune, s'il reste à le faire :
 
 | Version | Contenu | À vérifier après l'installation |
 |---|---|---|
@@ -57,18 +60,18 @@ deux autres contributeurs n'ont pas été contactés. Si l'un d'eux s'y oppose, 
 
 **Restent sans date** : la liste complète, relevée à la revue de fin en reprenant le plan point par point, est à la fin de `archives/REFONTE-2026-11.md`
 (dans le code, sur les serveurs, les vérifications réelles, ce qui revient aux mainteneurs). Les plus proches : installer les v125 à v136 sur le pilote et y retirer le vieux
-`BD.sql` s'il existe ; installer la v136 sur le serveur principal ; relire les rapports du 1er décembre ; fermer les issues #28, #55, #68, #72, #77 et #78 (réglées dans le code).
+`BD.sql` s'il existe ; relire les rapports du 1er décembre ; fermer, dans l'archive, les issues #28, #55, #68, #72, #77 et #78 (réglées dans le code).
 
 ## Passage au dépôt public
 
-Le code devient public dans un **dépôt neuf**, sur la branche `main`, en un seul commit. Le dépôt privé n'est pas rendu public :
+**Fait le 2026-11-12** (étapes 1 à 3 et 6 à 9) ; restent les étapes 4, 5 et 10. Le code devient public dans un **dépôt neuf**, sur la branche `main`, en un seul commit. Le dépôt privé n'est pas rendu public :
 son historique, ses branches et ses issues contiennent des secrets et des données personnelles. Il est renommé et reste privé, comme
 archive. Ordre à suivre, chaque étape faite avant la suivante :
 
 1. **v137** (fait) : la mise à jour suit `main` et marche sans jeton ; un jeton refusé est ignoré ; les installateurs installent sans jeton.
 2. **`main` dans le dépôt privé**, identique à `SwitchBoard2.0`, pour que les serveurs passés en v137 trouvent leur branche. Tant que le
    dépôt privé sert, chaque version est poussée sur les deux.
-3. **Installer la v137** sur le pilote, le serveur principal et tout autre serveur connu. Un serveur resté avant la v137 cherchera
+3. **Installer la v137** (fait sur les 2 serveurs) sur le pilote, le serveur principal et tout autre serveur connu. Un serveur resté avant la v137 cherchera
    `SwitchBoard2.0`, qui n'existera pas dans le dépôt public : il ne verra plus de mise à jour (une installation à la main règle l'affaire).
 4. **Révoquer et changer les secrets** qui ont figuré dans l'historique du dépôt privé (la liste est remise aux mainteneurs, hors dépôt).
    À faire même si le passage est retardé.
@@ -81,7 +84,7 @@ archive. Ordre à suivre, chaque étape faite avant la suivante :
    aucune autre branche ne peut être créée. Un ancien clone ne peut donc rien y pousser par erreur (son historique n'a aucun lien avec
    `main`). Puis : signalement privé de vulnérabilités (onglet *Security*), détection des secrets avec blocage à la poussée, alertes
    Dependabot.
-9. **Vérifier** : le banc d'essai passe sur GitHub ; sur chaque serveur, la console montre « disponible sur GitHub » avec le bon numéro
+9. **Vérifier** (fait : serveur principal, clone sans identifiants, banc d'installation sans jeton contre le dépôt public, 76 vérifications sur 76) : le banc d'essai passe sur GitHub ; sur chaque serveur, la console montre « disponible sur GitHub » avec le bon numéro
    et aucun avertissement de jeton (sinon, retirer ou remplacer le jeton) ; le banc d'installation passe sans jeton
    (`Docker/tests/install/run-linux.sh`, il voit seul que le dépôt est public).
 10. **Anciens clones** : dans chacun, `git remote set-url origin https://github.com/Switchboarders/SwitchBoard-archive.git` (sinon il
