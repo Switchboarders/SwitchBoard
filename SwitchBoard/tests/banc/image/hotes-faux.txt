@@ -1,0 +1,13 @@
+voip.ms
+api.github.com
+github.com
+codeload.github.com
+docs.google.com
+www.bankofcanada.ca
+hc-ping.com
+ipecho.net
+login.microsoftonline.com
+oauth2.googleapis.com
+agendas.banc.test
+sbchat.banc.test
+mas.banc.test

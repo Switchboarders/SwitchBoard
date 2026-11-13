@@ -1,0 +1,17 @@
+config.php
+configempty.php
+# Écrit par le bouton "mode debug" de la console d'administration (voir lesconstantes.php).
+# Written by the "debug mode" toggle in the admin console (see lesconstantes.php).
+debugmode.flag
+# Écrit par la page « Certificat SwitchBoard Chat / MAS » de la console d'administration.
+# Written by the admin console's "SwitchBoard Chat / MAS certificate" page.
+sbchat-ca-bundle.pem
+# Écrit par la page « Surveillance (dead-man's-switch) » de la console d'administration
+# (voir deadmanswitchpage.php) ; locks/ contient les verrous flock() de détection de
+# chevauchement (voir verrouexclusif.php), jamais des secrets.
+# Written by the "Monitoring (dead-man's-switch)" admin console page (see
+# deadmanswitchpage.php); locks/ holds the flock() overlap-detection lock files (see
+# verrouexclusif.php), never secrets.
+deadmanswitch-settings.json
+locks/
+.htaccess

@@ -1,0 +1,14 @@
+# Cron task need to be called by www-data to avoid permission issues
+*/10 * * * * su -s /bin/sh www-data -c '/usr/local/bin/php -q /var/www/html/SwitchBoard/SwitchBoard/src/refreshallringgroups.php' >> /var/log/cron.log 2>&1
+5,15,25,35,45,55 * * * * su -s /bin/sh www-data -c '/usr/local/bin/php -q /var/www/html/SwitchBoard/SwitchBoard/src/refreshsbchat.php' >> /var/log/cron.log 2>&1
+0 12 * * * su -s /bin/sh www-data -c '/usr/local/bin/php -q /var/www/html/SwitchBoard/SwitchBoard/src/sendnotificationsmss.php "daybefore"' >> /var/log/cron.log 2>&1
+2 12 * * * su -s /bin/sh www-data -c '/usr/local/bin/php -q /var/www/html/SwitchBoard/SwitchBoard/src/sendnotificationsbchat.php "daybefore"' >> /var/log/cron.log 2>&1
+30 * * * * su -s /bin/sh www-data -c '/usr/local/bin/php -q /var/www/html/SwitchBoard/SwitchBoard/src/sendnotificationsmss.php "hourbefore"' >> /var/log/cron.log 2>&1
+33 * * * * su -s /bin/sh www-data -c '/usr/local/bin/php -q /var/www/html/SwitchBoard/SwitchBoard/src/sendnotificationsbchat.php "hourbefore"' >> /var/log/cron.log 2>&1
+0 7 1 * * su -s /bin/sh www-data -c '/usr/local/bin/php -q /var/www/html/SwitchBoard/SwitchBoard/src/genstatistics.php' >> /var/log/cron.log 2>&1
+0 7 1 * * su -s /bin/sh www-data -c '/usr/local/bin/php -q /var/www/html/SwitchBoard/SwitchBoard/src/gendidcostreport.php' >> /var/log/cron.log 2>&1
+0 2 * * * /usr/sbin/logrotate -v /etc/logrotate.conf >> /var/log/cronrotation.log 2>&1
+5,35 * * * * su -s /bin/sh www-data -c '/usr/local/bin/php -q /var/www/html/SwitchBoard/SwitchBoard/src/mailcanary.php' >> /var/log/cron.log 2>&1
+20,50 * * * * su -s /bin/sh www-data -c '/usr/local/bin/php -q /var/www/html/SwitchBoard/SwitchBoard/src/checkinfra.php' >> /var/log/cron.log 2>&1
+#* * * * * echo testing cron.... >> /var/log/cron-1.log 2>&1
+

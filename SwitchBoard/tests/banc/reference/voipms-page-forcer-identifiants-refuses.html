@@ -1,0 +1,74 @@
+<br>
+<!DOCTYPE html>
+  <html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="portail/pages/utilisateur/style.css"  />
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="portail/pages/utilisateur/script.js"></script>
+    </head>
+    <body>
+		<!-- Return to Top Arrow-->
+		<a href="#pagetop" id="return-to-top"><i class="icon-chevron-up"></i></a>
+		<!-- ICON NEEDS FONT AWESOME FOR CHEVRON UP ICON -->
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+		
+		
+		  <div class="hamburger">
+		  <div class="line"></div>
+		  <div class="line"></div>
+		  <div class="line"></div>
+		</div>
+		<div class="menu">
+		  <A href="managementportal.php"><div class="menu-item">Page Principale</div></A>
+		  <div class="menu-item has-submenu">Groupes de sonneries</div>
+		  	<div class="submenu">
+			<A href="managementportal.php?page=validatecalendar"><div class="submenu-item">Validation du calendrier</div></A>
+		  	<form class='form-action form-action-bloc' method='post' action='managementportal.php?page=refreshringgroup'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Forcer le changement des répondants</button></form>
+		  	<form class='form-action form-action-bloc' method='post' action='managementportal.php?page=remindersms'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Rappels par SMS</button></form>
+		  	<form class='form-action form-action-bloc' method='post' action='managementportal.php?page=remindersmsjustbefore'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Rappels par SMS 15 minutes avant</button></form>
+			</div>
+		  <div class="menu-item has-submenu">SwitchBoard Chat</div>
+		    <div class="submenu">
+		    <form class='form-action form-action-bloc' method='post' action='managementportal.php?page=refreshsbchat'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Rafraîchir SBChat</button></form>
+		    <form class='form-action form-action-bloc' method='post' action='managementportal.php?page=remindersbchat'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Rappels SwitchBoard Chat pour demain</button></form>
+		    <form class='form-action form-action-bloc' method='post' action='managementportal.php?page=remindersbchatjustbefore'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Rappels SwitchBoard Chat dans l&#039;heure d&#039;avant</button></form>
+		    <A href="managementportal.php?page=manageuserssbchat"><div class="submenu-item">Gérer les utilisateurs du serveur Matrix</div></A>
+		  	<A href="managementportal.php?page=sbchatmacros"><div class="submenu-item">Macros SwitchBoard Chat du compte</div></A>
+		  	<A href="managementportal.php?page=sbchatagreement"><div class="submenu-item">Entente de confidentialité des bénévoles</div></A>
+		  	
+		</div>
+		  <A href="managementportal.php?page=mystats"><div class="menu-item">Mes statistiques</div></A>
+		  <A href="managementportal.php?page=userinfo"><div class="menu-item">Informations du compte</div></A>
+		  <A href="managementportal.php?page=sbchatinfo"><div class="menu-item">Informations SwitchBoard Chat du compte</div></A>
+
+		  		  <A href="managementportal.php?page=logout"><div class="menu-item">Se deconnecter</div></A>
+		  
+		</div>
+	<div id='pagetop'></div>
+		
+
+<section>
+		<h1>Forcer le changement de répondants</h1>  
+		</section><a href='managementportal.php?page=mainpage' class='backbutton'>&#8249;</a><div class='formated-output'>Agenda téléchargé avec succès.<br>Heure d'exécution :JJ-MM-AAAA HH:MM<br>
+Tour de Jean<br>
+Début du shift : JJ-MM-AAAA HH:MM<br>
+Fin du shift : JJ-MM-AAAA HH:MM<br>
+Numéro  de téléphone: 5145550111<br>
+Réglages : sonnerie 25 s (par défaut), faire le 1 : oui (par défaut)<br>
+Nom : Jean Numéro : 5145550111<br>
+addForwarding: Pas de forwarding ajouté.<br><br>
+Erreur lors de l'ajout du forwarding pour 5145550111<br><br>
+Le résultat de l'envoi vers voip.ms est : voip.ms refuse le nom d'utilisateur ou le mot de passe API. Vérifiez-les dans « Éditer informations utilisateur » : le nom d'utilisateur est l'adresse courriel du compte voip.ms, et le mot de passe est celui de l'API (différent du mot de passe de connexion au site voip.ms). (partiel : renvoi manquant pour 1 numéro(s) sur 1 : …0111)<br>
+Numéro invalide pour « Paul » : « 514-555-012 » (événement du JJ-MM-AAAA HH:MM au JJ-MM-AAAA HH:MM). Il faut 10 chiffres, avec ou sans 1 devant.<br>
+</div>	
+
+    </body>
+  </html>
+
+
+

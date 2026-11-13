@@ -1,0 +1,52 @@
+banc-autonome | getForwardings | method=getForwardings
+banc-autonome | setForwarding | callerid_override=5145550101&description=Groupe+autonome&method=setForwarding&phone_number=5145550111
+banc-autonome | setForwarding | callerid_override=5145550101&description=Groupe+autonome&method=setForwarding&phone_number=5145550111
+banc-autonome | getVoicemails | method=getVoicemails
+banc-autonome | getRingGroups | method=getRingGroups&ring_group=
+banc-autonome | setRingGroup | language=fr&members=fwd%3A101%2C25%2C1%3B&method=setRingGroup&name=Groupe+autonome&voicemail=0
+---
+banc-autonome | getForwardings | method=getForwardings
+banc-autonome | setForwarding | callerid_override=5145550101&description=Groupe+autonome&method=setForwarding&phone_number=5145550111
+banc-autonome | setForwarding | callerid_override=5145550101&description=Groupe+autonome&method=setForwarding&phone_number=5145550111
+banc-autonome | getVoicemails | method=getVoicemails
+banc-autonome | getRingGroups | method=getRingGroups&ring_group=
+banc-autonome | setRingGroup | language=fr&members=fwd%3A101%2C25%2C1%3B&method=setRingGroup&name=Groupe+autonome&voicemail=0
+---
+banc-autonome | setForwarding | callerid_override=5145550101&description=Groupe+autonome&method=setForwarding&phone_number=5145550112
+banc-autonome | getVoicemails | method=getVoicemails
+banc-autonome | getRingGroups | method=getRingGroups&ring_group=
+banc-autonome | setRingGroup | language=fr&members=fwd%3A102%2C25%2C1%3B&method=setRingGroup&name=Groupe+autonome&ring_group=900&voicemail=0
+banc-autonome | setRingGroup | language=fr&members=fwd%3A102%2C25%2C1%3B&method=setRingGroup&name=Groupe+autonome&ring_group=900&voicemail=0
+banc-autonome | getForwardings | method=getForwardings
+banc-autonome | delForwarding | forwarding=101&method=delForwarding
+---
+banc-autonome | getForwardings | method=getForwardings
+banc-autonome | setForwarding | callerid_override=5145550101&description=Groupe+autonome&method=setForwarding&phone_number=5145550111
+banc-autonome | getVoicemails | method=getVoicemails
+banc-autonome | getRingGroups | method=getRingGroups&ring_group=
+banc-autonome | setRingGroup | language=fr&members=fwd%3A101%2C25%2C1%3B&method=setRingGroup&name=Groupe+autonome&voicemail=0
+---
+banc-autonome | setForwarding | callerid_override=5145550101&description=Groupe+autonome&method=setForwarding&phone_number=5145550112
+banc-autonome | setForwarding | callerid_override=5145550101&description=Groupe+autonome&method=setForwarding&phone_number=5145550112
+banc-autonome | setForwarding | callerid_override=5145550101&description=Groupe+autonome&method=setForwarding&phone_number=5145550112
+---
+banc-autonome | setForwarding | callerid_override=5145550101&description=Groupe+autonome&method=setForwarding&phone_number=5145550112
+banc-autonome | getVoicemails | method=getVoicemails
+banc-autonome | getRingGroups | method=getRingGroups&ring_group=
+banc-autonome | setRingGroup | language=fr&members=fwd%3A102%2C25%2C1%3B&method=setRingGroup&name=Groupe+autonome&ring_group=900&voicemail=0
+banc-autonome | getForwardings | method=getForwardings
+banc-autonome | delForwarding | forwarding=101&method=delForwarding
+---
+banc-autonome | getIP | method=getIP
+banc-autonome | getForwardings | method=getForwardings
+banc-autonome | getForwardings | method=getForwardings
+banc-autonome | setForwarding | callerid_override=5145550101&description=Un+nom+de+groupe+beaucoup+trop+long+pour+voip.ms&method=setForwarding&phone_number=5145550111
+banc-autonome | getVoicemails | method=getVoicemails
+banc-autonome | getRingGroups | method=getRingGroups&ring_group=
+banc-autonome | setRingGroup | language=fr&members=fwd%3A101%2C25%2C1%3B&method=setRingGroup&name=Un+nom+de+groupe+beaucoup+trop+long+pour+voip.ms&voicemail=0
+---
+banc-autonome | getIP | method=getIP
+banc-autonome | getForwardings | method=getForwardings
+banc-autonome | getForwardings | method=getForwardings
+banc-autonome | setForwarding | callerid_override=5145550101&description=Groupe+autonome&method=setForwarding&phone_number=5145550111
+---

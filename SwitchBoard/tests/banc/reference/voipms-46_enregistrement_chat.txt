@@ -1,0 +1,3 @@
+banc-chat | getIP | method=getIP
+banc-chat | getForwardings | method=getForwardings
+---

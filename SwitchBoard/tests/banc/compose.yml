@@ -1,0 +1,76 @@
+# Le banc d'essai : à lancer par lancer.sh, qui construit l'image sb-banc.
+# Le réseau est interne : aucun conteneur n'a de sortie vers Internet, et aucun port n'est publié sur
+# la machine. Toutes les valeurs ci-dessous sont factices et n'ont de sens que dans ce banc.
+services:
+  banc:
+    image: sb-banc
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      TZ: America/New_York
+      MYSQL_USER: banc
+      MYSQL_PASSWORD: banc
+      MYSQL_DATABASE: switchboard
+      APP_ENCRYPTION_KEY: QmFuY0Rlc3NhaUNsZURlVGVzdFNhbnNWYWxldXIwMDA=
+      CRON_WEB_KEY: clefactice
+      SB_SMTP_HOST: smtp.banc.test
+      SB_SMTP_PORT: "25"
+      SB_SMTP_USER: banc@banc.test
+      SB_SMTP_PASSWORD: factice
+      SB_SMTP_FROM: banc@banc.test
+      SB_DMS_RINGGROUP_SUCCESS_URL: https://hc-ping.com/banc-ringgroup
+      SB_DMS_SBCHAT_SUCCESS_URL: https://hc-ping.com/banc-sbchat
+      SB_DMS_MAIL_SUCCESS_URL: https://hc-ping.com/banc-mail
+      SB_DMS_MAIL_TEST_RECIPIENT: canari@banc.test
+      SB_DMS_INFRA_SUCCESS_URL: https://hc-ping.com/banc-infra
+      # Le conteneur voit le disque de la machine : le résultat ne doit pas dépendre de la place qui y reste
+      # (pas 0 : checkinfra.php traite cette valeur comme absente et prend son défaut)
+      SB_DMS_INFRA_DISK_MIN_PERCENT: "0.001"
+      SB_DMS_INFRA_DISK_MIN_GB: "0.001"
+    # Les faux hôtes pointent vers le conteneur lui-même. Garder la liste identique à image/hotes-faux.txt.
+    extra_hosts:
+      - voip.ms:127.0.0.1
+      - api.github.com:127.0.0.1
+      - github.com:127.0.0.1
+      - codeload.github.com:127.0.0.1
+      - docs.google.com:127.0.0.1
+      - www.bankofcanada.ca:127.0.0.1
+      - hc-ping.com:127.0.0.1
+      - ipecho.net:127.0.0.1
+      - login.microsoftonline.com:127.0.0.1
+      - oauth2.googleapis.com:127.0.0.1
+      - agendas.banc.test:127.0.0.1
+      - sbchat.banc.test:127.0.0.1
+      - mas.banc.test:127.0.0.1
+    volumes:
+      - .:/banc:ro
+    healthcheck:
+      # 502 ou 000 : nginx ou php-fpm n'est pas encore prêt. Tout autre code veut dire que les deux répondent.
+      test: ["CMD-SHELL", "curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1/ | grep -qvE '^(000|502)$'"]
+      interval: 2s
+      timeout: 5s
+      retries: 30
+    networks:
+      - interne
+
+  db:
+    image: mariadb:${VERSION_MARIADB:-12}
+    environment:
+      MYSQL_ROOT_PASSWORD: banc
+      MYSQL_DATABASE: switchboard
+      MYSQL_USER: banc
+      MYSQL_PASSWORD: banc
+    tmpfs:
+      - /var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 2s
+      timeout: 5s
+      retries: 60
+    networks:
+      - interne
+
+networks:
+  interne:
+    internal: true

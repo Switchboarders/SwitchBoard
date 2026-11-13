@@ -1,0 +1,216 @@
+services:
+  # Ces deux services (letsencrypt + nginx-proxy) fournissent le reverse-proxy
+  # + TLS "clé en main" de SwitchBoard, en mode autonome (aucun reverse-proxy
+  # externe). Si un reverse-proxy externe gère déjà les ports 80/443 sur ce
+  # serveur, utilisez plutôt ./up.sh (ou docker-compose.reverse-proxy.yml) :
+  # voir le README.
+  #
+  # Ne lancez pas ce fichier directement avec `docker compose -f ... up` par
+  # habitude : utilisez ./up.sh, qui s'en souvient pour vous.
+  letsencrypt:
+    image: nginxproxy/acme-companion
+    container_name: sb_letsencrypt
+    restart: unless-stopped
+    depends_on:
+      - nginx-proxy
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./nginx/certs:/etc/nginx/certs
+      - ./nginx/vhost.d:/etc/nginx/vhost.d
+      - ./nginx/html:/usr/share/nginx/html
+      - ./nginx/acme:/etc/acme.sh
+    environment:
+      DEFAULT_EMAIL: ${DEFAULT_EMAIL}
+      NGINX_PROXY_CONTAINER: "sb_nginx-proxy"
+    networks:
+      - web
+  nginx-proxy:
+    #image: nginxproxy/nginx-proxy:1.11-alpine
+    build:
+      context: .
+      dockerfile: DockerfileNginxProxy
+    container_name: sb_nginx-proxy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+
+#      - "80:80"
+#      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./nginx/certs:/etc/nginx/certs
+      - ./nginx/vhost.d:/etc/nginx/vhost.d
+      - ./nginx/html:/usr/share/nginx/html
+    environment:
+      # Accès par le réseau local : une requête pour un nom inconnu (https://192.168.x.y, nom de
+      # la machine) est servie par SwitchBoard au lieu d'une erreur 503.
+      DEFAULT_HOST: ${SB_DEFAULT_HOST:-${VIRTUAL_HOST}}
+      # Noms et adresses IP ajoutés au certificat auto-signé de localhost (calculés par up.sh).
+      SB_CERT_SANS: ${SB_CERT_SANS:-}
+    entrypoint: ["/generate_self_signed_certificates.sh"]
+    command: ["/app/docker-entrypoint.sh", "forego", "start", "-r"]
+    working_dir: /app
+    networks:
+      - web
+  #
+  # wordpress:
+  #   image: wordpress:php8.3
+  #   container_name: wordpress
+  #   restart: always
+  #   ports:
+  #     - 8080:80
+  #   volumes:
+  #     - ./web:/var/www/html
+  #     - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+  #   networks:
+  #     - web
+  #   environment:
+  #     WORDPRESS_DB_HOST: db
+  #     WORDPRESS_DB_USER: app_user
+  #     WORDPRESS_DB_PASSWORD: "shTfhw4J6dL:3D2!fgjrd"
+  #     WORDPRESS_DB_NAME: moduloin_wpfractal2
+  #     VIRTUAL_HOST: ${VIRTUAL_HOST}
+  #     LETSENCRYPT_HOST: ${VIRTUAL_HOST}
+  #     LETSENCRYPT_EMAIL: ${DEFAULT_EMAIL}
+  #     WORDPRESS_DEBUG: true
+  #     SERVER_NAME: moduloinfo.ca
+
+
+  web:
+    image: nginx:stable-alpine
+    container_name: sb_web
+    restart: unless-stopped
+#    ports:
+#      - 80:80  
+    volumes:
+      - ./web:/var/www/html
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    
+    environment:
+      VIRTUAL_HOST: ${VIRTUAL_HOST}
+      LETSENCRYPT_HOST: ${VIRTUAL_HOST}
+      LETSENCRYPT_EMAIL: ${DEFAULT_EMAIL}
+    expose:
+      - "80"
+    depends_on:
+      # restart: true : quand php est recréé (nouvelle image après une mise à jour), web redémarre
+      # aussi. Sinon nginx garde l'ancienne adresse de sb_php-fpm et répond 502 jusqu'à un
+      # redémarrage manuel.
+      php:
+        condition: service_started
+        restart: true
+    networks:
+      - web
+  php:
+    build:
+      context: .
+      dockerfile: DockerfilePHP
+      args:
+        TZ: ${TZ}
+    container_name: sb_php-fpm
+    restart: unless-stopped
+    volumes:
+      - ./web:/var/www/html
+      - ./logs:/var/log/
+      # Certificat auto-signé du serveur SBChat/MAS, si nécessaire (voir certs/README.md).
+      # Le dossier peut rester vide : le montage est alors sans effet.
+      - ./certs:/etc/ssl/sbchat:ro
+    entrypoint: ["/entrypoint.sh"]
+    environment:
+      GITHUB_TOKEN: ${GITHUB_TOKEN}
+      TZ: ${TZ}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      APP_ENCRYPTION_KEY: ${APP_ENCRYPTION_KEY:-}
+      CRON_WEB_KEY: ${CRON_WEB_KEY:-}
+      SB_SBCHAT_CA_BUNDLE: ${SB_SBCHAT_CA_BUNDLE:-}
+      SB_ALLOW_INSECURE_TLS: ${SB_ALLOW_INSECURE_TLS:-}
+      SB_SMTP_HOST: ${SB_SMTP_HOST:-}
+      SB_SMTP_PORT: ${SB_SMTP_PORT:-}
+      SB_SMTP_USER: ${SB_SMTP_USER:-}
+      SB_SMTP_PASSWORD: ${SB_SMTP_PASSWORD:-}
+      SB_SMTP_FROM: ${SB_SMTP_FROM:-}
+      SB_SMTP_TLS: ${SB_SMTP_TLS:-}
+      SB_SMTP_OAUTH_PROVIDER: ${SB_SMTP_OAUTH_PROVIDER:-}
+      SB_SMTP_OAUTH_CLIENT_ID: ${SB_SMTP_OAUTH_CLIENT_ID:-}
+      SB_SMTP_OAUTH_CLIENT_SECRET: ${SB_SMTP_OAUTH_CLIENT_SECRET:-}
+      SB_SMTP_OAUTH_TENANT: ${SB_SMTP_OAUTH_TENANT:-}
+      SB_DMS_RINGGROUP_SUCCESS_URL: ${SB_DMS_RINGGROUP_SUCCESS_URL:-}
+      SB_DMS_RINGGROUP_FAIL_URL: ${SB_DMS_RINGGROUP_FAIL_URL:-}
+      SB_DMS_SBCHAT_SUCCESS_URL: ${SB_DMS_SBCHAT_SUCCESS_URL:-}
+      SB_DMS_SBCHAT_FAIL_URL: ${SB_DMS_SBCHAT_FAIL_URL:-}
+      SB_DMS_MAIL_SUCCESS_URL: ${SB_DMS_MAIL_SUCCESS_URL:-}
+      SB_DMS_MAIL_FAIL_URL: ${SB_DMS_MAIL_FAIL_URL:-}
+      SB_DMS_MAIL_TEST_RECIPIENT: ${SB_DMS_MAIL_TEST_RECIPIENT:-}
+      SB_DMS_INFRA_SUCCESS_URL: ${SB_DMS_INFRA_SUCCESS_URL:-}
+      SB_DMS_INFRA_FAIL_URL: ${SB_DMS_INFRA_FAIL_URL:-}
+      SB_DMS_INFRA_DISK_MIN_PERCENT: ${SB_DMS_INFRA_DISK_MIN_PERCENT:-}
+      SB_DMS_INFRA_DISK_MIN_GB: ${SB_DMS_INFRA_DISK_MIN_GB:-}
+    command: ["php-fpm"]
+    expose:
+      - "9000"
+    networks:
+      - web
+
+  # Relais SMTP interne (voir smtprelay.php) : permet à un autre service du réseau "web"
+  # (ex. MAS, récupération de mot de passe) d'envoyer du courriel avec la configuration SB_SMTP_*
+  # de SwitchBoard, y compris OAuth2 Microsoft 365 / Google que MAS ne sait pas utiliser. Le port
+  # n'est pas publié sur l'hôte. Pour y brancher MAS : utils/connect-mas-mail.sh.
+  # Internal SMTP relay: lets another service on the "web" network (e.g. MAS) send mail using
+  # SwitchBoard's SB_SMTP_* settings. Port not published on the host.
+  mail-relay:
+    build:
+      context: .
+      dockerfile: DockerfilePHP
+      args:
+        TZ: ${TZ}
+    container_name: sb_mail_relay
+    restart: unless-stopped
+    volumes:
+      - ./web:/var/www/html
+      - ./mail-relay-entrypoint.sh:/mail-relay-entrypoint.sh:ro
+      - ./smtprelay.php:/smtprelay.php:ro
+    entrypoint: ["/bin/bash", "/mail-relay-entrypoint.sh"]
+    environment:
+      TZ: ${TZ}
+      SB_SMTP_HOST: ${SB_SMTP_HOST:-}
+      SB_SMTP_PORT: ${SB_SMTP_PORT:-}
+      SB_SMTP_USER: ${SB_SMTP_USER:-}
+      SB_SMTP_PASSWORD: ${SB_SMTP_PASSWORD:-}
+      SB_SMTP_FROM: ${SB_SMTP_FROM:-}
+      SB_SMTP_TLS: ${SB_SMTP_TLS:-}
+      SB_SMTP_OAUTH_PROVIDER: ${SB_SMTP_OAUTH_PROVIDER:-}
+      SB_SMTP_OAUTH_CLIENT_ID: ${SB_SMTP_OAUTH_CLIENT_ID:-}
+      SB_SMTP_OAUTH_CLIENT_SECRET: ${SB_SMTP_OAUTH_CLIENT_SECRET:-}
+      SB_SMTP_OAUTH_TENANT: ${SB_SMTP_OAUTH_TENANT:-}
+      APP_ENCRYPTION_KEY: ${APP_ENCRYPTION_KEY:-}
+      CRON_WEB_KEY: ${CRON_WEB_KEY:-}
+    expose:
+      - "2525"
+    depends_on:
+      - php
+    networks:
+      - web
+
+  db:
+    image: mariadb:12
+    container_name: sb_mariadb
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - ./db_data:/var/lib/mysql
+    networks:
+      - web
+
+volumes:
+  db_data:
+
+networks:
+  web:
+    external: true

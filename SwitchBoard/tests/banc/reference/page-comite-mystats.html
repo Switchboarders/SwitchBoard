@@ -1,0 +1,103 @@
+<br>
+<!DOCTYPE html>
+  <html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="portail/pages/utilisateur/style.css"  />
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="portail/pages/utilisateur/script.js"></script>
+    </head>
+    <body>
+		<!-- Return to Top Arrow-->
+		<a href="#pagetop" id="return-to-top"><i class="icon-chevron-up"></i></a>
+		<!-- ICON NEEDS FONT AWESOME FOR CHEVRON UP ICON -->
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+		
+		
+		  <div class="hamburger">
+		  <div class="line"></div>
+		  <div class="line"></div>
+		  <div class="line"></div>
+		</div>
+		<div class="menu">
+		  <A href="managementportal.php"><div class="menu-item">Page Principale</div></A>
+		  <div class="menu-item has-submenu">Groupes de sonneries</div>
+		  	<div class="submenu">
+			<A href="managementportal.php?page=validatecalendar"><div class="submenu-item">Validation du calendrier</div></A>
+		  	<form class='form-action form-action-bloc' method='post' action='managementportal.php?page=refreshringgroup'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Forcer le changement des répondants</button></form>
+		  	<form class='form-action form-action-bloc' method='post' action='managementportal.php?page=remindersms'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Rappels par SMS</button></form>
+		  	<form class='form-action form-action-bloc' method='post' action='managementportal.php?page=remindersmsjustbefore'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Rappels par SMS 15 minutes avant</button></form>
+			</div>
+		  <div class="menu-item has-submenu">SwitchBoard Chat</div>
+		    <div class="submenu">
+		    <form class='form-action form-action-bloc' method='post' action='managementportal.php?page=refreshsbchat'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Rafraîchir SBChat</button></form>
+		    <form class='form-action form-action-bloc' method='post' action='managementportal.php?page=remindersbchat'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Rappels SwitchBoard Chat pour demain</button></form>
+		    <form class='form-action form-action-bloc' method='post' action='managementportal.php?page=remindersbchatjustbefore'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Rappels SwitchBoard Chat dans l&#039;heure d&#039;avant</button></form>
+		    <A href="managementportal.php?page=manageuserssbchat"><div class="submenu-item">Gérer les utilisateurs du serveur Matrix</div></A>
+		  	<A href="managementportal.php?page=sbchatmacros"><div class="submenu-item">Macros SwitchBoard Chat du compte</div></A>
+		  	<A href="managementportal.php?page=sbchatagreement"><div class="submenu-item">Entente de confidentialité des bénévoles</div></A>
+		  	
+		</div>
+		  <A href="managementportal.php?page=mystats"><div class="menu-item">Mes statistiques</div></A>
+		  <A href="managementportal.php?page=userinfo"><div class="menu-item">Informations du compte</div></A>
+		  <A href="managementportal.php?page=sbchatinfo"><div class="menu-item">Informations SwitchBoard Chat du compte</div></A>
+
+		  		  <A href="managementportal.php?page=logout"><div class="menu-item">Se deconnecter</div></A>
+		  
+		</div>
+	<div id='pagetop'></div>
+		
+
+<a href='managementportal.php?page=mainpage' class='backbutton'>&#8249;</a><section><h1>Statistiques de autonome</h1></section><p>Période : 2026-10-01 au 2026-10-31</p><h2>Statistiques d'appels</h2><div class='formated-output'>Bonjour autonome,<br />
+<br />
+Voici les statistiques pour la période mentionnée:<br />
+Nombre d&#039;appels reçus : 5<br />
+	Nombre d&#039;appels entre 22:00:00 et 01:00:00 : 1<br />
+	Nombre d&#039;appels entre 01:00:00 et 06:00:00 : 1<br />
+	Nombre d&#039;appels entre 06:00:00 et 09:00:00 : 1<br />
+	Nombre d&#039;appels entre 09:00:00 et 22:00:00 : 2<br />
+Nombre d&#039;appels répondus : 3<br />
+	Nombre d&#039;appels répondus &lt; 30 sec: 1<br />
+	Nombre d&#039;appels répondus entre 30 sec et 1 min: 1<br />
+	Nombre d&#039;appels répondus &gt; 1 min: 1<br />
+Nombre d&#039;appels non répondus : 1<br />
+Nombre d&#039;appels occupés : 1<br />
+Nombre d&#039;appels échoués : 0<br />
+Nombre d&#039;appels autres : 0<br />
+Solde au compte voip.ms: 25.5000<br />
+Nom de mailbox recherché: 5145550101<br />
+Nombre de messages vocaux reçus : 0<br />
+<br />
+Passez une bonne journée !<br />
+<br />
+Votre Comité de l&#039;aide téléphonique provincial !<br />
+</div><form class='form-action' method='post' action='managementportal.php?page=mystats'><input type='hidden' name='csrf_token' value='JETON'><input type='hidden' name='reportaction' value='sendstats'><button type='submit' class='bouton-lien'>Envoyer ce rapport par courriel</button></form><h2>Répartition des coûts par DID</h2><div class='formated-output'>Bonjour autonome,<br />
+<br />
+Voici la répartition des coûts par DID pour la période mentionnée:<br />
+<br />
+DID 5145550101 (Ligne autonome):<br />
+	Nombre d&#039;appels : 5 (répondus : 3)<br />
+	Coût des appels : 0.11 $<br />
+	Frais de location du DID : 0.85 $<br />
+	Part des frais non attribuables à un DID en particulier : 0.30 $<br />
+	Coût total pour ce DID : 1.26 $<br />
+<br />
+Détail des frais non attribuables à un DID en particulier (total : 0.30 $, réparti également entre 1 DID, soit 0.30 $ chacun) :<br />
+	Appels non identifiables à un DID précis : 0.00 $<br />
+	SMS - Textos : 0.30 $<br />
+<br />
+Coût total du compte pour la période : 1.26 $<br />
+Solde au compte voip.ms: 25.5000<br />
+<br />
+Passez une bonne journée !<br />
+</div><form class='form-action' method='post' action='managementportal.php?page=mystats'><input type='hidden' name='csrf_token' value='JETON'><input type='hidden' name='reportaction' value='senddidcost'><button type='submit' class='bouton-lien'>Envoyer ce rapport par courriel</button></form>	
+
+    </body>
+  </html>
+
+
+

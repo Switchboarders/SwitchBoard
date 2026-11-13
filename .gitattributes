@@ -1,0 +1,20 @@
+# Les scripts et fichiers de configuration copiés dans les images Docker doivent garder des fins
+# de ligne Unix (LF), même dans un clone fait sous Windows (git y convertit en CRLF par défaut) :
+# un script en CRLF échoue dans le conteneur (« bad interpreter », cron qui ignore ses tâches).
+*.sh                    text eol=lf
+Docker/Dockerfile*      text eol=lf
+Docker/nginx/Dockerfile text eol=lf
+Docker/cronjobs         text eol=lf
+Docker/.env_sample      text eol=lf
+Docker/.dockerignore    text eol=lf
+Docker/*.yml            text eol=lf
+Docker/*.ini            text eol=lf
+Docker/nginx/*.sample   text eol=lf
+Docker/utils/logrotate  text eol=lf
+Docker/templates/*      text eol=lf
+SwitchBoard/tests/banc/** text eol=lf
+# Les courriels de référence sont comparés à l'octet près, avec leurs fins de ligne d'origine
+SwitchBoard/tests/banc/reference/** -text
+# Scripts Windows : CRLF
+*.ps1                   text eol=crlf
+*.cmd                   text eol=crlf

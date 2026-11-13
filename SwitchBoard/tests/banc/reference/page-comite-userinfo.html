@@ -1,0 +1,132 @@
+<br>
+<!DOCTYPE html>
+  <html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="portail/pages/utilisateur/style.css"  />
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="portail/pages/utilisateur/script.js"></script>
+    </head>
+    <body>
+		<!-- Return to Top Arrow-->
+		<a href="#pagetop" id="return-to-top"><i class="icon-chevron-up"></i></a>
+		<!-- ICON NEEDS FONT AWESOME FOR CHEVRON UP ICON -->
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+		
+		
+		  <div class="hamburger">
+		  <div class="line"></div>
+		  <div class="line"></div>
+		  <div class="line"></div>
+		</div>
+		<div class="menu">
+		  <A href="managementportal.php"><div class="menu-item">Page Principale</div></A>
+		  <div class="menu-item has-submenu">Groupes de sonneries</div>
+		  	<div class="submenu">
+			<A href="managementportal.php?page=validatecalendar"><div class="submenu-item">Validation du calendrier</div></A>
+		  	<form class='form-action form-action-bloc' method='post' action='managementportal.php?page=refreshringgroup'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Forcer le changement des répondants</button></form>
+		  	<form class='form-action form-action-bloc' method='post' action='managementportal.php?page=remindersms'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Rappels par SMS</button></form>
+		  	<form class='form-action form-action-bloc' method='post' action='managementportal.php?page=remindersmsjustbefore'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Rappels par SMS 15 minutes avant</button></form>
+			</div>
+		  <div class="menu-item has-submenu">SwitchBoard Chat</div>
+		    <div class="submenu">
+		    <form class='form-action form-action-bloc' method='post' action='managementportal.php?page=refreshsbchat'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Rafraîchir SBChat</button></form>
+		    <form class='form-action form-action-bloc' method='post' action='managementportal.php?page=remindersbchat'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Rappels SwitchBoard Chat pour demain</button></form>
+		    <form class='form-action form-action-bloc' method='post' action='managementportal.php?page=remindersbchatjustbefore'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Rappels SwitchBoard Chat dans l&#039;heure d&#039;avant</button></form>
+		    <A href="managementportal.php?page=manageuserssbchat"><div class="submenu-item">Gérer les utilisateurs du serveur Matrix</div></A>
+		  	<A href="managementportal.php?page=sbchatmacros"><div class="submenu-item">Macros SwitchBoard Chat du compte</div></A>
+		  	<A href="managementportal.php?page=sbchatagreement"><div class="submenu-item">Entente de confidentialité des bénévoles</div></A>
+		  	
+		</div>
+		  <A href="managementportal.php?page=mystats"><div class="menu-item">Mes statistiques</div></A>
+		  <A href="managementportal.php?page=userinfo"><div class="menu-item">Informations du compte</div></A>
+		  <A href="managementportal.php?page=sbchatinfo"><div class="menu-item">Informations SwitchBoard Chat du compte</div></A>
+
+		  		  <A href="managementportal.php?page=logout"><div class="menu-item">Se deconnecter</div></A>
+		  
+		</div>
+	<div id='pagetop'></div>
+		
+
+    <script>
+		function validateForm() {
+		  window.location.reload();
+
+		} 
+		
+		
+	</script>
+		<section>
+		<div class="login">
+		<div class="login-triangle"></div>
+		 <a href='managementportal.php?page=mainpage' class='backbutton'>&#8249;</a>		<h2 class="login-header">Informations du compte</h2>
+		<form id="userinfoform" name="userinfoform" class="login-container" action=""  onsubmit="return validateForm()" method="post">
+			<input type='hidden' name='csrf_token' value='JETON'>			<div class='login-title'>Nom d'utilisateur SwitchBoard : <i>autonome</i></div><br>			<div class="login-title">Nom d'utilisateur voip.ms :</div>
+			<p><input value="banc-autonome" name="voipmsusername" type="text" placeholder="ex.monadressedecomptevoip@gmail.com"></p>
+			<div class="login-title">Mot de passe API voip.ms (pas le mot de passe du compte, celui de l'api !!): <span class='configured'>&#10003; configuré</span></div>
+			<p><input value="" name="voipmsapipassword" type="password" autocomplete="new-password" placeholder="laisser vide pour conserver"></p>
+			<div class="login-title">URL de l'agenda :</div>
+			<p><input value="https://agendas.banc.test/c/autonome.ics" name="calendarurl" type="text" placeholder="ex.https://calendar.google.com/calendar/ical/..."></p>
+			<p> <label for="calendartype" class="login-title">Type de calendrier :</label>
+			<select name="calendartype" id="calendartype" >
+			  <option value="secreturl" selected>URL secrète (Google / Outlook)</option>
+			  <option value="caldav" >CalDAV (compte cPanel avec authentification)</option>
+			</select> </p>
+			<div class="login-title">Nom d'utilisateur CalDAV (requis seulement si Type de calendrier = CalDAV) :</div>
+			<p><input value="" name="calendarusername" type="text" placeholder="agenda@exemple.org"></p>
+			<div class="login-title">Mot de passe CalDAV (requis seulement si Type de calendrier = CalDAV) : <span class='notconfigured'>non configuré</span></div>
+			<p><input value="" name="calendarpassword" type="password" autocomplete="new-password" placeholder="laisser vide pour conserver"></p>
+			<div class="login-title">Courriel de notification/validation :</div>
+			<p><input value="autonome@banc.test" name="validationfeedbackemail" type="text" placeholder="ex.moncourriel@gmail.com (plusieurs adresses séparées par des virgules sont acceptées)"></p>
+			<div class="login-title">Nom du groupe de sonnerie (Maximum 15 caractères):				<div class="tooltip-container">
+				<span class="exclamation-mark">!</span>
+				<div class="tooltip-text">À chaque mise à jour, le groupe de sonnerie se réinitialisera à votre boîte vocale par défaut. Cependant, si vous avez besoin d'une boîte spécifique à un groupe de sonnerie, vous pouvez créer un boîte vocale ayant pour nom votre DID. Celle-ci sera utilisée à la place de la boîte vocale principale.</div>
+				</div>
+			</div>
+				
+
+			<p><input value="Groupe autonome" name="ringgroupname" maxlength="15" type="text" placeholder="ex.groupedesonnerie1"></p>
+						<div class="login-title">Durée de sonnerie (secondes, 1 à 60) :				<div class="tooltip-container">
+				<span class="exclamation-mark">!</span>
+				<div class="tooltip-text">Vide : 25 secondes. Pour un seul répondant, le repère nbsec->20 dans la description de son événement de l'agenda a priorité sur ce réglage.</div>
+				</div>
+			</div>
+			<p><input value="" name="ringtime" type="number" min="1" max="60" placeholder="par défaut : 25"></p>
+			<div class="login-title"><label for="pressone">Faire le 1 pour accepter l'appel :</label>
+				<div class="tooltip-container">
+				<span class="exclamation-mark">!</span>
+				<div class="tooltip-text">Pour un seul répondant, le repère faire1->o ou faire1->n dans la description de son événement de l'agenda a priorité sur ce réglage.</div>
+				</div>
+			</div>
+			<p><select name="pressone" id="pressone" >
+			  <option value="" selected>par défaut (oui)</option>
+			  <option value="1" >oui</option>
+			  <option value="0" >non</option>
+			</select> </p>
+			<div class="login-title">Numéro de DID :</div>
+			<p><input value="5145550101" name="didnumber" type="text" placeholder="ex.4188882323"></p>
+			<p> <label for="language" class="login-title">Langue :</label>
+			<select name="language" id="language" >
+			  <option value="fr" selected>Français</option>
+			  <option value="en" >English</option>
+			</select> </p>
+			<div class='login-title'>Lien de validation sans authentification (vous pouvez le copier-coller) :</div><center><h3><A href='https://127.0.0.1/SwitchBoard/SwitchBoard/src/token.php?token=JETON'>Cliquez ici pour valider les numéros de téléphone de votre agenda</A></h3></center>			
+			
+			<p><input type="submit" value="Soumettre"></p>
+		  </form>
+		</div>
+		</section>
+
+
+
+	
+
+    </body>
+  </html>
+
+
+

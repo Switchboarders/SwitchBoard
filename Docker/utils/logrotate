@@ -1,0 +1,35 @@
+/var/log/cron*.log {
+    daily
+    rotate 90
+    missingok
+    notifempty
+    compress
+    delaycompress
+    create 0640 root root
+    sharedscripts
+    dateext
+    dateformat -%Y%m%d
+}
+
+# php-fpm (error_log/access.log) tourne comme www-data (voir entrypoint.sh) : après
+# rotation, le fichier recréé doit rester à ce même utilisateur, sinon php-fpm ne peut
+# plus y écrire et échoue à redémarrer avec la même erreur que /proc/self/fd/2. php-fpm
+# garde aussi son ancien descripteur de fichier ouvert après le renommage par logrotate
+# (donc continue d'écrire dans le fichier tourné) tant qu'on ne lui signale pas de
+# réouvrir ses journaux - d'où le postrotate ci-dessous (voir pid = /run/php-fpm.pid
+# dans entrypoint.sh).
+/var/log/php-fpm-*.log {
+    daily
+    rotate 90
+    missingok
+    notifempty
+    compress
+    delaycompress
+    create 0640 www-data www-data
+    sharedscripts
+    dateext
+    dateformat -%Y%m%d
+    postrotate
+        kill -USR1 $(cat /run/php-fpm.pid 2>/dev/null) 2>/dev/null || true
+    endscript
+}

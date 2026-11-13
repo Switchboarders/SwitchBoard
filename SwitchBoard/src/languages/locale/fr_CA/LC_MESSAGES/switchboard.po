@@ -1,0 +1,3851 @@
+# Language fr-CA translations for PACKAGE package.
+# Copyright (C) 2024 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-12 11:28-0500\n"
+"PO-Revision-Date: 2024-07-09 00:42-0400\n"
+"Language-Team: Language fr-CA\n"
+"Language: fr-CA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: managementportal.php:135
+msgid "Mauvais mot de passe"
+msgstr "Mauvais mot de passe"
+
+#: managementportal.php:152
+msgid "Tous les journaux ont été effacés."
+msgstr "Tous les journaux ont été effacés."
+
+#: managementportal.php:160
+msgid "Problème avec le paramètre page"
+msgstr "Problème avec le paramètre page"
+
+#: gendidcostreport.php:21
+#, fuzzy
+msgid "Début du programme gendidcostreport !"
+msgstr "Début du programme genstatsLAA !"
+
+#: gendidcostreport.php:25 genstatsLAA.php:43
+#: modules/agenda/TraitementComite.php:68
+#: modules/agenda/TraitementComite.php:433
+#: modules/agenda/TraitementComite.php:524
+#: modules/agenda/TraitementComite.php:574 genstatistics.php:25
+msgid "Heure d'exécution : "
+msgstr "Heure d'exécution : "
+
+#: gendidcostreport.php:71
+#, fuzzy
+msgid "Premier jour d'extraction des coûts : "
+msgstr "Premier jour d'extraction des stats : "
+
+#: gendidcostreport.php:72
+#, fuzzy
+msgid "Dernier jour d'extraction des coûts : "
+msgstr "Dernier jour d'extraction des stats : "
+
+#: gendidcostreport.php:82 refreshallringgroups.php:68
+#: sendnotificationsmss.php:65 sendnotificationsbchat.php:57
+#: refreshsbchat.php:53 genstatistics.php:91
+msgid "Table userservice vide, on ne traite rien"
+msgstr "Table userservice vide, on ne traite rien"
+
+#: gendidcostreport.php:89 genstatsLAA.php:90 genstatistics.php:107
+msgid "Traitement du compte voip : "
+msgstr "Traitement du compte voip : "
+
+#: gendidcostreport.php:104 genstatsLAA.php:297 refreshallringgroups.php:141
+#: sendnotificationsmss.php:109 sendnotificationsbchat.php:94
+#: refreshsbchat.php:94 genstatistics.php:123
+msgid "Temps d'exécution total : "
+msgstr "Temps d'exécution total : "
+
+#: gendidcostreport.php:109 genstatsLAA.php:300 genstatistics.php:128
+msgid "Fin du programme !"
+msgstr "Fin du programme !"
+
+#: genstatsLAA.php:39
+msgid "Début du programme genstatsLAA !"
+msgstr "Début du programme genstatsLAA !"
+
+#: genstatsLAA.php:85 genstatistics.php:80
+msgid "Premier jour d'extraction des stats : "
+msgstr "Premier jour d'extraction des stats : "
+
+#: genstatsLAA.php:86 genstatistics.php:81
+msgid "Dernier jour d'extraction des stats : "
+msgstr "Dernier jour d'extraction des stats : "
+
+#: genstatsLAA.php:99
+msgid "Compte Switchboard: "
+msgstr "Compte Switchboard: "
+
+#: genstatsLAA.php:105 modules/rapports/RapportCoutsDid.php:37
+#: modules/rapports/RapportStatistiques.php:34
+msgid "Bonjour "
+msgstr "Bonjour "
+
+#: genstatsLAA.php:106 modules/rapports/RapportStatistiques.php:35
+msgid "Voici les statistiques pour la période mentionnée:"
+msgstr "Voici les statistiques pour la période mentionnée:"
+
+#: genstatsLAA.php:125 modules/rapports/RapportStatistiques.php:80
+msgid "Retour de getCdr: "
+msgstr "Retour de getCdr: "
+
+#: genstatsLAA.php:214 genstatsLAA.php:227 genstatsLAA.php:268
+#: genstatsLAA.php:279
+msgid " "
+msgstr " "
+
+#: genstatsLAA.php:219
+msgid "Nombre d'appels transférés: "
+msgstr "Nombre d'appels transférés: "
+
+#: genstatsLAA.php:232
+msgid "Compteurs pour la région "
+msgstr "Compteurs pour la région "
+
+#: genstatsLAA.php:241
+#, fuzzy
+msgid "Total en $ US pour la région: "
+msgstr "Compteurs pour la région "
+
+#: genstatsLAA.php:245
+msgid "Nombre d'appels "
+msgstr "Nombre d'appels "
+
+#: genstatsLAA.php:261 modules/rapports/CorpsDuRapport.php:36
+#: modules/rapports/ComparaisonCouts.php:117
+msgid "Retour de getBalance: "
+msgstr "Retour de getBalance: "
+
+#: genstatsLAA.php:273 modules/rapports/CorpsDuRapport.php:40
+msgid "Solde au compte voip.ms: "
+msgstr "Solde au compte voip.ms: "
+
+#: genstatsLAA.php:288 modules/rapports/RapportCoutsDid.php:85
+#: modules/rapports/RapportStatistiques.php:55
+msgid "Passez une bonne journée !"
+msgstr "Passez une bonne journée !"
+
+#: genstatsLAA.php:289 modules/rapports/RapportStatistiques.php:56
+msgid "Votre Comité de l'aide téléphonique provincial !"
+msgstr "Votre Comité de l'aide téléphonique provincial !"
+
+#: genstatsLAA.php:290 modules/rapports/RapportStatistiques.php:25
+msgid "Statistiques des appels du "
+msgstr "Statistiques des appels du "
+
+#: genstatsLAA.php:290 modules/rapports/RapportCoutsDid.php:87
+#: modules/rapports/RapportStatistiques.php:25
+#: commun/statsreportrenderer.php:20
+msgid " au "
+msgstr " au "
+
+#: genstatsLAA.php:290 modules/rapports/RapportCoutsDid.php:87
+#: modules/rapports/RapportStatistiques.php:25
+msgid " pour l'utilisateur: "
+msgstr " pour l'utilisateur: "
+
+#: refreshallringgroups.php:98 sendnotificationsmss.php:77
+#: sendnotificationsbchat.php:65 refreshsbchat.php:63
+msgid "Ordre dans la file : "
+msgstr "Ordre dans la file : "
+
+#: sendnotificationsmss.php:90
+msgid "Résultat de l'échange avec voip.ms : "
+msgstr "Résultat de l'échange avec voip.ms : "
+
+#: modules/agenda/Agenda.php:59
+#, php-format
+msgid "Heure illisible dans l'agenda : %s"
+msgstr "Heure illisible dans l'agenda : %s"
+
+#: modules/agenda/ReperesAgenda.php:28
+#, php-format
+msgid "« %s » : repère sans valeur, ignoré"
+msgstr ""
+
+#: modules/agenda/ReperesAgenda.php:33
+#, php-format
+msgid "« %s » : repère inconnu, ignoré"
+msgstr ""
+
+#: modules/agenda/ReperesAgenda.php:38
+#, php-format
+msgid "« %s » : valeur invalide, valeur par défaut utilisée"
+msgstr ""
+
+#: modules/agenda/TraitementComite.php:35
+msgid "Agenda illisible : validation impossible."
+msgstr ""
+
+#: modules/agenda/TraitementComite.php:59
+msgid "Les données sont entrées correctement."
+msgstr "Les données sont entrées correctement."
+
+#: modules/agenda/TraitementComite.php:72
+#: modules/agenda/TraitementComite.php:578
+msgid "Agenda illisible : aucun rappel envoyé."
+msgstr ""
+
+#: modules/agenda/TraitementComite.php:77
+#: modules/agenda/TraitementComite.php:583
+msgid "Début du prochain shift : "
+msgstr "Début du prochain shift : "
+
+#: modules/agenda/TraitementComite.php:78
+#: modules/agenda/TraitementComite.php:584
+msgid "Fin du prochain shift : "
+msgstr "Fin du prochain shift : "
+
+#: modules/agenda/TraitementComite.php:88
+msgid "Personne ne sera texté, il n'y a personne d'identifié."
+msgstr "Personne ne sera texté, il n'y a personne d'identifié."
+
+#: modules/agenda/TraitementComite.php:93
+msgid "Temps d'execution : "
+msgstr "Temps d'execution : "
+
+#: modules/agenda/TraitementComite.php:95
+msgid "Personne à texter."
+msgstr "Personne à texter."
+
+#: modules/agenda/TraitementComite.php:104
+msgid " Numéro de téléphone : "
+msgstr " Numéro de téléphone : "
+
+#: modules/agenda/TraitementComite.php:104
+msgid " Plages : "
+msgstr " Plages : "
+
+#: modules/agenda/TraitementComite.php:109
+msgid "Mode test, aucun sms envoyé."
+msgstr "Mode test, aucun sms envoyé."
+
+#: modules/agenda/TraitementComite.php:122
+msgid " pour le numéro de destination : "
+msgstr " pour le numéro de destination : "
+
+#: modules/agenda/TraitementComite.php:134
+msgid "Veuillez entrer une url de calendrier pour cet utilisateur"
+msgstr ""
+
+#: modules/agenda/TraitementComite.php:143
+msgid "Agenda téléchargé avec succès.<br>"
+msgstr "Agenda téléchargé avec succès.<br>"
+
+#: modules/agenda/TraitementComite.php:155
+msgid "Chargement à partir du cache."
+msgstr "Chargement à partir du cache."
+
+#: modules/agenda/TraitementComite.php:173
+msgid ""
+"Agenda reçu sans aucun événement : il ne remplace pas la copie en cache."
+msgstr ""
+
+#: modules/agenda/TraitementComite.php:181
+msgid "Écriture de l'agenda dans le cache impossible."
+msgstr ""
+
+#: modules/agenda/TraitementComite.php:204
+msgid ""
+"L'agenda n'a pas pu être traité. Si le problème persiste, contactez votre "
+"administrateur."
+msgstr ""
+
+#: modules/agenda/TraitementComite.php:216
+msgid "Aucune adresse d'agenda n'est configurée."
+msgstr ""
+
+#: modules/agenda/TraitementComite.php:246
+#, php-format
+msgid "Le serveur de l'agenda a répondu avec le code HTTP %d."
+msgstr ""
+
+#: modules/agenda/TraitementComite.php:249
+msgid "La réponse du serveur n'est pas un agenda (BEGIN:VCALENDAR absent)."
+msgstr ""
+
+#: modules/agenda/TraitementComite.php:278
+#, php-format
+msgid "Le serveur CalDAV a répondu avec le code HTTP %d au lieu de 207."
+msgstr ""
+
+#: modules/agenda/TraitementComite.php:300
+msgid "Le serveur de l'agenda n'a pas pu être joint : "
+msgstr ""
+
+#: modules/agenda/TraitementComite.php:309
+msgid "Échec du téléchargement de l'agenda : "
+msgstr ""
+
+#: modules/agenda/TraitementComite.php:314
+msgid ""
+"Note, ce message d'erreur peut se produire occasionnellement sans "
+"occasionner de problème. Contacter votre administrateur s'il se produit "
+"continuellement."
+msgstr ""
+"Note, ce message d'erreur peut se produire occasionnellement sans "
+"occasionner de problème. Contacter votre administrateur s'il se produit "
+"continuellement."
+
+#: modules/agenda/TraitementComite.php:315
+msgid ""
+"Notez que vous pouvez effacer les plages horaires passées de votre agenda "
+"pour réduire la charge sur le système !"
+msgstr ""
+"Notez que vous pouvez effacer les plages horaires passées de votre agenda "
+"pour réduire la charge sur le système !"
+
+#: modules/agenda/TraitementComite.php:328
+#: modules/agenda/TraitementComite.php:342
+msgid "Rapport d'erreur"
+msgstr "Rapport d'erreur"
+
+#: modules/agenda/TraitementComite.php:349
+msgid "Le nom d'utilisateur "
+msgstr "Le nom d'utilisateur "
+
+#: modules/agenda/TraitementComite.php:349
+msgid " est invalide"
+msgstr " est invalide"
+
+#: modules/agenda/TraitementComite.php:363
+msgid "La réponse CalDAV n'est pas un XML valide."
+msgstr ""
+
+#: modules/agenda/TraitementComite.php:383
+msgid "Aucun événement trouvé dans la réponse CalDAV."
+msgstr ""
+
+#: modules/agenda/TraitementComite.php:423
+msgid ""
+"Agenda illisible : groupe de sonnerie inchangé, les derniers répondants "
+"restent en place."
+msgstr ""
+
+#: modules/agenda/TraitementComite.php:436
+#: modules/agenda/TraitementComite.php:527
+msgid "Heure d'exécution :"
+msgstr "Heure d'exécution :"
+
+#: modules/agenda/TraitementComite.php:460
+#: modules/agenda/TraitementComite.php:465
+#: modules/agenda/TraitementComite.php:541
+#: modules/agenda/TraitementComite.php:544 modules/chat/RappelsChat.php:26
+msgid "Tour de "
+msgstr "Tour de "
+
+#: modules/agenda/TraitementComite.php:461
+#: modules/agenda/TraitementComite.php:466
+#: modules/agenda/TraitementComite.php:542
+#: modules/agenda/TraitementComite.php:545 modules/chat/RappelsChat.php:27
+msgid "Début du shift : "
+msgstr "Début du shift : "
+
+#: modules/agenda/TraitementComite.php:462
+#: modules/agenda/TraitementComite.php:467
+#: modules/agenda/TraitementComite.php:543
+#: modules/agenda/TraitementComite.php:546 modules/chat/RappelsChat.php:28
+msgid "Fin du shift : "
+msgstr "Fin du shift : "
+
+#: modules/agenda/TraitementComite.php:463
+#: modules/agenda/TraitementComite.php:468
+msgid "Numéro  de téléphone: "
+msgstr "Numéro  de téléphone: "
+
+#: modules/agenda/TraitementComite.php:469
+#: modules/agenda/TraitementComite.php:470
+msgid "Réglages : "
+msgstr ""
+
+#: modules/agenda/TraitementComite.php:483
+msgid "Nom : "
+msgstr "Nom : "
+
+#: modules/agenda/TraitementComite.php:483
+msgid " Numéro : "
+msgstr " Numéro : "
+
+#: modules/agenda/TraitementComite.php:487
+msgid "Groupe de sonnerie : "
+msgstr ""
+
+#: modules/agenda/TraitementComite.php:494
+#, php-format
+msgid "(partiel : renvoi manquant pour %d numéro(s) sur %d : %s)"
+msgstr ""
+
+#: modules/agenda/TraitementComite.php:495
+#, php-format
+msgid ""
+"Renvoi d'appel non créé pour : %s. Ce répondant ne recevra pas les appels "
+"jusqu'au prochain passage."
+msgstr ""
+
+#: modules/agenda/TraitementComite.php:497
+#: modules/agenda/TraitementComite.php:509
+msgid "Le résultat de l'envoi vers voip.ms est : "
+msgstr "Le résultat de l'envoi vers voip.ms est : "
+
+#: modules/agenda/TraitementComite.php:517
+msgid "Agenda illisible : répondants de SwitchBoard Chat inchangés."
+msgstr ""
+
+#: modules/agenda/TraitementComite.php:552
+#: modules/agenda/TraitementComite.php:592
+msgid "Nom utilisateur : "
+msgstr "Nom utilisateur : "
+
+#: modules/agenda/TraitementComite.php:567
+#: modules/agenda/TraitementComite.php:607
+msgid "<br>Le résultat de l'envoi vers sbchat est : "
+msgstr "<br>Le résultat de l'envoi vers sbchat est : "
+
+#: modules/agenda/TraitementComite.php:631
+msgid "agenda"
+msgstr ""
+
+#: modules/agenda/TraitementComite.php:632
+msgid "comité"
+msgstr ""
+
+#: modules/agenda/TraitementComite.php:633
+msgid "par défaut"
+msgstr ""
+
+#: modules/agenda/TraitementComite.php:642
+#, php-format
+msgid "sonnerie %d s (%s), faire le 1 : %s (%s)"
+msgstr ""
+
+#: modules/agenda/TraitementComite.php:642
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.php:71
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:63
+msgid "oui"
+msgstr ""
+
+#: modules/agenda/TraitementComite.php:642
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.php:71
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:64
+msgid "non"
+msgstr ""
+
+#: modules/telephonie/RappelsSms.php:65
+msgid " à "
+msgstr " à "
+
+#: modules/telephonie/RappelsSms.php:73
+msgid "toute la journée"
+msgstr "toute la journée"
+
+#: modules/telephonie/RappelsSms.php:80
+msgid " vous êtes cédulé demain le "
+msgstr " vous êtes cédulé demain le "
+
+#: modules/telephonie/RappelsSms.php:82
+msgid " vous êtes cédulé dans la prochaine heure de "
+msgstr " vous êtes cédulé dans la prochaine heure de "
+
+#: modules/telephonie/GroupeSonnerie.php:63
+msgid "Erreur, numéros de téléphones manquants ?"
+msgstr "Erreur, numéros de téléphones manquants ?"
+
+#: modules/telephonie/GroupeSonnerie.php:83
+msgid "aucun changement, aucun appel à voip.ms"
+msgstr ""
+
+#: modules/telephonie/GroupeSonnerie.php:84
+msgid "aucun changement"
+msgstr ""
+
+#: modules/telephonie/GroupeSonnerie.php:86
+msgid "changement de répondants"
+msgstr ""
+
+#: modules/telephonie/GroupeSonnerie.php:91
+msgid "voip.ms a refusé la liste conservée"
+msgstr ""
+
+#: modules/telephonie/GroupeSonnerie.php:93
+msgid "resynchronisation complète : "
+msgstr ""
+
+#: modules/telephonie/GroupeSonnerie.php:111
+msgid "demandée"
+msgstr ""
+
+#: modules/telephonie/GroupeSonnerie.php:114
+msgid "aucune liste conservée"
+msgstr ""
+
+#: modules/telephonie/GroupeSonnerie.php:118
+msgid "compte voip.ms ou nom du groupe changé"
+msgstr ""
+
+#: modules/telephonie/GroupeSonnerie.php:128
+msgid "quotidienne"
+msgstr ""
+
+#: modules/telephonie/GroupeSonnerie.php:152
+msgid "aucun renvoi d'appel n'a pu être créé, rien n'est envoyé"
+msgstr ""
+
+#: modules/telephonie/GroupeSonnerie.php:162
+msgid "lecture du groupe de sonnerie impossible, rien n'est envoyé"
+msgstr ""
+
+#: modules/telephonie/GroupeSonnerie.php:173
+msgid "voip.ms a refusé la liste conservée : "
+msgstr ""
+
+#: modules/telephonie/GroupeSonnerie.php:224
+msgid "Erreur lors de l'ajout du forwarding pour "
+msgstr "Erreur lors de l'ajout du forwarding pour "
+
+#: modules/telephonie/GroupeSonnerie.php:243
+#, php-format
+msgid "Impossible de lire les messageries vocales de voip.ms : %s"
+msgstr ""
+
+#: modules/telephonie/GroupeSonnerie.php:282
+#, php-format
+msgid "voip.ms refuse le nom du groupe de sonnerie, qui est trop long : « %s »"
+msgstr ""
+
+#: modules/telephonie/GroupeSonnerie.php:289
+msgid "Groupe de sonnerie non mis à jour : "
+msgstr ""
+
+#: modules/telephonie/GroupeSonnerie.php:361
+#: modules/telephonie/GroupeSonnerie.php:363
+msgid "Erreur lors de la suppression du forwarding: "
+msgstr "Erreur lors de la suppression du forwarding: "
+
+#: modules/telephonie/GroupeSonnerie.php:366
+msgid "Forwarding "
+msgstr "Forwarding "
+
+#: modules/telephonie/GroupeSonnerie.php:366
+msgid " supprimé.<br>\n"
+msgstr " supprimé.<br>\n"
+
+#: modules/telephonie/GroupeSonnerie.php:370
+msgid " entrées supprimées"
+msgstr " entrées supprimées"
+
+#: modules/telephonie/GroupeSonnerie.php:382
+msgid "addForwarding: Erreur, result= "
+msgstr "addForwarding: Erreur, result= "
+
+#: modules/telephonie/GroupeSonnerie.php:388
+msgid "addForwarding: réutilisation de 'used_number'"
+msgstr "addForwarding: réutilisation de 'used_number'"
+
+#: modules/telephonie/GroupeSonnerie.php:399
+msgid "addForwarding: Pas de forwarding ajouté."
+msgstr "addForwarding: Pas de forwarding ajouté."
+
+#: modules/telephonie/GroupeSonnerie.php:403
+msgid "addForwarding: on retourne le forwarding !"
+msgstr "addForwarding: on retourne le forwarding !"
+
+#: modules/telephonie/GroupeSonnerie.php:417
+msgid "Id existant : "
+msgstr "Id existant : "
+
+#: modules/telephonie/GroupeSonnerie.php:434
+msgid "Retour de getRingGroups anormal= "
+msgstr "Retour de getRingGroups anormal= "
+
+#: modules/telephonie/GroupeSonnerie.php:443
+msgid "Aucun ring group trouvé avec ce nom !"
+msgstr "Aucun ring group trouvé avec ce nom !"
+
+#: modules/telephonie/ClientVoipms.php:245
+msgid ""
+"La configuration est valide : voip.ms accepte les identifiants et l'adresse "
+"IP du serveur."
+msgstr ""
+
+#: modules/telephonie/ClientVoipms.php:248
+#, php-format
+msgid "voip.ms a refusé la connexion (statut : %s)."
+msgstr ""
+
+#: modules/telephonie/ClientVoipms.php:256
+msgid ""
+"voip.ms n'a pas reçu de nom d'utilisateur ou de mot de passe API. Remplissez-"
+"les dans « Éditer informations utilisateur »."
+msgstr ""
+
+#: modules/telephonie/ClientVoipms.php:259
+msgid ""
+"voip.ms refuse le nom d'utilisateur ou le mot de passe API. Vérifiez-les "
+"dans « Éditer informations utilisateur » : le nom d'utilisateur est "
+"l'adresse courriel du compte voip.ms, et le mot de passe est celui de l'API "
+"(différent du mot de passe de connexion au site voip.ms)."
+msgstr ""
+
+#: modules/telephonie/ClientVoipms.php:262
+msgid ""
+"voip.ms refuse l'adresse IP de ce serveur. Ajoutez-la à la liste des "
+"adresses autorisées dans la section API du compte voip.ms (l'adresse du "
+"serveur est affichée sur la page principale de l'utilisateur)."
+msgstr ""
+
+#: modules/telephonie/ClientVoipms.php:373
+msgid "Erreur cURL : "
+msgstr "Erreur cURL : "
+
+#: modules/telephonie/ClientVoipms.php:380
+msgid "Erreur HTTP : "
+msgstr "Erreur HTTP : "
+
+#: modules/telephonie/ClientVoipms.php:385
+msgid "Erreur : réponse JSON invalide ou vide"
+msgstr "Erreur : réponse JSON invalide ou vide"
+
+#: modules/telephonie/ClientVoipms.php:388
+msgid "Erreur: mauvais retour de voip.ms"
+msgstr "Erreur: mauvais retour de voip.ms"
+
+#: modules/telephonie/ClientVoipms.php:392
+msgid "Erreur: "
+msgstr "Erreur: "
+
+#: modules/telephonie/ClientVoipms.php:398
+#: modules/telephonie/ClientVoipms.php:412
+msgid "statut : "
+msgstr ""
+
+#: modules/telephonie/ClientVoipms.php:412
+msgid "Erreur : clé attendue manquante dans la réponse ("
+msgstr "Erreur : clé attendue manquante dans la réponse ("
+
+#: modules/telephonie/NumeroTelephone.php:69
+#, php-format
+msgid "Numéro absent pour « %s » (événement du %s au %s)."
+msgstr "Numéro absent pour « %s » (événement du %s au %s)."
+
+#: modules/telephonie/NumeroTelephone.php:71
+#, php-format
+msgid ""
+"Numéro invalide pour « %s » : « %s » (événement du %s au %s). Il faut 10 "
+"chiffres, avec ou sans 1 devant."
+msgstr ""
+"Numéro invalide pour « %s » : « %s » (événement du %s au %s). Il faut 10 "
+"chiffres, avec ou sans 1 devant."
+
+#: modules/systeme/Fichiers.php:299
+#, php-format
+msgid "Archive illisible : %s"
+msgstr ""
+
+#: modules/systeme/Fichiers.php:303
+#, php-format
+msgid "Archive vide : %s"
+msgstr ""
+
+#: modules/systeme/Fichiers.php:307
+#, php-format
+msgid "Extraction impossible : %s"
+msgstr ""
+
+#: modules/systeme/Fichiers.php:314
+#, php-format
+msgid "Extraction incomplète de %s : %s (disque plein ?)"
+msgstr ""
+
+#: modules/systeme/Chiffrement.php:92
+msgid ""
+"Impossible de déchiffrer les secrets : la clé de chiffrement "
+"(APP_ENCRYPTION_KEY) n'est pas configurée."
+msgstr ""
+
+#: modules/systeme/BilanPassage.php:96
+#, php-format
+msgid ""
+"Le groupe de sonnerie n'a pas pu être mis à jour depuis %d passages de suite "
+"du cron."
+msgstr ""
+
+#: modules/systeme/BilanPassage.php:97
+msgid "Dernière raison : "
+msgstr ""
+
+#: modules/systeme/BilanPassage.php:98
+msgid ""
+"Vérifiez le mot de passe de l'API et l'adresse IP autorisée dans le compte "
+"voip.ms. Le journal du comité donne le détail."
+msgstr ""
+
+#: modules/systeme/BilanPassage.php:99 modules/systeme/BilanPassage.php:107
+msgid ""
+"Ce courriel part au plus une fois par 24 heures, tant que le problème dure."
+msgstr ""
+
+#: modules/systeme/BilanPassage.php:101
+msgid "Groupe de sonnerie en échec"
+msgstr ""
+
+#: modules/systeme/BilanPassage.php:105
+#, php-format
+msgid "Le cron %s a rencontré une erreur pour ce comité :"
+msgstr ""
+
+#: modules/systeme/BilanPassage.php:109
+msgid "Erreur dans un cron"
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:42
+msgid "Une autre mise à jour est déjà en cours."
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:47
+msgid ""
+"Les restes d'un essai précédent dans download/ ne peuvent pas être effacés."
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:51
+#, php-format
+msgid "SwitchBoard est déjà à jour (version %s)."
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:70
+#, php-format
+msgid "Mise à jour terminée : la version %s est installée."
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:82
+#, php-format
+msgid "PHP %s minimum est requis : ce serveur a la version %s."
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:86
+#, php-format
+msgid "Extensions PHP manquantes : %s."
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:93
+#, php-format
+msgid "Espace disque insuffisant : %d Mo libres, %d Mo requis."
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:102 modules/systeme/MiseAJour.php:107
+#: modules/systeme/MiseAJour.php:224
+#, php-format
+msgid "Droit d'écriture manquant sur %s."
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:111
+msgid ""
+"src/, download/ et backups/ doivent être sur le même disque : le "
+"remplacement du code se fait par renommage."
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:128
+msgid "Téléchargement de la nouvelle version..."
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:138
+#, php-format
+msgid "L'archive téléchargée ne contient pas %s."
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:143 modules/systeme/MiseAJour.php:178
+#, php-format
+msgid "%s est illisible dans l'archive téléchargée."
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:147
+#, php-format
+msgid "Archive vérifiée : version %s."
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:161
+#, php-format
+msgid ""
+"L'archive téléchargée ne correspond pas à la version attendue (dossier %s, "
+"commit attendu %s)."
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:182
+msgid ""
+"La version de la base de données est introuvable (table parameters, ligne "
+"'db version')."
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:189
+#, php-format
+msgid "%s n'est pas en ordre croissant (version %d)."
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:206
+#, php-format
+msgid "Le fichier de la migration %d est absent de l'archive téléchargée."
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:216
+#, php-format
+msgid ""
+"L'archive téléchargée doit contenir un seul zip de dépendances (trouvés : "
+"%d)."
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:229
+msgid "Le zip de dépendances ne contient pas vendor/autoload.php."
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:254
+#, php-format
+msgid "Impossible de créer le dossier de sauvegarde %s."
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:259
+msgid "Sauvegarde de la base de données en cours (étape la plus longue)..."
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:263
+#, php-format
+msgid "La sauvegarde de la base de données est vide : %s."
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:265
+msgid "Sauvegarde de la base de données terminée : "
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:270
+msgid ""
+"Le cron des groupes de sonnerie est en cours. Rien n'a changé : réessayez "
+"dans quelques minutes."
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:282
+#, php-format
+msgid "Migration de la base de données vers la version %d..."
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:288
+#, php-format
+msgid ""
+"La migration %d a échoué. La base de données est à la version %d et l'ancien "
+"code reste en place. Erreur : %s. Si l'erreur dit qu'une table ou une "
+"colonne existe déjà, un essai interrompu a pu l'appliquer sans avancer le "
+"compteur : vérifiez le schéma, corrigez la ligne 'db version' de la table "
+"parameters, puis relancez."
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:299
+msgid "Remplacement des dépendances..."
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:304
+msgid "Remplacement du code..."
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:334
+#, php-format
+msgid "La vieille sauvegarde %s n'a pas pu être effacée complètement."
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:344
+#, php-format
+msgid "Impossible de déplacer %s vers %s : rien n'a été remplacé."
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:350
+#, php-format
+msgid "%s est absent : remettez-le à la main depuis %s."
+msgstr ""
+
+#: modules/systeme/MiseAJour.php:352
+#, php-format
+msgid "Impossible de mettre le nouveau %s en place : l'ancien a été remis."
+msgstr ""
+
+#: modules/systeme/Courriel.php:41
+msgid "Important ! "
+msgstr "Important ! "
+
+#: modules/systeme/Courriel.php:41
+msgid "Pour l'utilisateur : "
+msgstr "Pour l'utilisateur : "
+
+#: modules/chat/RappelsChat.php:29
+msgid " et "
+msgstr " et "
+
+#: modules/chat/RappelsChat.php:36
+msgid "Vous êtes cédulé à répondre aux textos demain entre : "
+msgstr "Vous êtes cédulé à répondre aux textos demain entre : "
+
+#: modules/chat/RappelsChat.php:38
+msgid "Vous êtes cédulé à répondre aux textos dans la prochaine heure entre : "
+msgstr ""
+"Vous êtes cédulé à répondre aux textos dans la prochaine heure entre : "
+
+#: modules/chat/ClientSwitchBoardChat.php:47
+msgid ""
+"Veuillez remplir votre nom d'utilisateur voip.ms ainsi que votre mot de "
+"passe API et votre DID dans la section informations du compte."
+msgstr ""
+"Veuillez remplir votre nom d'utilisateur voip.ms ainsi que votre mot de "
+"passe API et votre DID dans la section informations du compte."
+
+#: modules/chat/ClientSwitchBoardChat.php:55
+msgid "Demande d'un nouveau jeton en cours..."
+msgstr ""
+
+#: modules/chat/ClientSwitchBoardChat.php:171
+msgid ""
+"Veuillez configurer vos informations de serveur MAS dans le formulaire "
+"d'informations SwitchBoard Chat."
+msgstr ""
+"Veuillez configurer vos informations de serveur MAS dans le formulaire "
+"d'informations SwitchBoard Chat."
+
+#: modules/chat/ClientSwitchBoardChat.php:196
+msgid "Utilisateur déjà existant."
+msgstr "Utilisateur déjà existant."
+
+#: modules/chat/ClientSwitchBoardChat.php:204
+msgid "Utilisateur créé."
+msgstr "Utilisateur créé."
+
+#: modules/chat/ClientSwitchBoardChat.php:208
+msgid "Erreur lors de la création de l'utilisateur :"
+msgstr "Erreur lors de la création de l'utilisateur :"
+
+#: modules/chat/ClientSwitchBoardChat.php:223
+msgid "Utilisateur non trouvé...."
+msgstr "Utilisateur non trouvé...."
+
+#: modules/chat/ClientSwitchBoardChat.php:234
+#: modules/chat/ClientSwitchBoardChat.php:470
+msgid "Impossible d'accéder au serveur !</h2>"
+msgstr "Impossible d'accéder au serveur !</h2>"
+
+#: modules/chat/ClientSwitchBoardChat.php:245
+msgid "Mot de passe modifié avec succès."
+msgstr "Mot de passe modifié avec succès."
+
+#: modules/chat/ClientSwitchBoardChat.php:248
+msgid "Erreur lors de la modification du mot de passe :"
+msgstr "Erreur lors de la modification du mot de passe :"
+
+#: modules/chat/ClientSwitchBoardChat.php:251
+msgid "Erreur, retour de l'api : "
+msgstr "Erreur, retour de l'api : "
+
+#: modules/chat/ClientSwitchBoardChat.php:253
+msgid "Erreur"
+msgstr "Erreur"
+
+#: modules/chat/ClientSwitchBoardChat.php:316
+msgid "Droits d'administrateur Matrix accordés."
+msgstr ""
+
+#: modules/chat/ClientSwitchBoardChat.php:316
+msgid "Droits d'administrateur Matrix retirés."
+msgstr ""
+
+#: modules/chat/ClientSwitchBoardChat.php:319
+#, fuzzy
+msgid "Erreur lors de la modification des droits d'administrateur Matrix :"
+msgstr "Erreur lors de la modification du mot de passe :"
+
+#: modules/chat/ClientSwitchBoardChat.php:330
+msgid "Pas d'identifiant utilisateur pour cet identifiant de courriel."
+msgstr "Pas d'identifiant utilisateur pour cet identifiant de courriel."
+
+#: modules/chat/ClientSwitchBoardChat.php:385
+msgid "Courriel créé avec succès"
+msgstr "Courriel créé avec succès"
+
+#: modules/chat/ClientSwitchBoardChat.php:389
+msgid "Courriel non valide"
+msgstr "Courriel non valide"
+
+#: modules/chat/ClientSwitchBoardChat.php:392
+msgid "Courriel déjà en utilisation"
+msgstr "Courriel déjà en utilisation"
+
+#: modules/chat/ClientSwitchBoardChat.php:393
+msgid "L'adresse courriel est déjà enregistrée à cette utilisateur : "
+msgstr "L'adresse courriel est déjà enregistrée à cette utilisateur : "
+
+#: modules/donnees/DatabaseManager.php:267
+msgid "Nom d'utilisateur ou mot de passe vide !!"
+msgstr "Nom d'utilisateur ou mot de passe vide !!"
+
+#: modules/donnees/DatabaseManager.php:298
+msgid "Mot de passe mis à jour."
+msgstr "Mot de passe mis à jour."
+
+#: modules/donnees/DatabaseManager.php:314
+msgid "Il ne peut n'y avoir qu'un seul administrateur principal."
+msgstr "Il ne peut n'y avoir qu'un seul administrateur principal."
+
+#: modules/donnees/DatabaseManager.php:316
+msgid ""
+"Vous ne pouvez pas changer le niveau de privilège de l'utilisateur, votre "
+"propre niveau de privilège(niveau="
+msgstr ""
+"Vous ne pouvez pas changer le niveau de privilège de l'utilisateur, votre "
+"propre niveau de privilège(niveau="
+
+#: modules/donnees/DatabaseManager.php:316
+msgid " ne le permet pas."
+msgstr " ne le permet pas."
+
+#: modules/donnees/DatabaseManager.php:325
+msgid "Niveau de privilege mis à jour."
+msgstr "Niveau de privilege mis à jour."
+
+#: modules/donnees/DatabaseManager.php:339
+msgid "Non autorisé."
+msgstr "Non autorisé."
+
+#: modules/donnees/DatabaseManager.php:345
+msgid "Il est impossible de supprimer le compte administrateur !"
+msgstr "Il est impossible de supprimer le compte administrateur !"
+
+#: modules/donnees/DatabaseManager.php:353
+msgid "Utilisateur "
+msgstr "Utilisateur "
+
+#: modules/donnees/DatabaseManager.php:353
+msgid " effacé de la table "
+msgstr " effacé de la table "
+
+#: modules/donnees/DatabaseManager.php:355
+msgid "Erreur pour effacer l'utilisateur : "
+msgstr "Erreur pour effacer l'utilisateur : "
+
+#: modules/donnees/DatabaseManager.php:451
+msgid "Utilisateur non Authentifié !"
+msgstr "Utilisateur non Authentifié !"
+
+#: modules/donnees/DatabaseManager.php:552
+#: modules/donnees/DatabaseManager.php:1035
+msgid "Utilisateur non-authentifié"
+msgstr "Utilisateur non-authentifié"
+
+#: modules/donnees/DatabaseManager.php:561
+#: modules/donnees/DatabaseManager.php:1044
+msgid ""
+"Vous n'êtes pas alloué à faire les changements d'information d'autres "
+"utilisateurs."
+msgstr ""
+"Vous n'êtes pas alloué à faire les changements d'information d'autres "
+"utilisateurs."
+
+#: modules/donnees/DatabaseManager.php:605
+#: modules/donnees/DatabaseManager.php:1072
+msgid "Base de données mise à jour"
+msgstr "Base de données mise à jour"
+
+#: modules/donnees/DatabaseManager.php:619
+#: modules/donnees/DatabaseManager.php:655
+msgid "Aucun utilisateur"
+msgstr "Aucun utilisateur"
+
+#: modules/donnees/DatabaseManager.php:694
+msgid "Mis à jour avec succès."
+msgstr "Mis à jour avec succès."
+
+#: modules/donnees/DatabaseManager.php:696
+#: modules/donnees/DatabaseManager.php:925
+msgid "Erreur : incapable d'exécuter "
+msgstr "Erreur : incapable d'exécuter "
+
+#: modules/donnees/DatabaseManager.php:772
+msgid "Liste conservée illisible : "
+msgstr ""
+
+#: modules/donnees/DatabaseManager.php:811
+msgid "Liste conservée non enregistrée : "
+msgstr ""
+
+#: modules/donnees/DatabaseManager.php:923
+msgid "Token créé ou mis à jour."
+msgstr "Token créé ou mis à jour."
+
+#: modules/donnees/DatabaseManager.php:980
+msgid "Aucune correspondance avec le token."
+msgstr "Aucune correspondance avec le token."
+
+#: modules/donnees/DatabaseManager.php:988
+msgid ""
+"Ce lien de validation a expiré. Veuillez vous reconnecter pour en obtenir un "
+"nouveau."
+msgstr ""
+
+#: modules/rapports/ExportComparaisonCouts.php:19
+#: portail/pages/admin/multiaccountcostreportresult.php:12
+msgid "Compte"
+msgstr "Compte"
+
+#: modules/rapports/ExportComparaisonCouts.php:23
+#: portail/pages/admin/multiaccountcostreportresult.php:16
+msgid "Total période"
+msgstr "Total période"
+
+#: modules/rapports/ExportComparaisonCouts.php:24
+#: portail/pages/admin/multiaccountcostreportresult.php:17
+msgid "Moyenne mensuelle"
+msgstr "Moyenne mensuelle"
+
+#: modules/rapports/ExportComparaisonCouts.php:25
+#: portail/pages/admin/multiaccountcostreportresult.php:18
+msgid "Solde actuel"
+msgstr "Solde actuel"
+
+#: modules/rapports/ExportComparaisonCouts.php:42
+#: modules/rapports/ExportComparaisonCouts.php:136
+#: portail/pages/admin/multiaccountcostreportresult.php:39
+msgid "TOTAL"
+msgstr "TOTAL"
+
+#: modules/rapports/ExportComparaisonCouts.php:73
+msgid "Légende :"
+msgstr "Légende :"
+
+#: modules/rapports/ExportComparaisonCouts.php:74
+msgid ""
+"- Une colonne par mois calendaire de la période choisie (le premier et le "
+"dernier mois peuvent être partiels selon les dates choisies)."
+msgstr ""
+"- Une colonne par mois calendaire de la période choisie (le premier et le "
+"dernier mois peuvent être partiels selon les dates choisies)."
+
+#: modules/rapports/ExportComparaisonCouts.php:75
+msgid ""
+"- Total période, Moyenne mensuelle et la ligne TOTAL sont des formules "
+"(SOMME/MOYENNE) : elles restent exactes si vous corrigez un montant mensuel "
+"à la main."
+msgstr ""
+"- Total période, Moyenne mensuelle et la ligne TOTAL sont des formules "
+"(SOMME/MOYENNE) : elles restent exactes si vous corrigez un montant mensuel "
+"à la main."
+
+#: modules/rapports/ExportComparaisonCouts.php:76
+msgid ""
+"- Solde actuel : solde du compte voip.ms au moment de la génération de ce "
+"rapport, indépendant de la période choisie."
+msgstr ""
+"- Solde actuel : solde du compte voip.ms au moment de la génération de ce "
+"rapport, indépendant de la période choisie."
+
+#: modules/rapports/ExportComparaisonCouts.php:77
+msgid ""
+"- La ligne TOTAL additionne tous les comptes sélectionnés, y compris leurs "
+"soldes combinés (utile pour évaluer le capital total actuellement réparti "
+"entre ces comptes)."
+msgstr ""
+"- La ligne TOTAL additionne tous les comptes sélectionnés, y compris leurs "
+"soldes combinés (utile pour évaluer le capital total actuellement réparti "
+"entre ces comptes)."
+
+#: modules/rapports/ExportComparaisonCouts.php:168
+msgid "Taux de conversion"
+msgstr "Taux de conversion"
+
+#: modules/rapports/ExportComparaisonCouts.php:174
+#, php-format
+msgid "Source : %s, taux du %s"
+msgstr "Source : %s, taux du %s"
+
+#: modules/rapports/ExportComparaisonCouts.php:175
+#, php-format
+msgid "Source : %s"
+msgstr "Source : %s"
+
+#: modules/rapports/ExportComparaisonCouts.php:236
+msgid "Sommaire (USD)"
+msgstr "Sommaire (USD)"
+
+#: modules/rapports/ExportComparaisonCouts.php:242
+msgid "Sommaire (CAD)"
+msgstr "Sommaire (CAD)"
+
+#: modules/rapports/ComparaisonCouts.php:109
+#: modules/rapports/RapportCoutsDid.php:42
+#: modules/rapports/RapportStatistiques.php:39
+msgid "Aucun compte voip.ms configuré pour cet utilisateur."
+msgstr "Aucun compte voip.ms configuré pour cet utilisateur."
+
+#: modules/rapports/ComparaisonCouts.php:125
+msgid "Format de solde inattendu (clé current_balance absente) : "
+msgstr "Format de solde inattendu (clé current_balance absente) : "
+
+#: modules/rapports/ComparaisonCouts.php:131
+#: modules/rapports/RapportCoutsDid.php:57
+#, fuzzy
+msgid "Retour de getDidsInfo: "
+msgstr "Retour de getCdr: "
+
+#: modules/rapports/ComparaisonCouts.php:159
+#: modules/rapports/RapportCoutsDid.php:58
+#, fuzzy
+msgid "Retour de getCdrComplet: "
+msgstr "Retour de getCdr: "
+
+#: modules/rapports/ComparaisonCouts.php:162
+#: modules/rapports/RapportCoutsDid.php:59
+#, fuzzy
+msgid "Retour de getTransactionHistory: "
+msgstr "Retour de getBalance: "
+
+#: modules/rapports/RapportCoutsDid.php:36
+msgid "Rapport de coûts par DID : erreur d'extraction"
+msgstr ""
+
+#: modules/rapports/RapportCoutsDid.php:38
+#, fuzzy
+msgid "Voici la répartition des coûts par DID pour la période mentionnée:"
+msgstr "Voici les statistiques pour la période mentionnée:"
+
+#: modules/rapports/RapportCoutsDid.php:87
+msgid "Coûts détaillés par DID du "
+msgstr ""
+
+#: modules/rapports/RapportCoutsDid.php:148
+#, php-format
+msgid ""
+"Le DID du comité (%s) est introuvable dans le compte voip.ms : rapport de "
+"coûts non disponible."
+msgstr ""
+
+#: modules/rapports/RapportCoutsDid.php:156
+msgid "DID "
+msgstr ""
+
+#: modules/rapports/RapportCoutsDid.php:157
+#, fuzzy
+msgid "Nombre d'appels : "
+msgstr "Nombre d'appels "
+
+#: modules/rapports/RapportCoutsDid.php:157
+#, fuzzy
+msgid " (répondus : "
+msgstr "Nombre d'appels répondus : "
+
+#: modules/rapports/RapportCoutsDid.php:158
+#, fuzzy
+msgid "Coût des appels : "
+msgstr "Statistiques des appels du "
+
+#: modules/rapports/RapportCoutsDid.php:158
+#: modules/rapports/RapportCoutsDid.php:159
+#: modules/rapports/RapportCoutsDid.php:160
+#: modules/rapports/RapportCoutsDid.php:161
+#: modules/rapports/RapportCoutsDid.php:172
+#: modules/rapports/RapportCoutsDid.php:174
+#: modules/rapports/RapportCoutsDid.php:178
+#: portail/pages/admin/multiaccountcostreportresult.php:24
+#: portail/pages/admin/multiaccountcostreportresult.php:26
+#: portail/pages/admin/multiaccountcostreportresult.php:27
+#: portail/pages/admin/multiaccountcostreportresult.php:28
+#: portail/pages/admin/multiaccountcostreportresult.php:41
+#: portail/pages/admin/multiaccountcostreportresult.php:43
+#: portail/pages/admin/multiaccountcostreportresult.php:45
+#, fuzzy
+msgid " $"
+msgstr " "
+
+#: modules/rapports/RapportCoutsDid.php:159
+msgid "Frais de location du DID : "
+msgstr ""
+
+#: modules/rapports/RapportCoutsDid.php:160
+msgid "Part des frais non attribuables à un DID en particulier : "
+msgstr ""
+
+#: modules/rapports/RapportCoutsDid.php:161
+msgid "Coût total pour ce DID : "
+msgstr ""
+
+#: modules/rapports/RapportCoutsDid.php:171
+msgid "Détail des frais non attribuables à un DID en particulier (total : "
+msgstr ""
+
+#: modules/rapports/RapportCoutsDid.php:171
+msgid " $, réparti également entre "
+msgstr ""
+
+#: modules/rapports/RapportCoutsDid.php:171
+msgid " DID, soit "
+msgstr ""
+
+#: modules/rapports/RapportCoutsDid.php:171
+msgid " $ chacun) :"
+msgstr ""
+
+#: modules/rapports/RapportCoutsDid.php:172
+msgid "Appels non identifiables à un DID précis : "
+msgstr ""
+
+#: modules/rapports/RapportCoutsDid.php:178
+msgid "Coût total du compte pour la période : "
+msgstr ""
+
+#: modules/rapports/TacheComparaisonCouts.php:61
+msgid "Date de début invalide."
+msgstr "Date de début invalide."
+
+#: modules/rapports/TacheComparaisonCouts.php:64
+msgid "Date de fin invalide."
+msgstr "Date de fin invalide."
+
+#: modules/rapports/TacheComparaisonCouts.php:67
+msgid "La date de début doit précéder la date de fin."
+msgstr "La date de début doit précéder la date de fin."
+
+#: modules/rapports/TacheComparaisonCouts.php:70
+msgid "Sélectionnez au moins un compte."
+msgstr "Sélectionnez au moins un compte."
+
+#: modules/rapports/TacheComparaisonCouts.php:106
+#: modules/rapports/TacheComparaisonCouts.php:145
+msgid "Tâche introuvable ou expirée."
+msgstr "Tâche introuvable ou expirée."
+
+#: modules/rapports/TauxDeChange.php:62
+msgid "Banque du Canada (taux quotidien officiel)"
+msgstr "Banque du Canada (taux quotidien officiel)"
+
+#: modules/rapports/TauxDeChange.php:76
+msgid ""
+"Valeur par défaut (source externe injoignable - taux figé dans le code, à "
+"mettre à jour au besoin)"
+msgstr ""
+"Valeur par défaut (source externe injoignable - taux figé dans le code, à "
+"mettre à jour au besoin)"
+
+#: modules/rapports/RapportStatistiques.php:30
+msgid ""
+"Compte principal : pas de statistiques d'appels (voir le rapport de coûts "
+"par DID)."
+msgstr ""
+
+#: modules/rapports/RapportStatistiques.php:79
+msgid "problème avec getCDR, impossible d'extraire les détails des appels !"
+msgstr "problème avec getCDR, impossible d'extraire les détails des appels !"
+
+#: modules/rapports/RapportStatistiques.php:94
+msgid "Nom de mailbox recherché: "
+msgstr "Nom de mailbox recherché: "
+
+#: modules/rapports/RapportStatistiques.php:97
+msgid "Retour de getVoiceMailMessages: "
+msgstr "Retour de getVoiceMailMessages: "
+
+#: modules/rapports/RapportStatistiques.php:100
+msgid "Nombre de messages vocaux reçus : "
+msgstr "Nombre de messages vocaux reçus : "
+
+#: modules/rapports/RapportStatistiques.php:163
+msgid "Nombre d'appels reçus : "
+msgstr "Nombre d'appels reçus : "
+
+#: modules/rapports/RapportStatistiques.php:164
+msgid "Nombre d'appels entre 22:00:00 et 01:00:00 : "
+msgstr "Nombre d'appels entre 22:00:00 et 01:00:00 : "
+
+#: modules/rapports/RapportStatistiques.php:165
+msgid "Nombre d'appels entre 01:00:00 et 06:00:00 : "
+msgstr "Nombre d'appels entre 01:00:00 et 06:00:00 : "
+
+#: modules/rapports/RapportStatistiques.php:166
+msgid "Nombre d'appels entre 06:00:00 et 09:00:00 : "
+msgstr "Nombre d'appels entre 06:00:00 et 09:00:00 : "
+
+#: modules/rapports/RapportStatistiques.php:167
+msgid "Nombre d'appels entre 09:00:00 et 22:00:00 : "
+msgstr "Nombre d'appels entre 09:00:00 et 22:00:00 : "
+
+#: modules/rapports/RapportStatistiques.php:168
+msgid "Nombre d'appels répondus : "
+msgstr "Nombre d'appels répondus : "
+
+#: modules/rapports/RapportStatistiques.php:169
+msgid "Nombre d'appels répondus < 30 sec: "
+msgstr "Nombre d'appels répondus < 30 sec: "
+
+#: modules/rapports/RapportStatistiques.php:170
+msgid "Nombre d'appels répondus entre 30 sec et 1 min: "
+msgstr "Nombre d'appels répondus entre 30 sec et 1 min: "
+
+#: modules/rapports/RapportStatistiques.php:171
+msgid "Nombre d'appels répondus > 1 min: "
+msgstr "Nombre d'appels répondus > 1 min: "
+
+#: modules/rapports/RapportStatistiques.php:172
+msgid "Nombre d'appels non répondus : "
+msgstr "Nombre d'appels non répondus : "
+
+#: modules/rapports/RapportStatistiques.php:173
+msgid "Nombre d'appels occupés : "
+msgstr "Nombre d'appels occupés : "
+
+#: modules/rapports/RapportStatistiques.php:174
+msgid "Nombre d'appels échoués : "
+msgstr "Nombre d'appels échoués : "
+
+#: modules/rapports/RapportStatistiques.php:175
+msgid "Nombre d'appels autres : "
+msgstr "Nombre d'appels autres : "
+
+#: sendnotificationsbchat.php:78
+msgid "Résultat de l'échange avec sbchat : "
+msgstr "Résultat de l'échange avec sbchat : "
+
+#: commun/authhelpers.php:19
+msgid "Jeton de sécurité invalide, action refusée."
+msgstr "Jeton de sécurité invalide, action refusée."
+
+#: commun/authhelpers.php:216 commun/authhelpers.php:228
+msgid "Vous n'avez pas les privilèges nécessaires pour effectuer cette tâche"
+msgstr "Vous n'avez pas les privilèges nécessaires pour effectuer cette tâche"
+
+#: commun/authhelpers.php:272
+#, fuzzy
+msgid "Nom d'utilisateur SwitchBoard :"
+msgstr "Nom d'utilisateur : "
+
+#: commun/oauthcourriel.php:241
+#, fuzzy
+msgid "Impossible de démarrer l'autorisation Microsoft 365."
+msgstr "Impossible de créer l'adresse courriel."
+
+#: commun/oauthcourriel.php:272
+msgid "Échec de l'autorisation Microsoft 365."
+msgstr ""
+
+#: commun/oauthcourriel.php:289
+msgid "Échec du rafraîchissement du jeton Microsoft 365."
+msgstr ""
+
+#: commun/oauthcourriel.php:333
+msgid "Échec de l'autorisation Google."
+msgstr ""
+
+#: commun/oauthcourriel.php:351
+msgid "Échec du rafraîchissement du jeton Google."
+msgstr ""
+
+#: commun/statsreportrenderer.php:19
+#, fuzzy
+msgid "Statistiques de "
+msgstr "Statistiques des appels du "
+
+#: commun/statsreportrenderer.php:20
+msgid "Période : "
+msgstr ""
+
+#: commun/statsreportrenderer.php:24
+#, fuzzy
+msgid "Statistiques d'appels"
+msgstr "Statistiques des appels du "
+
+#: commun/statsreportrenderer.php:30 commun/statsreportrenderer.php:44
+#, fuzzy
+msgid "Courriel envoyé."
+msgstr "Courriel Test"
+
+#: commun/statsreportrenderer.php:35 commun/statsreportrenderer.php:52
+msgid "Envoyer ce rapport par courriel"
+msgstr ""
+
+#: commun/statsreportrenderer.php:38
+msgid "Répartition des coûts par DID"
+msgstr ""
+
+#: commun/statsreportrenderer.php:46
+msgid "Voici ce que le comité a reçu (seulement son DID) :"
+msgstr ""
+
+#: commun/statsreportrenderer.php:49
+msgid ""
+"Ce comité local est membre d'un compte principal : vous voyez tout le "
+"compte, mais le courriel ne contient que son DID, sans le solde ni les "
+"totaux du compte."
+msgstr ""
+
+#: commun/certificatssbchat.php:61
+#, php-format
+msgid ""
+"Certificat SBChat introuvable : %s. Sur Docker, ce chemin doit être celui vu "
+"DEPUIS LE CONTENEUR php (le dossier Docker/certs/ y est monté sous /etc/ssl/"
+"sbchat/) et non un chemin de la machine hôte ; en installation manuelle, "
+"c'est un chemin normal sur votre serveur (voir README.md, section « Self-"
+"signed SBChat certificate »)."
+msgstr ""
+
+#: commun/certificatssbchat.php:64
+#, php-format
+msgid ""
+"Certificat SBChat illisible : %s. PHP s'exécute sous l'utilisateur du "
+"serveur web (ex. : www-data) : vérifiez les droits du fichier (ex. : chmod "
+"644 %s)."
+msgstr ""
+
+#: commun/certificatssbchat.php:68
+#, php-format
+msgid ""
+"Certificat SBChat vide : %s. La commande openssl qui l'a généré a "
+"probablement échoué ; regénérez-le et vérifiez son contenu."
+msgstr ""
+
+#: commun/certificatssbchat.php:71
+#, php-format
+msgid ""
+"Certificat SBChat invalide : %s ne contient pas de certificat au format PEM "
+"(ligne '-----BEGIN CERTIFICATE-----' absente). Regénérez-le."
+msgstr ""
+
+#: commun/certificatssbchat.php:109
+msgid "Aucun contenu de certificat fourni."
+msgstr ""
+
+#: commun/certificatssbchat.php:112
+msgid ""
+"Ce texte ne contient pas de certificat au format PEM (ligne '-----BEGIN "
+"CERTIFICATE-----' absente)."
+msgstr ""
+
+#: commun/certificatssbchat.php:115
+msgid "Ce certificat est illisible par OpenSSL (format invalide ou corrompu)."
+msgstr ""
+
+#: commun/certificatssbchat.php:131
+#, fuzzy
+msgid "Adresse de serveur invalide."
+msgstr " est de longueur invalide."
+
+#: commun/certificatssbchat.php:154
+msgid "Le serveur n'a présenté aucun certificat."
+msgstr ""
+
+#: commun/certificatssbchat.php:159
+#, fuzzy
+msgid "Impossible d'exporter le certificat reçu."
+msgstr "Impossible de créer l'adresse courriel."
+
+#: commun/certificatssbchat.php:194 commun/certificatssbchat.php:197
+msgid "inconnue"
+msgstr ""
+
+#: utils/repomanager.php:34
+#, php-format
+msgid "Impossible d'écrire dans %s."
+msgstr ""
+
+#: utils/repomanager.php:51
+#, php-format
+msgid "Téléchargement de l'archive impossible : %s"
+msgstr ""
+
+#: genstatistics.php:21
+msgid "Début du programme genstatistics !"
+msgstr "Début du programme genstatistics !"
+
+#: portail/adminpanel.php:67
+#, php-format
+msgid ""
+"Version du code installée : %s | disponible sur GitHub : %s | version du "
+"schéma de BD : %s"
+msgstr ""
+
+#: portail/adminpanel.php:117
+msgid "La mise à jour s'est interrompue sur une erreur fatale : "
+msgstr ""
+
+#: portail/adminpanel.php:121
+msgid ""
+"Si l'erreur concerne la mémoire ou le temps d'exécution pendant la "
+"sauvegarde de la base de données, augmentez memory_limit / "
+"max_execution_time, ou sauvegardez la base à la main puis relancez la mise à "
+"jour."
+msgstr ""
+
+#: portail/adminpanel.php:133 miseajour.php:45
+msgid "La mise à jour a échoué : "
+msgstr ""
+
+#: portail/adminpanel.php:135
+msgid "Retour à la console d'administration"
+msgstr ""
+
+#: portail/adminpanel.php:214
+msgid "Voulez vous vraiment supprimer cette entrée ?"
+msgstr "Voulez vous vraiment supprimer cette entrée ?"
+
+#: portail/adminpanel.php:215
+msgid "Envoyer maintenant les répondants de l'agenda de ce comité à voip.ms ?"
+msgstr ""
+
+#: portail/adminpanel.php:221
+msgid "Niveau de privilèges : "
+msgstr "Niveau de privilèges : "
+
+#: portail/adminpanel.php:223
+msgid "Modifier le mot de passe ou le niveau d'accès de l'utilisateur"
+msgstr "Modifier le mot de passe ou le niveau d'accès de l'utilisateur"
+
+#: portail/adminpanel.php:224 portail/pages/utilisateur/userdiagnostic.php:6
+msgid "Éditer informations utilisateur"
+msgstr "Éditer informations utilisateur"
+
+#: portail/adminpanel.php:225
+msgid "SwitchBoard Chat informations"
+msgstr "SwitchBoard Chat informations"
+
+#: portail/adminpanel.php:226
+#, fuzzy
+msgid "Modifier les macros SwitchBoard Chat"
+msgstr "Informations SwitchBoard Chat"
+
+#: portail/adminpanel.php:227
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.vue.php:3
+#: portail/pages/utilisateur/header.php:53
+msgid "Entente de confidentialité des bénévoles"
+msgstr ""
+
+#: portail/adminpanel.php:228
+msgid "Diagnostiquer les connexions établies par l'utilisateur"
+msgstr "Diagnostiquer les connexions établies par l'utilisateur"
+
+#: portail/adminpanel.php:231 portail/pages/utilisateur/header.php:42
+msgid "Forcer le changement des répondants"
+msgstr "Forcer le changement des répondants"
+
+#: portail/adminpanel.php:233
+msgid "Définir les services utilisés par un utilisateur"
+msgstr "Définir les services utilisés par un utilisateur"
+
+#: portail/adminpanel.php:234
+msgid "Consulter ou envoyer les statistiques de l'utilisateur"
+msgstr ""
+
+#: portail/adminpanel.php:235
+msgid "Supprimer utilisateur"
+msgstr "Supprimer utilisateur"
+
+#: portail/tokenaccess.php:47
+msgid ""
+"Lien de validation sans authentification (vous pouvez le copier-coller) :"
+msgstr ""
+"Lien de validation sans authentification (vous pouvez le copier-coller) :"
+
+#: portail/tokenaccess.php:48
+msgid "Cliquez ici pour valider les numéros de téléphone de votre agenda"
+msgstr "Cliquez ici pour valider les numéros de téléphone de votre agenda"
+
+#: portail/pages/utilisateur/refreshsbchat.vue.php:3
+msgid "Rafraichir SwitchBoard Chat"
+msgstr "Rafraichir SwitchBoard Chat"
+
+#: portail/pages/utilisateur/sbchatinformationspage.php:24
+msgid ""
+"<H2 style='color: red;'>SVP configurer un Nom d'utilisateur voip.ms, un mot "
+"de passe API pour voip.ms et un numéro DID pour cette utilisateur dans la "
+"section Informations du compte</H2>"
+msgstr ""
+"<H2 style='color: red;'>SVP configurer un Nom d'utilisateur voip.ms, un mot "
+"de passe API pour voip.ms et un numéro DID pour cette utilisateur dans la "
+"section Informations du compte</H2>"
+
+#: portail/pages/utilisateur/sbchatinformationspage.php:31
+msgid "Adresse URL non valide pour URL de l'Agenda !!"
+msgstr "Adresse URL non valide pour URL de l'Agenda !!"
+
+#: portail/pages/utilisateur/sbchatinformationspage.php:39
+msgid "Adresse URL non valide pour Adresse du serveur SwitchBoardChat !!"
+msgstr "Adresse URL non valide pour Adresse du serveur SwitchBoardChat !!"
+
+#: portail/pages/utilisateur/sbchatinformationspage.php:46
+msgid "Adresse URL non valide pour Adresse du serveur MAS !!"
+msgstr "Adresse URL non valide pour Adresse du serveur MAS !!"
+
+#: portail/pages/utilisateur/masalteruserform/masinvitation.php:29
+#, fuzzy
+msgid "Bonjour,"
+msgstr "Bonjour "
+
+#: portail/pages/utilisateur/masalteruserform/masinvitation.php:31
+msgid ""
+"Voici comment installer Element X, l'application de clavardage de "
+"SwitchBoard. Cela prend deux minutes."
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masinvitation.php:33
+msgid "1. Installez l'application Element X :"
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masinvitation.php:37
+msgid ""
+"2. Sur votre téléphone, touchez votre lien personnel ci-dessous. Il ouvre "
+"Element X avec le bon serveur et votre nom d'utilisateur déjà remplis. Si "
+"l'application n'était pas encore installée, installez-la puis touchez le "
+"lien de nouveau."
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masinvitation.php:42
+msgid "3. Touchez « Continuer », puis entrez votre mot de passe :"
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masinvitation.php:45
+msgid ""
+"3. Touchez « Continuer », puis entrez le mot de passe que nous vous avons "
+"donné."
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masinvitation.php:48
+msgid "Sur un ordinateur (Windows, Mac ou Linux) :"
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masinvitation.php:49
+msgid ""
+"1. Installez Element pour ordinateur (une autre application qu'Element X) :"
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masinvitation.php:51
+#, php-format
+msgid ""
+"2. Ouvrez Element et cliquez sur « Se connecter ». À côté du nom du serveur, "
+"cliquez sur « Modifier », entrez %s, puis cliquez sur « Continuer »."
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masinvitation.php:52
+msgid ""
+"3. Une page de connexion s'ouvre : entrez votre nom d'utilisateur et votre "
+"mot de passe."
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masinvitation.php:53
+#, php-format
+msgid ""
+"Sans rien installer, vous pouvez aussi utiliser Element dans votre "
+"navigateur : %s (mêmes étapes 2 et 3)."
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masinvitation.php:55
+#, fuzzy, php-format
+msgid "Votre nom d'utilisateur : %s"
+msgstr "Le nom d'utilisateur "
+
+#: portail/pages/utilisateur/masalteruserform/masinvitation.php:66
+msgid ""
+"Invitation Element X impossible : l'adresse du serveur MAS n'est pas "
+"configurée."
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masinvitation.php:74
+#, php-format
+msgid "Invitation Element X pour %s"
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masinvitation.php:75
+msgid ""
+"Envoyez ce message à la personne (courriel ou texto). Elle installe Element "
+"X, touche son lien personnel et tape son mot de passe : le serveur et son "
+"nom d'utilisateur sont déjà remplis."
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masinvitation.php:76
+msgid ""
+"Le message explique aussi comment se connecter sur un ordinateur (Windows, "
+"Mac ou Linux) avec Element. Sur ordinateur, il n'existe pas de lien qui "
+"remplit le serveur : la personne l'entre une fois sur l'écran de connexion."
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masinvitation.php:77
+msgid ""
+"Le message contient le mot de passe : il n'est affiché qu'une fois. Pour "
+"plus de sécurité, vous pouvez l'enlever du message et l'envoyer par un autre "
+"moyen (texto, téléphone)."
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masinvitation.php:80
+msgid "Copier le message"
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masinvitation.php:81
+msgid "Copié !"
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masinvitation.php:83
+msgid "Lien personnel :"
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masinvitation.php:84
+msgid ""
+"Si la personne lit le message sur un ordinateur, elle peut aussi scanner ce "
+"code avec l'appareil photo de son téléphone :"
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masinvitation.php:87
+msgid "Copier l'image du code QR"
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masinvitation.php:88
+#, fuzzy
+msgid "Télécharger l'image du code QR"
+msgstr "Télécharger Excel"
+
+#: portail/pages/utilisateur/masalteruserform/masinvitation.php:89
+msgid "Image copiée ! Collez-la dans votre courriel."
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masinvitation.php:91
+msgid ""
+"Vous pouvez aussi faire un clic droit sur l'image, puis « Copier l'image »."
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masinvitation.php:116
+msgid "Code QR de l'invitation Element X"
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.php:57
+msgid "Seul un administrateur peut créer un administrateur Matrix."
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.php:73
+msgid ""
+"Nom d'utilisateur invalide : seulement des lettres minuscules, des chiffres "
+"et . _ = / + -"
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.php:77
+msgid "Impossible de vérifier si cet utilisateur existe sur le serveur MAS."
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.php:79
+#, php-format
+msgid ""
+"L'utilisateur « %s » existe déjà. Pour changer son mot de passe ou son "
+"courriel, choisissez « Modifier un utilisateur existant ». Sinon, choisissez "
+"un autre nom d'utilisateur."
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.php:81
+#, php-format
+msgid ""
+"L'utilisateur « %s » n'existe pas. Pour le créer, choisissez « Créer un "
+"nouvel utilisateur »."
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.php:86
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.php:110
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.php:122
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.php:149
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.php:160
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.php:173
+msgid "<br>Aucune information enregistrée."
+msgstr "<br>Aucune information enregistrée."
+
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.php:105
+msgid "Adresse courriel changée avec succès."
+msgstr "Adresse courriel changée avec succès."
+
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.php:110
+msgid "Erreur pour changer l'adresse courriel."
+msgstr "Erreur pour changer l'adresse courriel."
+
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.php:114
+msgid "Adresse courriel déjà inscrite."
+msgstr "Adresse courriel déjà inscrite."
+
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.php:122
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.php:173
+msgid "Impossible de créer l'adresse courriel."
+msgstr "Impossible de créer l'adresse courriel."
+
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.php:130
+msgid "Nouvel mot de passe enregistré."
+msgstr "Nouvel mot de passe enregistré."
+
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.php:149
+msgid ""
+"L'utilisateur n'existe pas, pour entrer un nouvel utilisateur, veuillez "
+"entrer un mot de passe valide."
+msgstr ""
+"L'utilisateur n'existe pas, pour entrer un nouvel utilisateur, veuillez "
+"entrer un mot de passe valide."
+
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.php:160
+msgid "Cette adresse courriel est déjà utilisée par un autre utilisateur : "
+msgstr "Cette adresse courriel est déjà utilisée par un autre utilisateur : "
+
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.php:191
+msgid "Nouvel utilisateur et mot de passe enregistrés."
+msgstr "Nouvel utilisateur et mot de passe enregistrés."
+
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.vue.php:15
+msgid "Ajout d'utilisateur MAS ou Changement de mot de passe."
+msgstr "Ajout d'utilisateur MAS ou Changement de mot de passe."
+
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.vue.php:20
+#, fuzzy
+msgid "Créer un nouvel utilisateur"
+msgstr "Créer un compte utilisateur"
+
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.vue.php:21
+msgid ""
+"Modifier un utilisateur existant (mot de passe, courriel ou droits) ou "
+"refaire son invitation Element X"
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.vue.php:23
+msgid ""
+"Partie locale du nom d'utilisateur matrix (pour @jdupont:matrix.org, jdupont "
+"est la partie locale) :"
+msgstr ""
+"Partie locale du nom d'utilisateur matrix (pour @jdupont:matrix.org, jdupont "
+"est la partie locale) :"
+
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.vue.php:24
+msgid "nom_utilisateur_local"
+msgstr "nom_utilisateur_local"
+
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.vue.php:25
+msgid "Mot de passe de l'utilisateur :"
+msgstr "Mot de passe de l'utilisateur :"
+
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.vue.php:28
+msgid "ex.monmotdepasse12345"
+msgstr "ex.monmotdepasse12345"
+
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.vue.php:29
+msgid "Générer un mot de passe facile à taper"
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.vue.php:30
+msgid "ex.monemail@domaine.com"
+msgstr "ex.monemail@domaine.com"
+
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.vue.php:31
+msgid ""
+"Administrateur du serveur Matrix (n'enlève pas les droits d'un "
+"administrateur existant)"
+msgstr ""
+
+#: portail/pages/utilisateur/masalteruserform/masalteruserform.vue.php:32
+#: portail/pages/utilisateur/sbchatinfo/sbchatinfoform.vue.php:78
+#: portail/pages/utilisateur/sbchatinfo/sbchatinfoform.vue.php:94
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:76
+#: portail/pages/utilisateur/sbchatmacros/sbchatmacrosform.vue.php:73
+#: portail/pages/admin/userserviceform/userserviceform.vue.php:92
+msgid "Soumettre"
+msgstr "Soumettre"
+
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.php:15
+#, fuzzy
+msgid ""
+"Cet utilisateur n'a pas de token SB Chat. Veuillez compléter la "
+"configuration du compte."
+msgstr ""
+"Cet utilisateur n'a pas de token SB Chat. Veuillez compléter la "
+"configuration du compte pour accéder aux macros."
+
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.php:19
+#: portail/pages/utilisateur/sbchatmacros/sbchatmacrosform.php:23
+msgid "Aucun adresse de serveur SB Chat configurée !"
+msgstr "Aucun adresse de serveur SB Chat configurée !"
+
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.php:39
+#, php-format
+msgid "Entente envoyée à %d bénévole(s) qui ne l'avaient pas encore signée."
+msgstr ""
+
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.php:41
+msgid "L'envoi a échoué."
+msgstr ""
+
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.php:59
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.vue.php:29
+msgid "Bénévole"
+msgstr ""
+
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.php:59
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.vue.php:30
+msgid "Statut"
+msgstr ""
+
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.php:59
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.vue.php:31
+msgid "Nom tapé"
+msgstr ""
+
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.php:59
+msgid "Date de signature (heure de l'Est)"
+msgstr ""
+
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.php:59
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.vue.php:33
+msgid "Appareil"
+msgstr ""
+
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.php:59
+msgid "Appareil vérifié"
+msgstr ""
+
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.php:59
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.vue.php:34
+msgid "Version signée"
+msgstr ""
+
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.php:59
+msgid "Empreinte du texte signé"
+msgstr ""
+
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.php:59
+msgid "Référence du message"
+msgstr ""
+
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.php:63
+msgid "Signée"
+msgstr ""
+
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.php:65
+msgid "Ancienne version"
+msgstr ""
+
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.php:67
+msgid "À signer"
+msgstr ""
+
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.php:69
+msgid "vérifié"
+msgstr ""
+
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.php:69
+#, fuzzy
+msgid "non vérifié"
+msgstr "Non autorisé."
+
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.vue.php:7
+msgid ""
+"Impossible de joindre SwitchBoard Chat. Vérifiez sa configuration et sa "
+"version (cette page demande une version récente)."
+msgstr ""
+
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.vue.php:11
+msgid ""
+"L'entente n'est pas encore activée sur le serveur SwitchBoard Chat. Il faut "
+"y définir PRIVACY_OFFICER (nom et courriel de la personne responsable de la "
+"protection des renseignements personnels) dans le fichier .env, puis "
+"redémarrer."
+msgstr ""
+
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.vue.php:15
+msgid ""
+"Les bénévoles signent directement dans Element, dans leur « Salle "
+"Utilisateur » : ils écrivent !entente pour lire l'entente, puis !signer "
+"suivi de leur prénom et nom. Ils reçoivent aussitôt un reçu. Ceux qui n'ont "
+"pas signé reçoivent l'entente chaque jour à midi."
+msgstr ""
+
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.vue.php:18
+#, php-format
+msgid "%d bénévole(s) sur %d ont signé la version en vigueur (%s)."
+msgstr ""
+
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.vue.php:24
+msgid "Envoyer l'entente maintenant à ceux qui ne l'ont pas signée"
+msgstr ""
+
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.vue.php:32
+#, fuzzy
+msgid "Date de signature"
+msgstr "Date de fin :"
+
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.vue.php:42
+msgid "Exporter le registre (CSV)"
+msgstr ""
+
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.vue.php:45
+#, php-format
+msgid "Texte de l'entente en vigueur (version %s)"
+msgstr ""
+
+#: portail/pages/utilisateur/sbchatagreement/sbchatagreementform.vue.php:46
+msgid "Empreinte numérique (SHA-256) du texte :"
+msgstr ""
+
+#: portail/pages/utilisateur/remindersmsjustbeforepage.vue.php:3
+#: portail/pages/utilisateur/remindersbchatjustbeforepage.vue.php:3
+msgid "Rappels par SMS juste 15 minutes avant le début de la plage horaire"
+msgstr "Rappels par SMS juste 15 minutes avant le début de la plage horaire"
+
+#: portail/pages/utilisateur/sbchatinfo/sbchatinfoform.vue.php:46
+#: portail/pages/utilisateur/sbchatmacros/sbchatmacrosform.vue.php:46
+msgid "Informations SwitchBoard Chat"
+msgstr "Informations SwitchBoard Chat"
+
+#: portail/pages/utilisateur/sbchatinfo/sbchatinfoform.vue.php:51
+msgid "Token API SB Chat :"
+msgstr "Token API SB Chat :"
+
+#: portail/pages/utilisateur/sbchatinfo/sbchatinfoform.vue.php:52
+#: portail/pages/utilisateur/sbchatinfo/sbchatinfoform.vue.php:84
+#: portail/pages/utilisateur/sbchatinfo/sbchatinfoform.vue.php:89
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:20
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:33
+msgid "configuré"
+msgstr ""
+
+#: portail/pages/utilisateur/sbchatinfo/sbchatinfoform.vue.php:52
+#: portail/pages/utilisateur/sbchatinfo/sbchatinfoform.vue.php:84
+#: portail/pages/utilisateur/sbchatinfo/sbchatinfoform.vue.php:89
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:20
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:33
+msgid "non configuré"
+msgstr ""
+
+#: portail/pages/utilisateur/sbchatinfo/sbchatinfoform.vue.php:54
+msgid "Faire une requête à votre administrateur, service désactivé."
+msgstr "Faire une requête à votre administrateur, service désactivé."
+
+#: portail/pages/utilisateur/sbchatinfo/sbchatinfoform.vue.php:54
+#: portail/pages/utilisateur/sbchatinfo/sbchatinfoform.vue.php:86
+#: portail/pages/utilisateur/sbchatinfo/sbchatinfoform.vue.php:91
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:22
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:35
+msgid "laisser vide pour conserver"
+msgstr ""
+
+#: portail/pages/utilisateur/sbchatinfo/sbchatinfoform.vue.php:58
+msgid "Demander une token API."
+msgstr "Demander une token API."
+
+#: portail/pages/utilisateur/sbchatinfo/sbchatinfoform.vue.php:62
+msgid "Hook SMS à copier/coller dans votre DID voip.ms :"
+msgstr "Hook SMS à copier/coller dans votre DID voip.ms :"
+
+#: portail/pages/utilisateur/sbchatinfo/sbchatinfoform.vue.php:63
+msgid "Cliquez pour copier :"
+msgstr "Cliquez pour copier :"
+
+#: portail/pages/utilisateur/sbchatinfo/sbchatinfoform.vue.php:67
+msgid "Tester le hook (la page devrait retourner ok)"
+msgstr "Tester le hook (la page devrait retourner ok)"
+
+#: portail/pages/utilisateur/sbchatinfo/sbchatinfoform.vue.php:74
+msgid "URL de l'agenda"
+msgstr "URL de l'agenda"
+
+#: portail/pages/utilisateur/sbchatinfo/sbchatinfoform.vue.php:75
+msgid "Url privé du calendrier ici"
+msgstr "Url privé du calendrier ici"
+
+#: portail/pages/utilisateur/sbchatinfo/sbchatinfoform.vue.php:76
+msgid "Adresse du serveur SwitchBoardChat"
+msgstr "Adresse du serveur SwitchBoardChat"
+
+#: portail/pages/utilisateur/sbchatinfo/sbchatinfoform.vue.php:77
+msgid "ex: https://monserveur.org:3443"
+msgstr "ex: https://monserveur.org:3443"
+
+#: portail/pages/utilisateur/sbchatinfo/sbchatinfoform.vue.php:79
+msgid "Informations Matrix Authentification Service (MAS)"
+msgstr "Informations Matrix Authentification Service (MAS)"
+
+#: portail/pages/utilisateur/sbchatinfo/sbchatinfoform.vue.php:80
+msgid "URL du serveur MAS"
+msgstr "URL du serveur MAS"
+
+#: portail/pages/utilisateur/sbchatinfo/sbchatinfoform.vue.php:83
+msgid "ID du client MAS"
+msgstr "ID du client MAS"
+
+#: portail/pages/utilisateur/sbchatinfo/sbchatinfoform.vue.php:88
+msgid "SECRET du client MAS"
+msgstr "SECRET du client MAS"
+
+#: portail/pages/utilisateur/sbchatinfo/sbchatinfoform.php:38
+msgid "Ceci est un test"
+msgstr "Ceci est un test"
+
+#: portail/pages/utilisateur/remindersbchatpage.vue.php:3
+#: portail/pages/utilisateur/remindersmspage.vue.php:3
+#: portail/pages/utilisateur/header.php:43
+msgid "Rappels par SMS"
+msgstr "Rappels par SMS"
+
+#: portail/pages/utilisateur/usermodificationform/usermodificationform.vue.php:6
+msgid "Nouvelle Authentification"
+msgstr "Nouvelle Authentification"
+
+#: portail/pages/utilisateur/usermodificationform/usermodificationform.vue.php:12
+msgid ""
+"Le mot de passe est trop court. Il doit contenir un minimum de 8 caractères"
+msgstr ""
+"Le mot de passe est trop court. Il doit contenir un minimum de 8 caractères"
+
+#: portail/pages/utilisateur/usermodificationform/usermodificationform.vue.php:14
+msgid "Le mot de passe est trop long."
+msgstr "Le mot de passe est trop long."
+
+#: portail/pages/utilisateur/usermodificationform/usermodificationform.vue.php:16
+msgid "Le mot de passe doit contenir un chiffre."
+msgstr "Le mot de passe doit contenir un chiffre."
+
+#: portail/pages/utilisateur/usermodificationform/usermodificationform.vue.php:18
+msgid "Le mot de passe doit contenir des lettres."
+msgstr "Le mot de passe doit contenir des lettres."
+
+#: portail/pages/utilisateur/usermodificationform/usermodificationform.vue.php:28
+msgid "Le nom d'utilisateur doit contenir au moins 8 caractères"
+msgstr "Le nom d'utilisateur doit contenir au moins 8 caractères"
+
+#: portail/pages/utilisateur/usermodificationform/usermodificationform.vue.php:32
+msgid "Les mots de passe ne sont pas identiques."
+msgstr "Les mots de passe ne sont pas identiques."
+
+#: portail/pages/utilisateur/usermodificationform/usermodificationform.vue.php:56
+msgid ""
+"Un mot de passe valide doit contenir au moins 8 caractères avec des lettres "
+"et des chiffres. Le nom d'utilisateur doit aussi contenir 8 caractères."
+msgstr ""
+"Un mot de passe valide doit contenir au moins 8 caractères avec des lettres "
+"et des chiffres. Le nom d'utilisateur doit aussi contenir 8 caractères."
+
+#: portail/pages/utilisateur/usermodificationform/usermodificationform.vue.php:64
+#: portail/pages/utilisateur/loginform/loginform.php:25
+msgid "Nom d'utilisateur"
+msgstr "Nom d'utilisateur"
+
+#: portail/pages/utilisateur/usermodificationform/usermodificationform.vue.php:65
+#: portail/pages/utilisateur/loginform/loginform.php:26
+msgid "Mot de passe"
+msgstr "Mot de passe"
+
+#: portail/pages/utilisateur/usermodificationform/usermodificationform.vue.php:69
+msgid "Réécrire votre mot de passe"
+msgstr "Réécrire votre mot de passe"
+
+#: portail/pages/utilisateur/usermodificationform/usermodificationform.vue.php:74
+msgid "Co-administrateur"
+msgstr "Co-administrateur"
+
+#: portail/pages/utilisateur/usermodificationform/usermodificationform.vue.php:75
+msgid "Utilisateur régulier"
+msgstr "Utilisateur régulier"
+
+#: portail/pages/utilisateur/usermodificationform/usermodificationform.vue.php:76
+msgid "Administrateur principal"
+msgstr "Administrateur principal"
+
+#: portail/pages/utilisateur/userinformationspage.php:55
+msgid "Adresse courriel non valide pour Nom d'utilisateur voip.ms !!"
+msgstr "Adresse courriel non valide pour Nom d'utilisateur voip.ms !!"
+
+#: portail/pages/utilisateur/userinformationspage.php:70
+msgid "URL non valide pour URL de l'agenda !!"
+msgstr "URL non valide pour URL de l'agenda !!"
+
+#: portail/pages/utilisateur/userinformationspage.php:77
+#, fuzzy
+msgid "Type de calendrier invalide !!"
+msgstr " est de longueur invalide."
+
+#: portail/pages/utilisateur/userinformationspage.php:86
+msgid ""
+"Nom d'utilisateur et mot de passe CalDAV requis lorsque le type de "
+"calendrier est CalDAV !!"
+msgstr ""
+
+#: portail/pages/utilisateur/userinformationspage.php:95
+msgid "Adresse courriel non valide pour Courriel de notification/validation !!"
+msgstr ""
+"Adresse courriel non valide pour Courriel de notification/validation !!"
+
+#: portail/pages/utilisateur/userinformationspage.php:106
+msgid "DID non valide !!"
+msgstr "DID non valide !!"
+
+#: portail/pages/utilisateur/userinformationspage.php:118
+msgid ""
+"Durée de sonnerie non valide (1 à 60 secondes) : valeur par défaut "
+"utilisée !!"
+msgstr ""
+
+#: portail/pages/utilisateur/header.php:28
+#: portail/pages/utilisateur/header.php:64
+#: portail/pages/admin/adminpanelpage.vue.php:2
+msgid "Console d'administration"
+msgstr "Console d'administration"
+
+#: portail/pages/utilisateur/header.php:38
+msgid "Page Principale"
+msgstr "Page Principale"
+
+#: portail/pages/utilisateur/header.php:39
+msgid "Groupes de sonneries"
+msgstr "Groupes de sonneries"
+
+#: portail/pages/utilisateur/header.php:41
+msgid "Validation du calendrier"
+msgstr "Validation du calendrier"
+
+#: portail/pages/utilisateur/header.php:44
+msgid "Rappels par SMS 15 minutes avant"
+msgstr "Rappels par SMS 15 minutes avant"
+
+#: portail/pages/utilisateur/header.php:46
+msgid "SwitchBoard Chat"
+msgstr "SwitchBoard Chat"
+
+#: portail/pages/utilisateur/header.php:48
+msgid "Rafraîchir SBChat"
+msgstr "Rafraîchir SBChat"
+
+#: portail/pages/utilisateur/header.php:49
+msgid "Rappels SwitchBoard Chat pour demain"
+msgstr "Rappels SwitchBoard Chat pour demain"
+
+#: portail/pages/utilisateur/header.php:50
+msgid "Rappels SwitchBoard Chat dans l'heure d'avant"
+msgstr "Rappels SwitchBoard Chat dans l'heure d'avant"
+
+#: portail/pages/utilisateur/header.php:51
+msgid "Gérer les utilisateurs du serveur Matrix"
+msgstr "Gérer les utilisateurs du serveur Matrix"
+
+#: portail/pages/utilisateur/header.php:52
+msgid "Macros SwitchBoard Chat du compte"
+msgstr "Macros SwitchBoard Chat du compte"
+
+#: portail/pages/utilisateur/header.php:55
+#: portail/pages/admin/sbchatcertificatepage.vue.php:5
+#: portail/pages/admin/adminpanelpage.vue.php:20
+#, fuzzy
+msgid "Certificat SwitchBoard Chat / MAS"
+msgstr "Rafraichir SwitchBoard Chat"
+
+#: portail/pages/utilisateur/header.php:59
+msgid "Mes statistiques"
+msgstr ""
+
+#: portail/pages/utilisateur/header.php:60
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:13
+msgid "Informations du compte"
+msgstr "Informations du compte"
+
+#: portail/pages/utilisateur/header.php:61
+msgid "Informations SwitchBoard Chat du compte"
+msgstr "Informations SwitchBoard Chat du compte"
+
+#: portail/pages/utilisateur/header.php:65
+#: portail/pages/admin/mailtestpage.vue.php:5
+#: portail/pages/admin/adminpanelpage.vue.php:21
+#, fuzzy
+msgid "Courriel de test"
+msgstr "Courriel Test"
+
+#: portail/pages/utilisateur/header.php:66
+#: portail/pages/admin/mailoauthpage.vue.php:5
+#: portail/pages/admin/adminpanelpage.vue.php:22
+#, fuzzy
+msgid "Courriel OAuth"
+msgstr "Courriel Test"
+
+#: portail/pages/utilisateur/header.php:67
+#: portail/pages/admin/deadmanswitchpage.vue.php:5
+#: portail/pages/admin/adminpanelpage.vue.php:23
+msgid "Surveillance (dead-man's-switch)"
+msgstr ""
+
+#: portail/pages/utilisateur/header.php:69
+msgid "Se deconnecter"
+msgstr "Se deconnecter"
+
+#: portail/pages/utilisateur/userdiagnostic.vue.php:6
+msgid "Id de l'utilisateur : "
+msgstr "Id de l'utilisateur : "
+
+#: portail/pages/utilisateur/userdiagnostic.vue.php:8
+msgid "Tests liés à la plateforme voip.ms :"
+msgstr "Tests liés à la plateforme voip.ms :"
+
+#: portail/pages/utilisateur/userdiagnostic.vue.php:9
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:17
+msgid "Nom d'utilisateur voip.ms :"
+msgstr "Nom d'utilisateur voip.ms :"
+
+#: portail/pages/utilisateur/userdiagnostic.vue.php:11
+msgid ""
+"Le nom d'utilisateur ou le mot de passe API voip.ms est vide : la connexion "
+"à voip.ms ne peut pas fonctionner. Remplissez les deux champs ici : "
+msgstr ""
+
+#: portail/pages/utilisateur/userdiagnostic.vue.php:15
+msgid "Tests liés à l'agenda :"
+msgstr "Tests liés à l'agenda :"
+
+#: portail/pages/utilisateur/userdiagnostic.vue.php:17
+msgid "Aucune adresse d'agenda n'est configurée. Ajoutez-la ici : "
+msgstr ""
+
+#: portail/pages/utilisateur/userdiagnostic.vue.php:19
+msgid "L'agenda a été téléchargé correctement."
+msgstr ""
+
+#: portail/pages/utilisateur/userdiagnostic.vue.php:21
+msgid "L'adresse vers le calendrier ne répond pas ou n'est pas valide !"
+msgstr "L'adresse vers le calendrier ne répond pas ou n'est pas valide !"
+
+#: portail/pages/utilisateur/userdiagnostic.vue.php:22
+msgid "Voici l'url :"
+msgstr "Voici l'url :"
+
+#: portail/pages/utilisateur/refreshringgrouppage.php:19
+msgid ""
+"Une mise à jour de ce groupe de sonnerie est déjà en cours (passage "
+"automatique ou autre clic). Réessayez dans une minute."
+msgstr ""
+
+#: portail/pages/utilisateur/mainpage.vue.php:7
+msgid "Journal vide"
+msgstr "Journal vide"
+
+#: portail/pages/utilisateur/mainpage.vue.php:11
+msgid "Aller à la fin du journal"
+msgstr "Aller à la fin du journal"
+
+#: portail/pages/utilisateur/mainpage.vue.php:17
+msgid "Aller au début du journal"
+msgstr "Aller au début du journal"
+
+#: portail/pages/utilisateur/mainpage.vue.php:22
+msgid "Page principale"
+msgstr "Page principale"
+
+#: portail/pages/utilisateur/mainpage.vue.php:23
+msgid "Adresses IP pour configurer la liste blanche de l'API voip."
+msgstr "Adresses IP pour configurer la liste blanche de l'API voip."
+
+#: portail/pages/utilisateur/mainpage.vue.php:24
+msgid ""
+"Adresse IP du serveur(selon voip.ms, cette adresse est toujours la bonne, "
+"mais necessite un compte voip.ms configuré pour fonctionner) : "
+msgstr ""
+"Adresse IP du serveur(selon voip.ms, cette adresse est toujours la bonne, "
+"mais necessite un compte voip.ms configuré pour fonctionner) : "
+
+#: portail/pages/utilisateur/mainpage.vue.php:25
+msgid ""
+"Adresse IP du serveur(selon le serveur lui-même, cette adresse est rarement "
+"valide) :"
+msgstr ""
+"Adresse IP du serveur(selon le serveur lui-même, cette adresse est rarement "
+"valide) :"
+
+#: portail/pages/utilisateur/mainpage.vue.php:26
+msgid ""
+"Adresse IP du serveur(selon un service externe, cette adresse est fiable, "
+"mais peut être en ipv6) :"
+msgstr ""
+"Adresse IP du serveur(selon un service externe, cette adresse est fiable, "
+"mais peut être en ipv6) :"
+
+#: portail/pages/utilisateur/mainpage.vue.php:27
+msgid "Numéros de transfert actuels (programmés sur voip.ms)"
+msgstr "Numéros de transfert actuels (programmés sur voip.ms)"
+
+#: portail/pages/utilisateur/mainpage.vue.php:29
+msgid "Aucun forwarding<br>\n"
+msgstr "Aucun forwarding<br>\n"
+
+#: portail/pages/utilisateur/mainpage.vue.php:32
+msgid "Aucun forwardings trouvé."
+msgstr "Aucun forwardings trouvé."
+
+#: portail/pages/utilisateur/mainpage.vue.php:37
+msgid "Journaux d'exécution: "
+msgstr "Journaux d'exécution: "
+
+#: portail/pages/utilisateur/mainpage.vue.php:39
+msgid "Effacer tous les journaux d'exécution"
+msgstr "Effacer tous les journaux d'exécution"
+
+#: portail/pages/utilisateur/mainpage.vue.php:39
+msgid "Ceci supprimera tous les journaux"
+msgstr "Ceci supprimera tous les journaux"
+
+#: portail/pages/utilisateur/mainpage.vue.php:42
+#: portail/pages/utilisateur/mainpage.vue.php:45
+msgid "Aller à :"
+msgstr "Aller à :"
+
+#: portail/pages/utilisateur/mainpage.vue.php:42
+msgid "Journal des groupes de sonneries pour l'utilisateur actuel"
+msgstr "Journal des groupes de sonneries pour l'utilisateur actuel"
+
+#: portail/pages/utilisateur/mainpage.vue.php:45
+msgid "Journal des groupes de sonneries pour tous les utilisateurs"
+msgstr "Journal des groupes de sonneries pour tous les utilisateurs"
+
+#: portail/pages/utilisateur/mainpage.vue.php:48
+#: portail/pages/utilisateur/mainpage.vue.php:52
+msgid "Aller à : "
+msgstr "Aller à : "
+
+#: portail/pages/utilisateur/mainpage.vue.php:48
+msgid "Envoi de notifications SMS le jour d'avant"
+msgstr "Envoi de notifications SMS le jour d'avant"
+
+#: portail/pages/utilisateur/mainpage.vue.php:52
+msgid "Envoi de notifications SMS une heure avant"
+msgstr "Envoi de notifications SMS une heure avant"
+
+#: portail/pages/utilisateur/mainpage.vue.php:55
+msgid "Mise à jour des groupes de sonneries pour l'utilisateur actuel : "
+msgstr "Mise à jour des groupes de sonneries pour l'utilisateur actuel : "
+
+#: portail/pages/utilisateur/mainpage.vue.php:60
+msgid "Mise à jour des groupes de sonneries pour tous les utilisateurs: "
+msgstr "Mise à jour des groupes de sonneries pour tous les utilisateurs: "
+
+#: portail/pages/utilisateur/mainpage.vue.php:65
+msgid "Envoi de notifications SMS le jour d'avant :"
+msgstr "Envoi de notifications SMS le jour d'avant :"
+
+#: portail/pages/utilisateur/mainpage.vue.php:69
+msgid "Envoi de notifications SMS une heure avant :"
+msgstr "Envoi de notifications SMS une heure avant :"
+
+#: portail/pages/utilisateur/refreshringgrouppage.vue.php:3
+msgid "Forcer le changement de répondants"
+msgstr "Forcer le changement de répondants"
+
+#: portail/pages/utilisateur/loginform/loginform.php:14
+msgid "Authentification"
+msgstr "Authentification"
+
+#: portail/pages/utilisateur/loginform/loginform.php:22
+#: portail/pages/utilisateur/loginform/loginform.php:27
+msgid "Se connecter"
+msgstr "Se connecter"
+
+#: portail/pages/utilisateur/validationpage.php:3
+#: portail/pages/jeton/header.php:12
+msgid "Page de validation"
+msgstr "Page de validation"
+
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:18
+msgid "ex.monadressedecomptevoip@gmail.com"
+msgstr "ex.monadressedecomptevoip@gmail.com"
+
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:19
+msgid ""
+"Mot de passe API voip.ms (pas le mot de passe du compte, celui de l'api !!):"
+msgstr ""
+"Mot de passe API voip.ms (pas le mot de passe du compte, celui de l'api !!):"
+
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:23
+msgid "URL de l'agenda :"
+msgstr "URL de l'agenda :"
+
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:25
+#, fuzzy
+msgid "Type de calendrier :"
+msgstr "Url privé du calendrier ici"
+
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:27
+msgid "URL secrète (Google / Outlook)"
+msgstr ""
+
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:28
+msgid "CalDAV (compte cPanel avec authentification)"
+msgstr ""
+
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:30
+msgid ""
+"Nom d'utilisateur CalDAV (requis seulement si Type de calendrier = CalDAV) :"
+msgstr ""
+
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:31
+msgid "agenda@exemple.org"
+msgstr ""
+
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:32
+msgid "Mot de passe CalDAV (requis seulement si Type de calendrier = CalDAV) :"
+msgstr ""
+
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:36
+msgid "Courriel de notification/validation :"
+msgstr "Courriel de notification/validation :"
+
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:37
+msgid ""
+"ex.moncourriel@gmail.com (plusieurs adresses séparées par des virgules sont "
+"acceptées)"
+msgstr ""
+
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:38
+msgid "Nom du groupe de sonnerie (Maximum 15 caractères):"
+msgstr "Nom du groupe de sonnerie (Maximum 15 caractères):"
+
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:41
+msgid ""
+"À chaque mise à jour, le groupe de sonnerie se réinitialisera à votre boîte "
+"vocale par défaut. Cependant, si vous avez besoin d'une boîte spécifique à "
+"un groupe de sonnerie, vous pouvez créer un boîte vocale ayant pour nom "
+"votre DID. Celle-ci sera utilisée à la place de la boîte vocale principale."
+msgstr ""
+"À chaque mise à jour, le groupe de sonnerie se réinitialisera à votre boîte "
+"vocale par défaut. Cependant, si vous avez besoin d'une boîte spécifique à "
+"un groupe de sonnerie, vous pouvez créer un boîte vocale ayant pour nom "
+"votre DID. Celle-ci sera utilisée à la place de la boîte vocale principale."
+
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:46
+msgid "ex.groupedesonnerie1"
+msgstr "ex.groupedesonnerie1"
+
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:48
+msgid "Durée de sonnerie (secondes, 1 à 60) :"
+msgstr ""
+
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:51
+msgid ""
+"Vide : 25 secondes. Pour un seul répondant, le repère nbsec->20 dans la "
+"description de son événement de l'agenda a priorité sur ce réglage."
+msgstr ""
+
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:54
+msgid "par défaut : 25"
+msgstr ""
+
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:55
+msgid "Faire le 1 pour accepter l'appel :"
+msgstr ""
+
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:58
+msgid ""
+"Pour un seul répondant, le repère faire1->o ou faire1->n dans la description "
+"de son événement de l'agenda a priorité sur ce réglage."
+msgstr ""
+
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:62
+msgid "par défaut (oui)"
+msgstr ""
+
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:66
+msgid "Numéro de DID :"
+msgstr "Numéro de DID :"
+
+#: portail/pages/utilisateur/userinfoform/userinfoform.vue.php:68
+msgid "Langue :"
+msgstr "Langue :"
+
+#: portail/pages/utilisateur/sbchatmacros/sbchatmacrosform.php:19
+msgid ""
+"Cet utilisateur n'a pas de token SB Chat. Veuillez compléter la "
+"configuration du compte pour accéder aux macros."
+msgstr ""
+"Cet utilisateur n'a pas de token SB Chat. Veuillez compléter la "
+"configuration du compte pour accéder aux macros."
+
+#: portail/pages/utilisateur/sbchatmacros/sbchatmacrosform.php:65
+msgid "Erreur de configuration ou de connexion"
+msgstr ""
+
+#: portail/pages/utilisateur/sbchatmacros/sbchatmacrosform.vue.php:50
+msgid "Modifier ou insérer Macro SB Chat:"
+msgstr "Modifier ou insérer Macro SB Chat:"
+
+#: portail/pages/utilisateur/sbchatmacros/sbchatmacrosform.vue.php:59
+msgid "Nom du macro : "
+msgstr "Nom du macro : "
+
+#: portail/pages/utilisateur/sbchatmacros/sbchatmacrosform.vue.php:60
+msgid "Nom du macro"
+msgstr "Nom du macro"
+
+#: portail/pages/utilisateur/sbchatmacros/sbchatmacrosform.vue.php:61
+#, fuzzy
+msgid "Texte du macro : "
+msgstr "Nom du macro : "
+
+#: portail/pages/utilisateur/sbchatmacros/sbchatmacrosform.vue.php:62
+#, fuzzy
+msgid "Texte du macro"
+msgstr "Nom du macro"
+
+#: portail/pages/utilisateur/sbchatmacros/sbchatmacrosform.vue.php:63
+#, fuzzy
+msgid "Tag du macro : "
+msgstr "Nom du macro : "
+
+#: portail/pages/utilisateur/sbchatmacros/sbchatmacrosform.vue.php:66
+msgid "Aucun"
+msgstr ""
+
+#: portail/pages/utilisateur/sbchatmacros/sbchatmacrosform.vue.php:80
+msgid "Aucune macro pour ce centre d'appel."
+msgstr ""
+
+#: portail/pages/utilisateur/sbchatmacros/sbchatmacrosform.vue.php:91
+#, fuzzy
+msgid "Voulez vous vraiment supprimer ce macro ?"
+msgstr "Voulez vous vraiment supprimer cette entrée ?"
+
+#: portail/pages/admin/mailoauthpage.php:65
+msgid ""
+" Pour que l'envoi de courriel utilise réellement ce mode OAuth, redémarrez "
+"le conteneur php une fois : « docker compose restart php » (depuis le "
+"dossier Docker/) - sans ce redémarrage, l'autorisation est bien enregistrée "
+"mais l'envoi continue d'utiliser l'ancien réglage jusque-là."
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.php:91
+msgid "Choisissez un fournisseur (Microsoft 365 ou Google)."
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.php:93
+msgid "L'adresse courriel et le Client ID sont requis."
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.php:95
+msgid "Le Client Secret est requis pour Google."
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.php:103
+msgid "Réglages enregistrés."
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.php:105
+#: portail/pages/admin/deadmanswitchpage.php:51
+msgid ""
+"Impossible d'enregistrer les réglages (vérifiez les droits d'écriture sur le "
+"dossier config/)."
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.php:130
+msgid ""
+"Aucune autorisation en cours - cliquez d'abord sur « Démarrer "
+"l'autorisation »."
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.php:136
+#, fuzzy
+msgid "Microsoft 365 autorisé avec succès."
+msgstr "Mis à jour avec succès."
+
+#: portail/pages/admin/mailoauthpage.php:138
+msgid ""
+"Pas encore autorisé. Assurez-vous d'avoir terminé l'étape dans votre "
+"navigateur, puis cliquez de nouveau sur « J'ai autorisé, continuer ». Si "
+"vous vous êtes trompé en entrant le code chez Microsoft, utilisez « Annuler "
+"et recommencer » ci-dessous pour obtenir un nouveau code."
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.php:151
+msgid ""
+"État OAuth invalide (état manquant ou expiré) - relancez l'autorisation ci-"
+"dessous."
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.php:157
+#, fuzzy
+msgid "Google autorisé avec succès."
+msgstr "Mot de passe modifié avec succès."
+
+#: portail/pages/admin/mailoauthpage.php:163
+#, php-format
+msgid "Autorisation refusée par Google : %s"
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.php:172
+msgid "Réglages retirés - choisissez de nouveau un fournisseur ci-dessous."
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.php:178
+#, fuzzy
+msgid "Autorisation retirée."
+msgstr "<br>Aucune information enregistrée."
+
+#: portail/pages/admin/mailoauthpage.php:180
+msgid ""
+"L'autorisation n'a pas pu être retirée (vérifiez les droits d'écriture sur "
+"le dossier config/)."
+msgstr ""
+
+#: portail/pages/admin/adduserpage.php:2
+#: portail/pages/admin/updateVersionSB.php:2
+msgid "Créer un nouveau compte"
+msgstr "Créer un nouveau compte"
+
+#: portail/pages/admin/deadmanswitchpage.vue.php:17
+msgid ""
+"Chaque ligne ci-dessous correspond à une chose critique à surveiller. Créez "
+"un compte gratuit sur un service de type dead-man's-switch (ex.: "
+"healthchecks.io), créez-y un check par ligne, collez son URL de ping ici, "
+"puis envoyez un ping de test. Le canal de notification (SMS, Telegram, ntfy, "
+"etc.) se configure entièrement chez ce fournisseur, pas ici - voir "
+"DEADMANSWITCH-SETUP.md pour le guide complet."
+msgstr ""
+
+#: portail/pages/admin/deadmanswitchpage.vue.php:27
+msgid "Configuré."
+msgstr ""
+
+#: portail/pages/admin/deadmanswitchpage.vue.php:29
+msgid "Non configuré - aucune alerte ne sera envoyée pour ce check."
+msgstr ""
+
+#: portail/pages/admin/deadmanswitchpage.vue.php:33
+msgid "Géré par une variable d'environnement (SB_DMS_"
+msgstr ""
+
+#: portail/pages/admin/deadmanswitchpage.vue.php:33
+msgid ""
+"_SUCCESS_URL dans .env) - pour changer, modifiez .env puis redémarrez le "
+"conteneur."
+msgstr ""
+
+#: portail/pages/admin/deadmanswitchpage.vue.php:39
+msgid "URL de ping de succès :"
+msgstr ""
+
+#: portail/pages/admin/deadmanswitchpage.vue.php:41
+msgid ""
+"URL de ping d'échec (optionnel - par défaut, l'URL ci-dessus + « /fail ») :"
+msgstr ""
+
+#: portail/pages/admin/deadmanswitchpage.vue.php:42
+#: portail/pages/admin/mailoauthpage.vue.php:67
+msgid "(déjà enregistré - laissez vide pour le conserver)"
+msgstr ""
+
+#: portail/pages/admin/deadmanswitchpage.vue.php:43
+#: portail/pages/admin/mailoauthpage.vue.php:70
+msgid "Enregistrer"
+msgstr ""
+
+#: portail/pages/admin/deadmanswitchpage.vue.php:50
+msgid "Retirer"
+msgstr ""
+
+#: portail/pages/admin/deadmanswitchpage.vue.php:60
+msgid "Envoyer un ping de test maintenant"
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:15
+#, php-format
+msgid "Fournisseur configuré : %s. Statut : %s"
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:15
+#: portail/pages/admin/mailoauthpage.vue.php:75
+#, fuzzy
+msgid "autorisé"
+msgstr "Non autorisé."
+
+#: portail/pages/admin/mailoauthpage.vue.php:15
+#: portail/pages/admin/mailoauthpage.vue.php:75
+#, fuzzy
+msgid "non autorisé"
+msgstr "Non autorisé."
+
+#: portail/pages/admin/mailoauthpage.vue.php:17
+#: portail/pages/admin/mailoauthpage.vue.php:78
+msgid ""
+"Autorisé, mais l'envoi de courriel n'utilise pas encore ce mode OAuth sur ce "
+"conteneur : redémarrez-le une fois avec « docker compose restart php » "
+"(depuis le dossier Docker/) pour que ça prenne effet."
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:19
+msgid ""
+"Géré par la variable d'environnement SB_SMTP_OAUTH_PROVIDER (.env) - pour "
+"changer de fournisseur ou de Client ID/Secret, modifiez .env puis redémarrez "
+"le conteneur (docker compose restart php)."
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:24
+msgid "&#8249; Annuler et revenir au statut"
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:27
+msgid ""
+"Choisissez le fournisseur de votre boîte courriel, puis suivez les étapes ci-"
+"dessous pour obtenir un Client ID (et un Client Secret pour Google) - une "
+"inscription unique à faire dans la console de ce fournisseur, hors de "
+"SwitchBoard."
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:30
+msgid "Microsoft 365 : comment obtenir un Client ID"
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:32
+#: portail/pages/admin/mailoauthpage.vue.php:45
+msgid "Allez sur"
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:32
+#, fuzzy
+msgid "Nouvelle inscription"
+msgstr "Nouvelle Authentification"
+
+#: portail/pages/admin/mailoauthpage.vue.php:33
+msgid ""
+"Donnez-lui un nom (ex.: « SwitchBoard Mail »), laissez le reste par défaut, "
+"puis Enregistrer."
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:34
+msgid ""
+"Copiez l'« ID d'application (client) » affiché - c'est le Client ID à coller "
+"ci-dessous. Copiez aussi le « ID de l'annuaire (locataire) » (Tenant ID) "
+"affiché juste à côté sur cette même page - avec les réglages par défaut "
+"(« Comptes dans cet annuaire organisationnel uniquement »), ce Tenant ID est "
+"OBLIGATOIRE ci-dessous, PAS optionnel (voir la note Tenant plus bas - le "
+"laisser vide cause l'erreur AADSTS50059)."
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:35
+msgid ""
+"Authentification &rarr; Paramètres avancés &rarr; « Autoriser les flux "
+"clients publics » &rarr; Oui &rarr; Enregistrer."
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:36
+msgid ""
+"Rien à faire dans « Autorisations API » pour ce flux : SwitchBoard demande "
+"directement la permission SMTP.Send au moment de l'autorisation ci-dessous "
+"(c'est Microsoft qui affiche alors l'écran de consentement) - vous n'avez "
+"pas besoin de la chercher/ajouter vous-même dans le portail. Si votre tenant "
+"exige un consentement admin, l'écran de consentement vous le dira à ce "
+"moment-là plutôt qu'ici."
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:37
+msgid ""
+"Étape séparée obligatoire : un administrateur Exchange doit aussi activer "
+"l'authentification SMTP sur la boîte courriel elle-même (désactivée par "
+"défaut). Voir MAIL-OAUTH-SETUP.md pour la commande exacte - sans cette "
+"étape, l'envoi échouera même une fois autorisé ici."
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:38
+msgid ""
+"Tenant : avec les réglages d'inscription par défaut (mono-tenant), ce champ "
+"est OBLIGATOIRE - collez l'ID de l'annuaire (locataire) copié à l'étape 3 "
+"(ou le nom de domaine de votre organisation, ex.: contoso.onmicrosoft.com). "
+"Le laisser vide envoie la demande à l'adresse générique « common », que "
+"Microsoft refuse pour une inscription mono-tenant avec l'erreur AADSTS50059 "
+"« No tenant-identifying information found »."
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:43
+msgid "Google : comment obtenir un Client ID et un Client Secret"
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:45
+msgid "(créez un projet si vous n'en avez pas)."
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:46
+msgid ""
+"Écran de consentement OAuth : type Externe, remplissez le nom de l'app et un "
+"courriel de support, Enregistrer (le mode « Test » suffit - ajoutez votre "
+"propre adresse comme utilisateur de test)."
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:47
+msgid ""
+"Identifiants &rarr; Créer des identifiants &rarr; ID client OAuth &rarr; "
+"type d'application « Application Web »."
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:48
+msgid ""
+"Dans « URI de redirection autorisés », collez EXACTEMENT cette adresse :"
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:51
+msgid ""
+"Créez, puis copiez le Client ID ET le Client Secret affichés - collez-les ci-"
+"dessous."
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:62
+#, fuzzy
+msgid "Adresse courriel du compte à autoriser :"
+msgstr "Adresse courriel déjà inscrite."
+
+#: portail/pages/admin/mailoauthpage.vue.php:66
+msgid "Google seulement"
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:68
+msgid ""
+"Microsoft 365 seulement - laissez vide UNIQUEMENT si votre inscription Azure "
+"est multi-tenant ; requis dans la plupart des cas, voir le guide ci-dessus"
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:75
+#, php-format
+msgid "Fournisseur configuré : %s (%s). Statut : %s"
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:85
+msgid "Retirer l'autorisation"
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:91
+msgid "Autorisation en cours"
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:92
+#, php-format
+msgid "Allez sur %s et entrez ce code :"
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:97
+#: portail/pages/admin/mailoauthpage.vue.php:108
+msgid "J'ai autorisé, continuer"
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:102
+#: portail/pages/admin/mailoauthpage.vue.php:113
+msgid "Annuler et recommencer (nouveau code)"
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:119
+msgid "Démarrer l'autorisation Microsoft 365"
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:123
+msgid "Autoriser Google"
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:127
+msgid "Modifier les réglages (fournisseur, Client ID/Secret)"
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:129
+msgid ""
+"Retirer complètement les réglages OAuth (fournisseur, Client ID/Secret et "
+"autorisation) ?"
+msgstr ""
+
+#: portail/pages/admin/mailoauthpage.vue.php:132
+msgid "Retirer les réglages et recommencer"
+msgstr ""
+
+#: portail/pages/admin/mailtestpage.vue.php:7
+msgid ""
+"SwitchBoard se sert du courriel pour signaler les erreurs et avertissements "
+"affectant le fonctionnement du système (groupes de sonnerie, rappels, etc.). "
+"Utilisez ce formulaire pour vérifier que l'envoi fonctionne réellement, sans "
+"avoir à ouvrir de terminal."
+msgstr ""
+
+#: portail/pages/admin/mailtestpage.vue.php:22
+#, fuzzy
+msgid "Adresse de destination :"
+msgstr " pour le numéro de destination : "
+
+#: portail/pages/admin/mailtestpage.vue.php:23
+msgid "ex: moncourriel@exemple.com"
+msgstr ""
+
+#: portail/pages/admin/mailtestpage.vue.php:24
+msgid "Envoyer un courriel de test"
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.vue.php:16
+msgid "Certificat imposé par une variable d'environnement"
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.vue.php:17
+#, php-format
+msgid ""
+"La variable d'environnement SB_SBCHAT_CA_BUNDLE est définie (%s) et prend "
+"toujours priorité sur tout certificat approuvé depuis cette page : les "
+"actions ci-dessous n'auraient aucun effet visible tant qu'elle reste "
+"définie, elles sont donc masquées."
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.vue.php:18
+msgid ""
+"Pour gérer le certificat depuis cette page à la place, retirez "
+"SB_SBCHAT_CA_BUNDLE : dans Docker/.env puis relancez ./up.sh si vous "
+"utilisez Docker, ou dans la configuration d'environnement de votre serveur "
+"web/PHP-FPM sinon."
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.vue.php:23
+msgid "Aperçu : certificat obtenu, pas encore approuvé"
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.vue.php:24
+#, php-format
+msgid "Connexion effectuée à : %s"
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.vue.php:27
+msgid "⚠ Ce certificat ne semble PAS correspondre au serveur attendu"
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.vue.php:28
+#, php-format
+msgid ""
+"Aucun des noms du certificat (sujet ou SAN ci-dessous) ne correspond à "
+"« %s ». Cela arrive typiquement quand l'adresse du serveur SwitchBoard Chat "
+"n'inclut pas le bon port et se connecte par erreur à un autre service sur le "
+"même nom de domaine. Vérifiez l'adresse du serveur (« Informations "
+"SwitchBoard Chat du compte ») avant de confirmer — n'approuvez ce certificat "
+"que si vous êtes certain qu'il s'agit bien du bon serveur."
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.vue.php:31
+msgid "✔ Ce certificat correspond au nom d'hôte contacté."
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.vue.php:38
+msgid "Oui, approuver ce certificat"
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.vue.php:40
+msgid "Annuler"
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.vue.php:53
+msgid "Certificat qui vient d'être approuvé"
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.vue.php:55
+msgid "Certificat actuellement utilisé"
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.vue.php:57
+msgid "Aucun certificat n'est actuellement approuvé."
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.vue.php:63
+msgid ""
+"Ce certificat n'est pas auto-signé : l'approbation manuelle n'est plus "
+"nécessaire"
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.vue.php:64
+#, php-format
+msgid ""
+"Il est émis par %s, une autorité de certification reconnue — c'est-à-dire "
+"qu'il serait déjà accepté normalement, sans rien approuver ici. Le garder "
+"approuvé manuellement est même contre-productif : approuver un certificat "
+"précis fait que SEUL CE FICHIER EXACT est accepté, à la place de la "
+"confiance normale du système. Au prochain renouvellement (habituellement 60 "
+"à 90 jours pour Let's Encrypt), le nouveau certificat ne correspondra plus à "
+"celui-ci et la connexion échouera de nouveau, même si le nouveau certificat "
+"est parfaitement valide."
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.vue.php:65
+msgid ""
+"Il est recommandé de le retirer ci-dessous : SwitchBoard utilisera alors la "
+"confiance normale du système, qui continue de fonctionner automatiquement à "
+"travers les renouvellements."
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.vue.php:69
+#: portail/pages/admin/sbchatcertificatepage.vue.php:76
+msgid "Supprimer le certificat approuvé"
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.vue.php:82
+msgid "Récupérer automatiquement le certificat actuel du serveur"
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.vue.php:84
+#, php-format
+msgid ""
+"SwitchBoard va se connecter à %s pour voir quel certificat il présente "
+"actuellement, et vous montrera ses détails avant de l'approuver — utile "
+"quand le certificat existant vient d'expirer et a été renouvelé sur le "
+"serveur SBChat/MAS."
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.vue.php:88
+#, fuzzy
+msgid "Vérifier le certificat du serveur"
+msgstr "Gérer les utilisateurs du serveur Matrix"
+
+#: portail/pages/admin/sbchatcertificatepage.vue.php:91
+msgid ""
+"Configurez d'abord l'adresse du serveur SwitchBoard Chat (« Informations "
+"SwitchBoard Chat du compte ») pour utiliser cette option."
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.vue.php:94
+msgid "Ou coller le certificat manuellement"
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.vue.php:95
+msgid ""
+"À utiliser si SwitchBoard ne peut pas joindre directement le serveur SBChat/"
+"MAS (pare-feu). Collez le contenu du fichier .pem obtenu autrement (ex. : "
+"openssl s_client -connect votreserveur:port | openssl x509)."
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.vue.php:100
+msgid "Prévisualiser ce certificat"
+msgstr ""
+
+#: portail/pages/admin/mailtestpage.php:38
+msgid ""
+"Ceci est un courriel de test envoyé depuis la console d'administration de "
+"SwitchBoard."
+msgstr ""
+
+#: portail/pages/admin/mailtestpage.php:39
+msgid ""
+"Si vous recevez ce message, la configuration de courriel fonctionne "
+"correctement."
+msgstr ""
+
+#: portail/pages/admin/mailtestpage.php:48
+msgid "Impossible de lancer msmtp."
+msgstr ""
+
+#: portail/pages/admin/mailtestpage.php:69
+#, fuzzy
+msgid "Adresse courriel non valide."
+msgstr "Courriel non valide"
+
+#: portail/pages/admin/mailtestpage.php:73
+#, fuzzy, php-format
+msgid "Courriel de test envoyé avec succès à %s."
+msgstr "Courriel créé avec succès"
+
+#: portail/pages/admin/mailtestpage.php:75
+#, php-format
+msgid "Échec de l'envoi à %s."
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.php:78
+msgid ""
+"SB_SBCHAT_CA_BUNDLE est définie et prend priorité : retirez-la d'abord pour "
+"gérer le certificat depuis cette page."
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.php:83
+msgid ""
+"Configurez d'abord l'adresse du serveur SwitchBoard Chat dans « Informations "
+"SwitchBoard Chat du compte » avant de récupérer son certificat."
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.php:90
+#, fuzzy, php-format
+msgid "Impossible de récupérer le certificat : %s"
+msgstr "Impossible de créer l'adresse courriel."
+
+#: portail/pages/admin/sbchatcertificatepage.php:130
+#, fuzzy
+msgid "Certificat approuvé avec succès."
+msgstr "Courriel créé avec succès"
+
+#: portail/pages/admin/sbchatcertificatepage.php:133
+msgid ""
+"Le certificat n'a pas pu être enregistré (vérifiez les droits d'écriture sur "
+"le dossier config/)."
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.php:137
+msgid ""
+"Certificat approuvé retiré. SwitchBoard utilisera désormais la confiance "
+"normale du système d'exploitation (ou config.php, si un réglage manuel y est "
+"défini)."
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.php:139
+msgid ""
+"Le certificat n'a pas pu être retiré (vérifiez les droits d'écriture sur le "
+"dossier config/)."
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.php:168
+msgid "Sujet : "
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.php:169
+#, fuzzy
+msgid "Émetteur : "
+msgstr "Nom utilisateur : "
+
+#: portail/pages/admin/sbchatcertificatepage.php:169
+msgid "auto-signé"
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.php:170
+msgid "Noms alternatifs (SAN) : "
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.php:170
+msgid "aucun"
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.php:171
+msgid "Valide jusqu'au : "
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.php:173
+msgid "(expire bientôt !)"
+msgstr ""
+
+#: portail/pages/admin/sbchatcertificatepage.php:176
+msgid "Empreinte SHA-256 : "
+msgstr ""
+
+#: portail/pages/admin/userserviceform/userserviceform.vue.php:33
+msgid ""
+"Ce compte deviendra un compte principal : les services de groupe de "
+"sonnerie, de SMS et de SwitchBoard Chat seront désactivés. Continuer ?"
+msgstr ""
+
+#: portail/pages/admin/userserviceform/userserviceform.vue.php:52
+msgid "Services de l'utilisateur"
+msgstr "Services de l'utilisateur"
+
+#: portail/pages/admin/userserviceform/userserviceform.vue.php:59
+#, fuzzy
+msgid "Type de compte :"
+msgstr "Url privé du calendrier ici"
+
+#: portail/pages/admin/userserviceform/userserviceform.vue.php:61
+msgid ""
+"Compte principal (paie le compte voip.ms : reçoit le rapport de coûts "
+"complet de tous ses DID)"
+msgstr ""
+
+#: portail/pages/admin/userserviceform/userserviceform.vue.php:66
+msgid "Services :"
+msgstr ""
+
+#: portail/pages/admin/userserviceform/userserviceform.vue.php:67
+msgid ""
+"Un compte principal n'a que les statistiques mensuelles : les autres "
+"services ne sont pas disponibles."
+msgstr ""
+
+#: portail/pages/admin/userserviceform/userserviceform.vue.php:69
+msgid "Mise à jour des groupes de sonneries"
+msgstr "Mise à jour des groupes de sonneries"
+
+#: portail/pages/admin/userserviceform/userserviceform.vue.php:73
+msgid "SMS le jour d'avant"
+msgstr "SMS le jour d'avant"
+
+#: portail/pages/admin/userserviceform/userserviceform.vue.php:77
+msgid "SMS une demi-heure avant"
+msgstr "SMS une demi-heure avant"
+
+#: portail/pages/admin/userserviceform/userserviceform.vue.php:81
+msgid "Envoyer des statistiques mensuellement"
+msgstr "Envoyer des statistiques mensuellement"
+
+#: portail/pages/admin/userserviceform/userserviceform.vue.php:85
+msgid "Mise à jour de SwitchBoard Chat"
+msgstr "Mise à jour de SwitchBoard Chat"
+
+#: portail/pages/admin/userloginandprivilegespage.php:3
+msgid "Changer le mot de passe d'un utilisateur et/ou son niveau d'accès."
+msgstr "Changer le mot de passe d'un utilisateur et/ou son niveau d'accès."
+
+#: portail/pages/admin/userloginandprivilegespage.php:4
+msgid "Laisser le mot de passe vide pour changer uniquement le niveau d'accès"
+msgstr "Laisser le mot de passe vide pour changer uniquement le niveau d'accès"
+
+#: portail/pages/admin/adminpanelpage.vue.php:3
+msgid "Voir ma page principale (tableau de bord personnel)"
+msgstr ""
+
+#: portail/pages/admin/adminpanelpage.vue.php:6
+msgid "Mode debug : "
+msgstr ""
+
+#: portail/pages/admin/adminpanelpage.vue.php:7
+msgid ""
+"ACTIVÉ - les erreurs PHP (chemins serveur, requêtes SQL) sont affichées à "
+"l'écran."
+msgstr ""
+
+#: portail/pages/admin/adminpanelpage.vue.php:7
+msgid "désactivé (recommandé en production)."
+msgstr ""
+
+#: portail/pages/admin/adminpanelpage.vue.php:9
+msgid ""
+"Imposé par la variable d'environnement SB_DEBUG : le bouton ci-dessous est "
+"sans effet tant qu'elle est définie."
+msgstr ""
+
+#: portail/pages/admin/adminpanelpage.vue.php:12
+msgid "Désactiver le mode debug"
+msgstr ""
+
+#: portail/pages/admin/adminpanelpage.vue.php:12
+msgid "Activer le mode debug"
+msgstr ""
+
+#: portail/pages/admin/adminpanelpage.vue.php:13
+msgid "Le changement prendra effet à partir du prochain chargement de page."
+msgstr ""
+
+#: portail/pages/admin/adminpanelpage.vue.php:17
+msgid "Liste des utilisateurs :"
+msgstr "Liste des utilisateurs :"
+
+#: portail/pages/admin/adminpanelpage.vue.php:18
+msgid "Ajouter un utilisateur"
+msgstr "Ajouter un utilisateur"
+
+#: portail/pages/admin/adminpanelpage.vue.php:19
+msgid "Suggestions de commandes Cron"
+msgstr "Suggestions de commandes Cron"
+
+#: portail/pages/admin/adminpanelpage.vue.php:24
+#: portail/pages/admin/multiaccountcostreportpage.vue.php:5
+msgid "Comparaison des coûts entre comptes voip.ms"
+msgstr "Comparaison des coûts entre comptes voip.ms"
+
+#: portail/pages/admin/multiaccountcostreportresult.php:8
+msgid "Aperçu"
+msgstr "Aperçu"
+
+#: portail/pages/admin/multiaccountcostreportresult.php:54
+msgid "Télécharger CSV"
+msgstr "Télécharger CSV"
+
+#: portail/pages/admin/multiaccountcostreportresult.php:60
+msgid "Télécharger Excel"
+msgstr "Télécharger Excel"
+
+#: portail/pages/admin/tokenreminder.php:3
+msgid "Rappel : jeton GitHub non configuré"
+msgstr ""
+
+#: portail/pages/admin/tokenreminder.php:5
+msgid ""
+"La mise à jour automatique de SwitchBoard est désactivée parce qu'aucun "
+"jeton d'accès GitHub n'est configuré. Le reste de l'application fonctionne "
+"normalement."
+msgstr ""
+
+#: portail/pages/admin/tokenreminder.php:8
+msgid ""
+"Le jeton n'est plus stocké dans le code source. Pour réactiver la mise à "
+"jour automatique, fournissez-le de l'une des deux façons suivantes :"
+msgstr ""
+
+#: portail/pages/admin/tokenreminder.php:11
+msgid ""
+"dans le fichier config/config.php, en donnant une valeur à la variable "
+"$githubtoken ;"
+msgstr ""
+
+#: portail/pages/admin/tokenreminder.php:12
+msgid "ou par la variable d'environnement SB_GITHUB_TOKEN."
+msgstr ""
+
+#: portail/pages/admin/tokenreminder.php:15
+msgid ""
+"Si le dépôt SwitchBoard est public, aucun jeton n'est nécessaire : la mise à "
+"jour fonctionnera sans configuration."
+msgstr ""
+
+#: portail/pages/admin/tokenreminder.php:18
+#, fuzzy
+msgid "Important :"
+msgstr "Important ! "
+
+#: portail/pages/admin/tokenreminder.php:19
+msgid ""
+"ne replacez jamais un jeton directement dans le code source, et ne le "
+"publiez jamais dans un dépôt. Un jeton qui a déjà été publié doit être "
+"révoqué sur GitHub, puis remplacé par un nouveau."
+msgstr ""
+
+#: portail/pages/admin/multiaccountcostreportpage.vue.php:7
+msgid ""
+"Choisissez une période et les comptes à comparer. Le coût de chaque compte "
+"est réparti mois par mois, avec son solde actuel (indépendant de la période "
+"choisie). Utile pour évaluer une consolidation de plusieurs comptes voip.ms "
+"en un seul."
+msgstr ""
+"Choisissez une période et les comptes à comparer. Le coût de chaque compte "
+"est réparti mois par mois, avec son solde actuel (indépendant de la période "
+"choisie). Utile pour évaluer une consolidation de plusieurs comptes voip.ms "
+"en un seul."
+
+#: portail/pages/admin/multiaccountcostreportpage.vue.php:11
+msgid "Date de début :"
+msgstr "Date de début :"
+
+#: portail/pages/admin/multiaccountcostreportpage.vue.php:13
+msgid "Date de fin :"
+msgstr "Date de fin :"
+
+#: portail/pages/admin/multiaccountcostreportpage.vue.php:17
+msgid "Tout sélectionner"
+msgstr "Tout sélectionner"
+
+#: portail/pages/admin/multiaccountcostreportpage.vue.php:19
+msgid "Tout désélectionner"
+msgstr "Tout désélectionner"
+
+#: portail/pages/admin/multiaccountcostreportpage.vue.php:23
+msgid "Aucun compte avec un compte voip.ms configuré n'a été trouvé."
+msgstr "Aucun compte avec un compte voip.ms configuré n'a été trouvé."
+
+#: portail/pages/admin/multiaccountcostreportpage.vue.php:39
+msgid "Générer l'aperçu"
+msgstr "Générer l'aperçu"
+
+#: portail/pages/admin/multiaccountcostreportpage.vue.php:86
+msgid "Calcul en cours..."
+msgstr "Calcul en cours..."
+
+#: portail/pages/admin/multiaccountcostreportpage.vue.php:94
+msgid "Communication interrompue, nouvel essai..."
+msgstr "Communication interrompue, nouvel essai..."
+
+#: portail/pages/admin/multiaccountcostreportpage.vue.php:102
+#: portail/pages/admin/multiaccountcostreportpage.vue.php:133
+msgid "Erreur de communication avec le serveur."
+msgstr "Erreur de communication avec le serveur."
+
+#: portail/pages/admin/multiaccountcostreportpage.vue.php:105
+#: portail/pages/admin/multiaccountcostreportpage.vue.php:136
+msgid "Reprendre"
+msgstr "Reprendre"
+
+#: portail/pages/admin/multiaccountcostreportpage.vue.php:150
+msgid "Démarrage..."
+msgstr "Démarrage..."
+
+#: portail/pages/admin/multiaccountcostreportpage.vue.php:176
+msgid "Aucune étape à traiter."
+msgstr "Aucune étape à traiter."
+
+#: portail/pages/admin/multiaccountcostreportpage.vue.php:181
+msgid "Erreur de communication avec le serveur - réessayez."
+msgstr "Erreur de communication avec le serveur - réessayez."
+
+#: portail/pages/admin/cronsuggestion.vue.php:4
+msgid ""
+"Commande de tâche Cron suggèré (fonctionne avec WHC, il est possible que "
+"cela diffère) :"
+msgstr ""
+"Commande de tâche Cron suggèré (fonctionne avec WHC, il est possible que "
+"cela diffère) :"
+
+#: portail/pages/admin/cronsuggestion.vue.php:5
+msgid ""
+"Pour les mise à jour des groupes de sonnerie(mettre à tous les 10 minutes) :"
+msgstr ""
+"Pour les mise à jour des groupes de sonnerie(mettre à tous les 10 minutes) :"
+
+#: portail/pages/admin/cronsuggestion.vue.php:7
+msgid ""
+"Le dead-man's-switch 'ringgroup' est déjà configuré : la commande ci-dessous "
+"n'enverra plus de courriel de sortie généré par cron à chaque exécution (les "
+"vrais courriels d'erreur pour un comité en particulier continuent d'être "
+"envoyés normalement, tout comme le ping de surveillance)."
+msgstr ""
+"Le dead-man's-switch 'ringgroup' est déjà configuré : la commande ci-dessous "
+"n'enverra plus de courriel de sortie généré par cron à chaque exécution (les "
+"vrais courriels d'erreur pour un comité en particulier continuent d'être "
+"envoyés normalement, tout comme le ping de surveillance)."
+
+#: portail/pages/admin/cronsuggestion.vue.php:10
+msgid ""
+"Pour les mise à jour des notification par texto la veille(mettre une fois "
+"par jour à midi) :"
+msgstr ""
+"Pour les mise à jour des notification par texto la veille(mettre une fois "
+"par jour à midi) :"
+
+#: portail/pages/admin/cronsuggestion.vue.php:12
+msgid ""
+"Pour les mise à jour des notification par texto peu de temps avant le début "
+"du chiffre(mettre à toute les heures aux demi-heures) :"
+msgstr ""
+"Pour les mise à jour des notification par texto peu de temps avant le début "
+"du chiffre(mettre à toute les heures aux demi-heures) :"
+
+#: portail/pages/admin/cronsuggestion.vue.php:14
+msgid "La production de statistiques chaque mois :"
+msgstr "La production de statistiques chaque mois :"
+
+#: portail/pages/admin/cronsuggestion.vue.php:16
+msgid ""
+"La production du rapport de coûts par DID chaque mois (même échéancier que "
+"les statistiques) :"
+msgstr ""
+
+#: portail/pages/admin/cronsuggestion.vue.php:18
+msgid ""
+"Pour les mise à jour des groupes de switchboard chat(mettre à tous les 10 "
+"minutes) :"
+msgstr ""
+"Pour les mise à jour des groupes de switchboard chat(mettre à tous les 10 "
+"minutes) :"
+
+#: portail/pages/admin/cronsuggestion.vue.php:20
+msgid ""
+"Le dead-man's-switch 'sbchat' est déjà configuré : la commande ci-dessous "
+"n'enverra plus de courriel de sortie généré par cron à chaque exécution (les "
+"vrais courriels d'erreur pour un utilisateur en particulier continuent "
+"d'être envoyés normalement, tout comme le ping de surveillance)."
+msgstr ""
+"Le dead-man's-switch 'sbchat' est déjà configuré : la commande ci-dessous "
+"n'enverra plus de courriel de sortie généré par cron à chaque exécution (les "
+"vrais courriels d'erreur pour un utilisateur en particulier continuent "
+"d'être envoyés normalement, tout comme le ping de surveillance)."
+
+#: portail/pages/admin/cronsuggestion.vue.php:23
+msgid ""
+"Pour les mise à jour des notification pour SwitchBoard Chat la veille(mettre "
+"une fois par jour à midi) :"
+msgstr ""
+"Pour les mise à jour des notification pour SwitchBoard Chat la veille(mettre "
+"une fois par jour à midi) :"
+
+#: portail/pages/admin/cronsuggestion.vue.php:25
+msgid ""
+"Pour les mise à jour des notification pour SwitchBoard Chat peu de temps "
+"avant le début du chiffre(mettre à toute les heures aux demi-heures) :"
+msgstr ""
+"Pour les mise à jour des notification pour SwitchBoard Chat peu de temps "
+"avant le début du chiffre(mettre à toute les heures aux demi-heures) :"
+
+#: portail/pages/admin/deadmanswitchpage.php:16
+msgid "Groupes de sonnerie (refreshallringgroups.php, à toutes les 10 min)"
+msgstr ""
+
+#: portail/pages/admin/deadmanswitchpage.php:17
+msgid "SwitchBoard Chat (refreshsbchat.php, à toutes les 10 min)"
+msgstr ""
+
+#: portail/pages/admin/deadmanswitchpage.php:18
+msgid "Courriel - test réel de livraison (mailcanary.php, aux 30 min)"
+msgstr ""
+
+#: portail/pages/admin/deadmanswitchpage.php:19
+msgid ""
+"Infrastructure - base de données et espace disque (checkinfra.php, aux 30 "
+"min)"
+msgstr ""
+
+#: portail/pages/admin/deadmanswitchpage.php:39
+msgid "Check inconnu."
+msgstr ""
+
+#: portail/pages/admin/deadmanswitchpage.php:41
+msgid ""
+"Ce check est géré par une variable d'environnement - modifiez .env puis "
+"redémarrez le conteneur."
+msgstr ""
+
+#: portail/pages/admin/deadmanswitchpage.php:46
+msgid "L'URL de ping de succès est requise."
+msgstr ""
+
+#: portail/pages/admin/deadmanswitchpage.php:49
+msgid "Réglages enregistrés pour : "
+msgstr ""
+
+#: portail/pages/admin/deadmanswitchpage.php:62
+msgid "Réglages retirés pour : "
+msgstr ""
+
+#: portail/pages/admin/deadmanswitchpage.php:72
+msgid ""
+"Aucune URL de succès enregistrée pour ce check - enregistrez d'abord les "
+"réglages ci-dessous."
+msgstr ""
+
+#: portail/pages/admin/deadmanswitchpage.php:82
+msgid ""
+"Test manuel depuis la console admin (déclenche volontairement une alerte de "
+"test), le "
+msgstr ""
+
+#: portail/pages/admin/deadmanswitchpage.php:83
+msgid ""
+"Test manuel depuis la console admin (rétablissement immédiat après le test), "
+"le "
+msgstr ""
+
+#: portail/pages/admin/deadmanswitchpage.php:84
+msgid "Ping de test envoyé pour : "
+msgstr ""
+
+#: portail/pages/admin/deadmanswitchpage.php:84
+msgid ""
+"Un ping d'échec puis un ping de succès ont été envoyés - vous devriez "
+"recevoir une vraie notification sous peu (le check redevient normal aussitôt "
+"après)."
+msgstr ""
+
+#: portail/useraccess.php:187
+msgid "Vous êtes maintenant déconnecté."
+msgstr "Vous êtes maintenant déconnecté."
+
+#: portail/useraccess.php:187
+msgid "Se reconnecter"
+msgstr "Se reconnecter"
+
+#~ msgid "Erreur : ring_groups manquant dans la réponse"
+#~ msgstr "Erreur : ring_groups manquant dans la réponse"
+
+#~ msgid "Ring group non trouvé"
+#~ msgstr "Ring group non trouvé"
+
+#~ msgid "Erreur, la messagerie vocale a-t-elle été créée ?"
+#~ msgstr "Erreur, la messagerie vocale a-t-elle été créée ?"
+
+#~ msgid "Le numéro "
+#~ msgstr "Le numéro "
+
+#~ msgid " pour "
+#~ msgstr " pour "
+
+#~ msgid " n'est pas composé uniquement de caractères numériques."
+#~ msgstr " n'est pas composé uniquement de caractères numériques."
+
+#~ msgid ""
+#~ " est de longueur invalide (10 chiffres et un 1 au début ne compte pas)."
+#~ msgstr ""
+#~ " est de longueur invalide (10 chiffres et un 1 au début ne compte pas)."
+
+#~ msgid "Numéro : "
+#~ msgstr "Numéro : "
+
+#~ msgid " n'a aucun numéro inscrit."
+#~ msgstr " n'a aucun numéro inscrit."
+
+#~ msgid "Le numéro comprend des caractères non numériques : "
+#~ msgstr "Le numéro comprend des caractères non numériques : "
+
+#~ msgid " est de longueur invalide."
+#~ msgstr " est de longueur invalide."
+
+#~ msgid "Le numéro de "
+#~ msgstr "Le numéro de "
+
+#~ msgid " n'est pas inscrit !"
+#~ msgstr " n'est pas inscrit !"
+
+#~ msgid "Message Test :)"
+#~ msgstr "Message Test :)"
+
+#~ msgid "Courriel Test"
+#~ msgstr "Courriel Test"
+
+#~ msgid "Erreur détectée lors de la tâche : "
+#~ msgstr "Erreur détectée lors de la tâche : "
+
+#~ msgid "Rapport d'erreur toadmin"
+#~ msgstr "Rapport d'erreur toadmin"
+
+#~ msgid "Nom d'utilisateur : "
+#~ msgstr "Nom d'utilisateur : "
+
+#~ msgid "Créer un compte utilisateur"
+#~ msgstr "Créer un compte utilisateur"
+
+#~ msgid "Non autorisé !"
+#~ msgstr "Non autorisé !"
+
+#~ msgid ""
+#~ "Attention, fichier switchboard/src/updatejson/dbVersion.json pas en ordre"
+#~ msgstr ""
+#~ "Attention, fichier switchboard/src/updatejson/dbVersion.json pas en ordre"
+
+#~ msgid ""
+#~ "Erreur lors du backup de la base de données, la mise à jour de la BD a "
+#~ "été annulée par mesure de sécurité : "
+#~ msgstr ""
+#~ "Erreur lors du backup de la base de données, la mise à jour de la BD a "
+#~ "été annulée par mesure de sécurité : "
+
+#~ msgid "Le système n'a pas retourné de code HTTP."
+#~ msgstr "Le système n'a pas retourné de code HTTP."
+
+#~ msgid "Le code d'erreur HTTP est : "
+#~ msgstr "Le code d'erreur HTTP est : "
+
+#~ msgid "<br>"
+#~ msgstr "<br>"
+
+#~ msgid "Le téléchargement de l'agenda a échoué."
+#~ msgstr "Le téléchargement de l'agenda a échoué."
+
+#~ msgid "Échec du téléchargement après "
+#~ msgstr "Échec du téléchargement après "
+
+#~ msgid " essais."
+#~ msgstr " essais."
+
+#~ msgid " essais. Voici la dernière exception retournée :"
+#~ msgstr " essais. Voici la dernière exception retournée :"
+
+#~ msgid "Aucune exception valide n'a été retournée."
+#~ msgstr "Aucune exception valide n'a été retournée."
+
+#, fuzzy
+#~ msgid "Le lien CalDAV répond correctement."
+#~ msgstr "Les données sont entrées correctement."
+
+#~ msgid "Le lien vers le calendrier retourne un code valide (200)."
+#~ msgstr "Le lien vers le calendrier retourne un code valide (200)."
+
+#~ msgid "Aucun forwarding à effacer"
+#~ msgstr "Aucun forwarding à effacer"
+
+#~ msgid "La configuration est valide..."
+#~ msgstr "La configuration est valide..."
+
+#~ msgid "Adresse IP Non disponible..."
+#~ msgstr "Adresse IP Non disponible..."
+
+#~ msgid "Votre adresse IP n'est pas inscrite..."
+#~ msgstr "Votre adresse IP n'est pas inscrite..."
+
+#~ msgid "Sommaire"
+#~ msgstr "Sommaire"
+
+#~ msgid "- Total période : somme des coûts mensuels affichés pour ce compte."
+#~ msgstr "- Total période : somme des coûts mensuels affichés pour ce compte."
+
+#~ msgid ""
+#~ "- Moyenne mensuelle : Total période divisé par le nombre de mois affichés "
+#~ "pour ce compte."
+#~ msgstr ""
+#~ "- Moyenne mensuelle : Total période divisé par le nombre de mois affichés "
+#~ "pour ce compte."
+
+#~ msgid "Taux de change USD → CAD utilisé : %s (source : %s, taux du %s)"
+#~ msgstr "Taux de change USD → CAD utilisé : %s (source : %s, taux du %s)"
+
+#~ msgid "Taux de change USD → CAD utilisé : %s (source : %s)"
+#~ msgstr "Taux de change USD → CAD utilisé : %s (source : %s)"

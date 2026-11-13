@@ -1,0 +1,11 @@
+banc-autonome | sendSMS | did=5145550101&dst=5145550111&message=Jean+vous+%C3%AAtes+c%C3%A9dul%C3%A9+demain+le+JJ+%3A+HH%3AMM+%C3%A0+HH%3AMM&method=sendSMS
+---
+banc-autonome | sendSMS | did=5145550101&dst=5145550111&message=Jean+vous+%C3%AAtes+c%C3%A9dul%C3%A9+demain+le+JJ+%3A+HH%3AMM+%C3%A0+HH%3AMM%2CHH%3AMM+%C3%A0+HH%3AMM&method=sendSMS
+---
+banc-autonome | sendSMS | did=5145550101&dst=5145550111&message=Jean+vous+%C3%AAtes+c%C3%A9dul%C3%A9+dans+la+prochaine+heure+de+HH%3AMM+%C3%A0+HH%3AMM&method=sendSMS
+---
+banc-autonome | sendSMS | did=5145550101&dst=5145550111&message=Jean+vous+%C3%AAtes+c%C3%A9dul%C3%A9+demain+le+JJ+%3A+HH%3AMM+%C3%A0+HH%3AMM&method=sendSMS
+---
+banc-autonome | sendSMS | did=5145550101&dst=5145550111&message=Jean+vous+%C3%AAtes+c%C3%A9dul%C3%A9+demain+le+JJ+%3A+HH%3AMM+%C3%A0+HH%3AMM&method=sendSMS
+banc-autonome | sendSMS | did=5145550101&dst=5145550111&message=Jean+vous+%C3%AAtes+c%C3%A9dul%C3%A9+demain+le+JJ+%3A+HH%3AMM+%C3%A0+HH%3AMM&method=sendSMS
+---

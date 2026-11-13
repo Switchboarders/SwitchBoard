@@ -1,0 +1,10 @@
+# Ce fichier ne fournit AUCUN contrôle d'accès (juste des réglages PHP) et est de plus
+# ignoré par la pile Docker fournie (nginx + php-fpm, qui n'utilise pas .htaccess) : la
+# protection des dossiers sensibles (config/, backups/, etc.) est assurée par nginx (voir
+# Docker/nginx/nginx.conf.sample) ou par la configuration Apache de votre hébergeur.
+
+php_value upload_max_filesize 64M
+php_value post_max_size 128M
+php_value memory_limit 256M
+php_value max_execution_time 300
+php_value max_input_time 300

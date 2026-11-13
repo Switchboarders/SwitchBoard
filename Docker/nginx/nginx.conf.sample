@@ -1,0 +1,43 @@
+server_tokens off;
+
+server {
+	listen 80;
+	server_name localhost;
+	# L'application ne reçoit aucun fichier téléversé ; 10M est largement suffisant pour
+	# n'importe quel formulaire, et évite d'exposer une limite inutilement large (DoS).
+	client_max_body_size 10M;
+	root /var/www/html;
+	index index.php index.html;
+
+	add_header X-Content-Type-Options nosniff always;
+	add_header X-Frame-Options SAMEORIGIN always;
+	add_header Referrer-Policy strict-origin-when-cross-origin always;
+	# HSTS n'a de sens que derrière TLS ; ce fichier sert du HTTP brut (le TLS est géré par
+	# nginx-proxy/acme-companion en amont), donc pas de Strict-Transport-Security ici.
+
+	# Bloque l'accès direct aux fichiers/dossiers cachés (.git, .env, .htaccess, etc.)
+	location ~ /\. {
+		deny all;
+	}
+
+	# Bloque l'accès direct aux répertoires sensibles servis uniquement côté serveur
+	location ~ /(config|backups|download|vendor|calendarcache|logs)/ {
+		deny all;
+	}
+
+	location / {
+		try_files $uri /index.php$is_args$args;
+	}
+
+	# DNS interne de Docker, relu toutes les 10 s : quand le conteneur php est recréé (mise à jour),
+	# il change d'adresse ; sans ceci nginx garderait l'ancienne et répondrait 502.
+	resolver 127.0.0.11 valid=10s ipv6=off;
+
+	location ~ \.php$ {
+		include fastcgi_params;
+		set $php_fpm sb_php-fpm:9000;
+		fastcgi_pass $php_fpm;
+		fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+		fastcgi_index index.php;
+	}
+}

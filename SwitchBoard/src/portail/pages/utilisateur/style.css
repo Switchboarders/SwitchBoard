@@ -1,0 +1,849 @@
+/* ============================================================
+   SwitchBoard — feuille de style partagée
+   Système de design unique utilisé par toutes les pages de
+   l'application (portail principal, formulaires autonomes comme
+   la connexion, et pages d'administration).
+   ============================================================ */
+
+:root {
+  --sb-primary: #2d7fd2;
+  --sb-primary-dark: #1c5f9e;
+  --sb-primary-darker: #164a7c;
+  --sb-primary-light: #eaf3fc;
+  --sb-primary-lighter: #f5f9fe;
+
+  --sb-bg: #f2f5f9;
+  --sb-surface: #ffffff;
+  --sb-border: #dde3ea;
+  --sb-border-strong: #c7d0db;
+
+  --sb-text: #263241;
+  --sb-text-muted: #64748b;
+  --sb-text-on-primary: #ffffff;
+
+  --sb-success: #2e7d32;
+  --sb-success-bg: #edf7ed;
+  --sb-danger: #c62828;
+  --sb-danger-bg: #fdecea;
+  --sb-warning: #b45309;
+  --sb-warning-bg: #fef3e0;
+  --sb-info: #6a1b9a;
+
+  --sb-radius-sm: 6px;
+  --sb-radius: 10px;
+  --sb-radius-lg: 14px;
+
+  --sb-shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08);
+  --sb-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+  --sb-shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.14);
+
+  --sb-space-1: 0.25rem;
+  --sb-space-2: 0.5rem;
+  --sb-space-3: 1rem;
+  --sb-space-4: 1.5rem;
+  --sb-space-5: 2.5rem;
+
+  --sb-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --sb-transition: 0.2s ease;
+}
+
+/* ===== BASE ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--sb-bg);
+  color: var(--sb-text);
+  margin: 0;
+  min-height: 100%;
+  width: 100%;
+  font-family: var(--sb-font);
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+  color: var(--sb-text);
+  line-height: 1.3;
+}
+
+h1 { font-size: 1.9rem; margin: 0 0 var(--sb-space-3); }
+h2 { font-size: 1.4rem; margin: var(--sb-space-4) 0 var(--sb-space-2); }
+h3 { font-size: 1.1rem; font-weight: 500; margin: var(--sb-space-3) 0; }
+h4 { font-size: 1rem; font-weight: 500; color: var(--sb-text-muted); margin: var(--sb-space-3) 0 var(--sb-space-1); }
+
+a {
+  color: var(--sb-primary);
+  text-decoration: none;
+  transition: color var(--sb-transition);
+}
+
+a:hover {
+  color: var(--sb-primary-dark);
+  text-decoration: underline;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--sb-border);
+  margin: var(--sb-space-4) 0;
+}
+
+section {
+  background: var(--sb-surface);
+  padding: var(--sb-space-5) var(--sb-space-5);
+  margin: var(--sb-space-4) auto;
+  max-width: 1100px;
+  border-radius: var(--sb-radius-lg);
+  box-shadow: var(--sb-shadow-sm);
+}
+
+@media (max-width: 640px) {
+  section {
+    padding: var(--sb-space-4);
+    margin: var(--sb-space-2);
+    border-radius: var(--sb-radius);
+  }
+}
+
+/* ===== BOUTON ADMIN (collé au bord supérieur droit) ===== */
+#admin-topright-button {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 0;
+  z-index: 1050;
+  background: var(--sb-primary);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.85rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: 0 0 0 var(--sb-radius);
+  box-shadow: var(--sb-shadow-lg);
+  transition: all var(--sb-transition);
+}
+
+#admin-topright-button:hover {
+  background: var(--sb-primary-dark);
+  color: #fff;
+  padding-right: 1.8rem;
+}
+
+@media (max-width: 640px) {
+  #admin-topright-button {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* ===== HAMBURGER MENU ===== */
+.hamburger {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  margin: 0;
+  z-index: 1100;
+  cursor: pointer;
+  padding: 0.6rem;
+  border-radius: var(--sb-radius-sm);
+  transition: background var(--sb-transition);
+}
+
+.hamburger:hover {
+  background: rgba(45, 127, 210, 0.1);
+}
+
+.hamburger:hover .line {
+  background: var(--sb-primary-dark);
+}
+
+.line {
+  width: 32px;
+  height: 4px;
+  background: var(--sb-primary);
+  margin-bottom: 6px;
+  border-radius: 3px;
+  transition: background var(--sb-transition);
+}
+
+/* ===== SIDE MENU ===== */
+.menu {
+  width: 300px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--sb-primary) 0%, var(--sb-primary-darker) 100%);
+  position: fixed;
+  top: 0;
+  padding-bottom: 3rem;
+  left: -300px;
+  transition: left var(--sb-transition);
+  margin-top: 0;
+  box-shadow: var(--sb-shadow-lg);
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.menu--open {
+  left: 0;
+}
+
+.menu-header {
+  padding: 2rem 1.5rem 1.5rem;
+  background: rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  margin-bottom: 0.5rem;
+}
+
+.menu-title {
+  color: #fff;
+  font-size: 1.6em;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+/* ===== MENU ITEMS ===== */
+.menu-item {
+  color: rgba(255, 255, 255, 0.92);
+  width: 100%;
+  padding: 1rem 1.75rem;
+  box-sizing: border-box;
+  text-align: left;
+  border-left: 3px solid transparent;
+  transition: all var(--sb-transition);
+  cursor: pointer;
+  font-size: 1.05rem;
+  position: relative;
+}
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-left-color: #fff;
+  color: #fff;
+}
+
+.menu-item.active {
+  background: rgba(255, 255, 255, 0.15);
+  border-left-color: #fff;
+  font-weight: 600;
+  color: #fff;
+}
+
+.menu-item.has-submenu::after {
+  content: '›';
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.4em;
+  transition: transform var(--sb-transition);
+}
+
+.menu-item.has-submenu.submenu-open::after {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+/* ===== SUBMENU ===== */
+.submenu {
+  max-height: 0;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.15);
+  transition: max-height 0.35s ease;
+  padding: 0;
+}
+
+.submenu.submenu-open {
+  max-height: 500px;
+  padding: 0.4rem 0;
+}
+
+.submenu-item {
+  color: rgba(255, 255, 255, 0.85);
+  width: 100%;
+  padding: 0.8rem 1.75rem 0.8rem 2.5rem;
+  box-sizing: border-box;
+  text-align: left;
+  transition: all var(--sb-transition);
+  cursor: pointer;
+  font-size: 0.98rem;
+  border-left: 3px solid transparent;
+}
+
+.submenu-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-left-color: rgba(255, 255, 255, 0.5);
+}
+
+.submenu-item.active {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-weight: 500;
+  border-left-color: rgba(255, 255, 255, 0.7);
+}
+
+.menu-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  margin: 0.75rem 1.5rem;
+}
+
+/* ===== VALIDATION & MESSAGES ===== */
+.validation-warning {
+  color: var(--sb-danger);
+  padding-left: 0;
+  padding-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.formated-output {
+  padding-left: 0;
+  padding-bottom: 10px;
+}
+
+.updatemessage {
+  display: inline-block;
+  color: var(--sb-info);
+  background: var(--sb-primary-lighter);
+  border: 1px solid var(--sb-primary-light);
+  border-radius: var(--sb-radius-sm);
+  padding: 0.6rem 1rem;
+  font-size: 1.05rem;
+  margin: 0.5rem 0;
+}
+
+/* Étapes d'une mise à jour lancée depuis la console : l'une sous l'autre, à distance du bord */
+.etapesmaj {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.5rem 1rem;
+}
+
+.etapesmaj .updatemessage {
+  margin: 0.25rem 0;
+}
+
+/* Boîtes de message génériques, réutilisables partout */
+.alert {
+  border-radius: var(--sb-radius-sm);
+  padding: 0.75rem 1.1rem;
+  margin: 0.75rem 0;
+  font-size: 0.98rem;
+  border: 1px solid transparent;
+}
+
+.alert-success { color: var(--sb-success); background: var(--sb-success-bg); border-color: rgba(46, 125, 50, 0.25); }
+.alert-error   { color: var(--sb-danger);  background: var(--sb-danger-bg);  border-color: rgba(198, 40, 40, 0.25); }
+.alert-warning { color: var(--sb-warning); background: var(--sb-warning-bg); border-color: rgba(180, 83, 9, 0.25); }
+
+.configured    { color: var(--sb-success); font-size: 0.9em; }
+.notconfigured { color: var(--sb-warning); font-size: 0.9em; }
+
+/* ===== BOUTONS ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.7rem 1.4rem;
+  font-family: inherit;
+  font-size: 0.98rem;
+  font-weight: 500;
+  border-radius: var(--sb-radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--sb-transition);
+}
+
+.btn:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--sb-primary) 0%, var(--sb-primary-dark) 100%);
+  color: #fff;
+  box-shadow: var(--sb-shadow-sm);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--sb-primary-dark) 0%, var(--sb-primary-darker) 100%);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(45, 127, 210, 0.3);
+}
+
+.btn-secondary {
+  background: var(--sb-surface);
+  color: var(--sb-text);
+  border-color: var(--sb-border-strong);
+}
+
+.btn-secondary:hover {
+  background: var(--sb-bg);
+  color: var(--sb-text);
+}
+
+.btn-danger {
+  background: var(--sb-surface);
+  color: var(--sb-danger);
+  border-color: rgba(198, 40, 40, 0.35);
+}
+
+.btn-danger:hover {
+  background: var(--sb-danger-bg);
+  color: var(--sb-danger);
+}
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: var(--sb-space-3);
+}
+
+/* ===== FORMS (cartes de connexion / formulaires autonomes) ===== */
+.login {
+  width: 100%;
+  max-width: 480px;
+  margin: 2.5rem auto;
+  font-size: 16px;
+  box-shadow: var(--sb-shadow-lg);
+  border-radius: var(--sb-radius-lg);
+  overflow: hidden;
+  text-align: center;
+  background: var(--sb-surface);
+}
+
+.login-header,
+.login p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.login-title {
+  color: var(--sb-text);
+  font-size: 1.1em;
+  font-weight: 500;
+  text-align: left; /* comme les champs en dessous, malgré le centrage de .login */
+}
+
+.login-triangle {
+  display: none;
+}
+
+.login-header {
+  background: linear-gradient(135deg, var(--sb-primary) 0%, var(--sb-primary-dark) 100%);
+  padding: 1.75rem 1.5rem;
+  font-size: 1.35em;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 0.3px;
+}
+
+.description-header {
+  background: linear-gradient(135deg, var(--sb-primary) 0%, var(--sb-primary-dark) 100%);
+  padding: 1.25rem 1.5rem;
+  font-size: 1em;
+  font-weight: normal;
+  text-align: center;
+  color: #fff;
+}
+
+.login-container {
+  background: var(--sb-surface);
+  padding: 1.5rem;
+}
+
+.login p {
+  padding: 0.6rem 0;
+  text-align: left;
+}
+
+.login input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 0.85rem 1rem;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+  border-radius: var(--sb-radius-sm);
+  transition: all var(--sb-transition);
+}
+
+.login input[type="text"],
+.login input[type="password"],
+.login input[type="email"] {
+  background: var(--sb-surface);
+  border-color: var(--sb-border-strong);
+  color: var(--sb-text);
+  text-align: left;
+}
+
+.login input[type="text"]:focus,
+.login input[type="password"]:focus,
+.login input[type="email"]:focus {
+  border-color: var(--sb-primary);
+  box-shadow: 0 0 0 3px rgba(45, 127, 210, 0.15);
+}
+
+.login input[type="submit"] {
+  background: linear-gradient(135deg, var(--sb-primary) 0%, var(--sb-primary-dark) 100%);
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 0.4rem;
+}
+
+.login input[type="submit"]:hover {
+  background: linear-gradient(135deg, var(--sb-primary-dark) 0%, var(--sb-primary-darker) 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(45, 127, 210, 0.3);
+}
+
+.login input[type="submit"]:focus {
+  border-color: var(--sb-primary-dark);
+}
+
+.login textarea,
+.login select {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 0.85rem 1rem;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+  border-radius: var(--sb-radius-sm);
+  transition: all var(--sb-transition);
+  background: var(--sb-surface);
+  border-color: var(--sb-border-strong);
+  color: var(--sb-text);
+  text-align: left;
+}
+
+.login textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.login textarea:focus,
+.login select:focus {
+  border-color: var(--sb-primary);
+  box-shadow: 0 0 0 3px rgba(45, 127, 210, 0.15);
+}
+
+/* Carte générique pour "mise à jour disponible" et autres formulaires simples */
+.update-form {
+  width: 100%;
+  max-width: 520px;
+  margin: 2.5rem auto;
+  padding: 2rem;
+  background: var(--sb-surface);
+  border-radius: var(--sb-radius-lg);
+  box-shadow: var(--sb-shadow-lg);
+  text-align: center;
+}
+
+.update-form h2 {
+  margin-top: 0;
+}
+
+/* ===== CHECKBOXES ===== */
+.container {
+  display: inline;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background-color: var(--sb-bg);
+  border: 2px solid var(--sb-border-strong);
+  border-radius: var(--sb-radius-sm);
+  transition: all var(--sb-transition);
+}
+
+.container:hover input ~ .checkmark {
+  background-color: var(--sb-primary-light);
+  border-color: var(--sb-primary);
+}
+
+.container input:checked ~ .checkmark {
+  background-color: var(--sb-primary);
+  border-color: var(--sb-primary);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 8px;
+  top: 4px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.checkboxcentered {
+  margin: auto;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  text-align: left; /* cases alignées à gauche, malgré le centrage de .login */
+}
+
+/* ===== LISTES (ex: utilisateurs en console d'administration) ===== */
+.item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: var(--sb-space-3) 0;
+}
+
+.item-card {
+  border: 1px solid var(--sb-border);
+  border-radius: var(--sb-radius);
+  padding: 1rem 1.25rem;
+  background: var(--sb-surface);
+  transition: box-shadow var(--sb-transition), border-color var(--sb-transition);
+}
+
+.item-card:hover {
+  box-shadow: var(--sb-shadow-sm);
+  border-color: var(--sb-border-strong);
+}
+
+.item-card-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.item-card-title .item-card-meta {
+  font-weight: 400;
+  color: var(--sb-text-muted);
+  font-size: 0.9em;
+}
+
+.item-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.item-card-actions a.danger {
+  color: var(--sb-danger);
+}
+
+/* ===== RETURN TO TOP ARROW ===== */
+#return-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--sb-primary);
+  width: 46px;
+  height: 46px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 50%;
+  transition: all var(--sb-transition);
+  box-shadow: var(--sb-shadow);
+  z-index: 900;
+}
+
+#return-to-top i {
+  color: #fff;
+  font-size: 18px;
+}
+
+#return-to-top:hover {
+  background: var(--sb-primary-dark);
+  transform: translateY(-3px);
+  box-shadow: var(--sb-shadow-lg);
+}
+
+/* ===== BACK BUTTON ===== */
+.backbutton {
+  background: var(--sb-primary-light);
+  color: var(--sb-primary-dark);
+  text-decoration: none;
+  padding: 0.5rem 1.1rem;
+  margin: 0.5rem auto;
+  font-size: 1.6rem;
+  line-height: 1;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--sb-radius-sm);
+  transition: all var(--sb-transition);
+  border: 1px solid var(--sb-primary);
+}
+
+.backbutton:hover {
+  background: var(--sb-primary);
+  color: #fff;
+  text-decoration: none;
+  box-shadow: var(--sb-shadow-sm);
+}
+
+/* ===== TOOLTIPS ===== */
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  font-family: var(--sb-font);
+  text-align: right;
+}
+
+.question-mark {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--sb-primary);
+  cursor: pointer;
+  user-select: none;
+  transition: color var(--sb-transition);
+}
+
+.question-mark:hover {
+  color: var(--sb-primary-dark);
+}
+
+.exclamation-mark {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--sb-danger);
+  cursor: pointer;
+  user-select: none;
+  transition: color var(--sb-transition);
+}
+
+.exclamation-mark:hover {
+  color: #8e0000;
+}
+
+.tooltip-container .tooltip-text {
+  visibility: hidden;
+  width: 320px;
+  max-width: 80vw;
+  background-color: var(--sb-primary-darker);
+  color: #fff;
+  text-align: center;
+  border-radius: var(--sb-radius-sm);
+  padding: 0.7rem 1rem;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity var(--sb-transition);
+  box-shadow: var(--sb-shadow);
+  font-size: 0.9rem;
+}
+
+.tooltip-container .tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--sb-primary-darker) transparent transparent transparent;
+}
+
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ===== BOUTONS QUI AGISSENT (boutonAction() : un formulaire POST, jamais un lien) ===== */
+.form-action {
+  display: inline;
+  margin: 0;
+}
+
+/* Une entrée du menu latéral, ou un bouton qui est un titre (h2, h3) : un bloc */
+.form-action-bloc {
+  display: block;
+}
+
+/* Dans le texte : l'apparence d'un lien */
+.bouton-lien {
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: var(--sb-primary);
+  cursor: pointer;
+  text-align: inherit;
+  transition: color var(--sb-transition);
+}
+
+.bouton-lien:hover {
+  color: var(--sb-primary-dark);
+  text-decoration: underline;
+}
+
+.bouton-lien.danger {
+  color: var(--sb-danger);
+}
+
+/* Une entrée du menu latéral : la même que .submenu-item, mais dans un bouton */
+.bouton-menu {
+  appearance: none;
+  background: none;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 0;
+  margin: 0;
+  display: block;
+  font-family: inherit;
+  line-height: inherit;
+}

@@ -1,0 +1,10 @@
+# Données runtime/bind-mounts, jamais nécessaires au build des images.
+db_data
+web
+logs
+nginx/certs
+nginx/vhost.d
+nginx/html
+nginx/acme
+.deploy-mode
+.git

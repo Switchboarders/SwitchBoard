@@ -1,0 +1,120 @@
+FROM php:8.4-fpm
+
+# Install mysqli and pdo_mysql extensions
+RUN docker-php-ext-install mysqli pdo_mysql gettext
+RUN docker-php-ext-enable mysqli pdo_mysql gettext
+# Generating locale
+RUN apt-get update && apt-get install -y locales tzdata iputils-ping
+# Set timezone from build arg
+ARG TZ=UTC
+ENV TZ=${TZ}
+
+# Set timezone
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
+    echo $TZ > /etc/timezone
+# Also configure PHP timezone
+RUN echo "date.timezone = ${TZ}" > /usr/local/etc/php/conf.d/timezone.ini
+
+# Help debug. To get inside the container :
+# docker exec -it php-fpm bash
+RUN apt-get -y install bash-completion nano
+RUN echo ". /etc/bash_completion" >> ~/.bashrc
+
+RUN echo 'fr_CA.UTF-8 UTF-8' >> /etc/locale.gen && \
+    echo 'en_US.UTF-8 UTF-8' >> /etc/locale.gen  && \
+    locale-gen
+# Setting up mail
+RUN apt-get update && apt-get -y install msmtp msmtp-mta gpg
+
+# Certains hôtes Docker annoncent des adresses IPv6 (AAAA) pour des serveurs SMTP comme
+# smtp.office365.com sans que le conteneur ait de connectivité IPv6 réelle (pas d'adresse
+# IPv6 assignée) : getaddrinfo() renvoie alors ces adresses AAAA en premier, msmtp les essaie
+# et échoue avec "Network is unreachable" sans jamais retomber sur les adresses IPv4 (pourtant
+# présentes dans la même réponse DNS). Cette règle de précédence (RFC 3484/6724, voir
+# gai.conf(5)) force le tri à préférer les adresses IPv4 - vérifié en conditions réelles.
+#
+# Some Docker hosts advertise IPv6 (AAAA) addresses for SMTP servers like
+# smtp.office365.com even though the container has no real IPv6 connectivity (no IPv6
+# address assigned): getaddrinfo() then returns those AAAA addresses first, msmtp tries
+# them and fails with "Network is unreachable" without ever falling back to the IPv4
+# addresses (present in the same DNS response). This precedence rule (RFC 3484/6724, see
+# gai.conf(5)) forces IPv4 to be preferred - confirmed against a real deployment.
+RUN echo 'precedence ::ffff:0:0/96  100' >> /etc/gai.conf
+
+# Installing Composer
+RUN apt-get -y install curl &&  apt-get -y install unzip && apt-get -y install git
+RUN apt-get update && apt-get install -y \
+    libzip-dev \
+    zip \
+    unzip \
+    && docker-php-ext-configure zip \
+    && docker-php-ext-install zip
+
+# ext-gd est requis par phpoffice/phpspreadsheet (génération des rapports Excel) - absent de
+# l'image de base php:8.4-fpm.
+# ext-gd is required by phpoffice/phpspreadsheet (Excel report generation) - not present in
+# the base php:8.4-fpm image.
+RUN apt-get update && apt-get install -y \
+    libfreetype6-dev \
+    libjpeg62-turbo-dev \
+    libpng-dev \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install gd
+
+RUN mkdir /composer_setup && cd /composer_setup
+RUN curl -sS https://getcomposer.org/installer -o composer-setup.php
+RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+RUN apt-get -y install cron && apt-get -y install logrotate
+RUN apt-get install -y gosu && rm -rf /var/lib/apt/lists/*
+
+# /etc/msmtprc n'est PLUS figé dans l'image : il est généré à l'exécution par
+# generate_mail_config.sh (voir entrypoint.sh) à partir des variables d'environnement
+# SB_SMTP_* (.env), sur le même principe que generate_db_config.sh pour la base de données.
+# Changer un mot de passe de courriel ne demande donc plus de reconstruire l'image.
+# /etc/msmtprc is no longer baked into the image: it's generated at runtime by
+# generate_mail_config.sh (see entrypoint.sh) from the SB_SMTP_* environment variables
+# (.env), the same way generate_db_config.sh works for the database. Changing a mail
+# password no longer requires rebuilding the image.
+WORKDIR /
+COPY msmtp-php.ini /usr/local/etc/php/conf.d/msmtp.ini
+# Hors du docroot (/var/www/html) : script de diagnostic CLI seulement, pas une page web.
+# Utilisation : docker exec sb_php-fpm php /testmail.php destinataire@example.com
+COPY --chown=www-data /utils/testmail.php /testmail.php
+
+# Here I would call git clone but since the repo is private, use the zip file renamed sb.zip
+
+#COPY sb.zip /var/www/html
+WORKDIR /
+#RUN unzip sb.zip
+#RUN ls -l && echo "Above is the output of ls"
+COPY --chown=www-data generate_db_config.sh /generate_db_config.sh
+COPY --chown=www-data generate_mail_config.sh /generate_mail_config.sh
+# .env n'est PAS copié dans l'image : les secrets (GITHUB_TOKEN, MYSQL_*) sont fournis à
+# l'exécution via environment: dans docker-compose.yml, jamais figés dans une couche d'image.
+COPY --chown=www-data prepare_switchboard.sh /prepare_switchboard.sh
+COPY --chown=www-data entrypoint.sh /entrypoint.sh
+# chmod dans un RUN plutôt que COPY --chmod : --chmod exige BuildKit, absent quand le plugin
+# buildx n'est pas installé (paquet docker d'Arch Linux, etc.) - le build échouait alors.
+RUN chmod +x /generate_db_config.sh /generate_mail_config.sh /prepare_switchboard.sh /entrypoint.sh
+# Setting SB execution logs rotation
+COPY /utils/logrotate /etc/logrotate.d/logrotate
+
+
+# Setting up cron jobs
+RUN touch /var/log/cron.log
+RUN touch /var/log/cronrotation.log
+COPY cronjobs /etc/cron.d/cronjobs
+# Give execution rights on the cron job
+RUN chmod 0644 /etc/cron.d/cronjobs
+# Apply cron job
+RUN crontab /etc/cron.d/cronjobs
+#RUN (crontab -l ; echo "* * * * * echo testing cron.... >> /var/log/cron-1.log 2>&1") | crontab
+
+#WORKDIR /app/
+#RUN chmod +x /generate_db_config.sh
+#RUN chmod +x /prepare_switchboard.sh
+#RUN chmod +x /entrypoint.sh
+#RUN /app/generate_db_config.sh
+
+    # Copy your PHP application code
+COPY --chown=www-data . /var/www/html

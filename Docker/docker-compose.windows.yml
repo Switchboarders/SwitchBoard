@@ -1,0 +1,21 @@
+# Complément Windows (Docker Desktop), ajouté par up.ps1 après le fichier du mode choisi :
+#   COMPOSE_FILE=docker-compose.standalone.yml;docker-compose.windows.yml
+#
+# La base de données et le code de SwitchBoard vont dans des volumes Docker plutôt que dans
+# des dossiers Windows (./db_data, ./web) : un disque NTFS ne distingue pas les majuscules,
+# ignore les permissions Linux et est très lent vu du conteneur, ce qui gêne MariaDB et
+# l'installation des dépendances. Sauvegarde : docker compose exec db mariadb-dump ...
+services:
+  web:
+    volumes:
+      - sb_web:/var/www/html
+  php:
+    volumes:
+      - sb_web:/var/www/html
+  db:
+    volumes:
+      - sb_db:/var/lib/mysql
+
+volumes:
+  sb_web:
+  sb_db:

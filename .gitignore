@@ -1,0 +1,17 @@
+.gitignore
+.settings/
+.buildpath
+.project
+.codelite/
+.ctagsd/
+.idea/
+SwitchBoard.code-workspace
+SwitchBoard.workspace
+tags
+SwitchBoard/src/genstatisticsSB3b.php
+.vscode/
+Switchboard/.vscode/
+parameters.sql
+DFMajAutomatique.md
+CLAUDE.md
+SWITCHBOARD_CALDAV_STATUS.md

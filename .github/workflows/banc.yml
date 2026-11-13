@@ -1,0 +1,23 @@
+# Lance le banc d'essai à chaque poussée. Sans PR, ce résultat n'empêche aucune fusion : il informe. Le vrai
+# garde-fou reste la règle « banc vert avant fusion » (CONVENTIONS.md, section 9).
+name: Banc d'essai
+
+on:
+  push:
+
+permissions:
+  contents: read
+
+jobs:
+  banc:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        # 12 : serveur principal. 10.11 : serveur pilote (vérifié le 2026-11-07).
+        mariadb: ["12", "10.11"]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lancer le banc
+        run: SwitchBoard/tests/banc/lancer.sh --mariadb "${{ matrix.mariadb }}"

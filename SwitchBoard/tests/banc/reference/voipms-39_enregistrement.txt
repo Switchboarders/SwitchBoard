@@ -1,0 +1,5 @@
+banc-autonome | getIP | method=getIP
+banc-autonome | getForwardings | method=getForwardings
+banc-chat | getIP | method=getIP
+banc-chat | getForwardings | method=getForwardings
+---

@@ -1,0 +1,122 @@
+<br>
+<!DOCTYPE html>
+  <html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="portail/pages/utilisateur/style.css"  />
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="portail/pages/utilisateur/script.js"></script>
+    </head>
+    <body>
+		<!-- Return to Top Arrow-->
+		<a href="#pagetop" id="return-to-top"><i class="icon-chevron-up"></i></a>
+		<!-- ICON NEEDS FONT AWESOME FOR CHEVRON UP ICON -->
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+				<a href="managementportal.php?page=adminpanel" id="admin-topright-button">Console d'administration</a>
+		
+		
+		  <div class="hamburger">
+		  <div class="line"></div>
+		  <div class="line"></div>
+		  <div class="line"></div>
+		</div>
+		<div class="menu">
+		  <A href="managementportal.php"><div class="menu-item">Page Principale</div></A>
+		  <div class="menu-item has-submenu">Groupes de sonneries</div>
+		  	<div class="submenu">
+			<A href="managementportal.php?page=validatecalendar"><div class="submenu-item">Validation du calendrier</div></A>
+		  	<form class='form-action form-action-bloc' method='post' action='managementportal.php?page=refreshringgroup'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Forcer le changement des répondants</button></form>
+		  	<form class='form-action form-action-bloc' method='post' action='managementportal.php?page=remindersms'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Rappels par SMS</button></form>
+		  	<form class='form-action form-action-bloc' method='post' action='managementportal.php?page=remindersmsjustbefore'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Rappels par SMS 15 minutes avant</button></form>
+			</div>
+		  <div class="menu-item has-submenu">SwitchBoard Chat</div>
+		    <div class="submenu">
+		    <form class='form-action form-action-bloc' method='post' action='managementportal.php?page=refreshsbchat'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Rafraîchir SBChat</button></form>
+		    <form class='form-action form-action-bloc' method='post' action='managementportal.php?page=remindersbchat'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Rappels SwitchBoard Chat pour demain</button></form>
+		    <form class='form-action form-action-bloc' method='post' action='managementportal.php?page=remindersbchatjustbefore'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Rappels SwitchBoard Chat dans l&#039;heure d&#039;avant</button></form>
+		    <A href="managementportal.php?page=manageuserssbchat"><div class="submenu-item">Gérer les utilisateurs du serveur Matrix</div></A>
+		  	<A href="managementportal.php?page=sbchatmacros"><div class="submenu-item">Macros SwitchBoard Chat du compte</div></A>
+		  	<A href="managementportal.php?page=sbchatagreement"><div class="submenu-item">Entente de confidentialité des bénévoles</div></A>
+		  			  	<A href="managementportal.php?page=sbchatcertificate"><div class="submenu-item">Certificat SwitchBoard Chat / MAS</div></A>
+		  	
+		</div>
+		  <A href="managementportal.php?page=mystats"><div class="menu-item">Mes statistiques</div></A>
+		  <A href="managementportal.php?page=userinfo"><div class="menu-item">Informations du compte</div></A>
+		  <A href="managementportal.php?page=sbchatinfo"><div class="menu-item">Informations SwitchBoard Chat du compte</div></A>
+
+		  		  <div class='menu-item'><A href='managementportal.php?page=adminpanel'>Console d'administration</A></div>
+		  <A href="managementportal.php?page=mailtest"><div class="menu-item">Courriel de test</div></A>
+		  <A href="managementportal.php?page=mailoauth"><div class="menu-item">Courriel OAuth</div></A>
+		  <A href="managementportal.php?page=deadmanswitch"><div class="menu-item">Surveillance (dead-man's-switch)</div></A>
+		  		  <A href="managementportal.php?page=logout"><div class="menu-item">Se deconnecter</div></A>
+		  
+		</div>
+	<div id='pagetop'></div>
+		
+
+<section>
+<div class="login">
+<div class="login-triangle"></div>
+<a href='managementportal.php?page=adminpanel' class='backbutton'>&#8249;</a><h2 class="login-header">Courriel OAuth</h2>
+
+
+
+
+<p>Choisissez le fournisseur de votre boîte courriel, puis suivez les étapes ci-dessous pour obtenir un Client ID (et un Client Secret pour Google) - une inscription unique à faire dans la console de ce fournisseur, hors de SwitchBoard.</p>
+
+<details open style="margin:1em 0;text-align:left;">
+<summary style="cursor:pointer;font-weight:bold;">Microsoft 365 : comment obtenir un Client ID</summary>
+<ol>
+<li>Allez sur <a href="https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationsListBlade" target="_blank">portal.azure.com &rarr; Inscriptions d'applications</a> &rarr; Nouvelle inscription.</li>
+<li>Donnez-lui un nom (ex.: « SwitchBoard Mail »), laissez le reste par défaut, puis Enregistrer.</li>
+<li>Copiez l'« ID d'application (client) » affiché - c'est le Client ID à coller ci-dessous. Copiez aussi le « ID de l'annuaire (locataire) » (Tenant ID) affiché juste à côté sur cette même page - avec les réglages par défaut (« Comptes dans cet annuaire organisationnel uniquement »), ce Tenant ID est OBLIGATOIRE ci-dessous, PAS optionnel (voir la note Tenant plus bas - le laisser vide cause l'erreur AADSTS50059).</li>
+<li>Authentification &rarr; Paramètres avancés &rarr; « Autoriser les flux clients publics » &rarr; Oui &rarr; Enregistrer.</li>
+<li>Rien à faire dans « Autorisations API » pour ce flux : SwitchBoard demande directement la permission SMTP.Send au moment de l'autorisation ci-dessous (c'est Microsoft qui affiche alors l'écran de consentement) - vous n'avez pas besoin de la chercher/ajouter vous-même dans le portail. Si votre tenant exige un consentement admin, l'écran de consentement vous le dira à ce moment-là plutôt qu'ici.</li>
+<li><strong>Étape séparée obligatoire : un administrateur Exchange doit aussi activer l'authentification SMTP sur la boîte courriel elle-même (désactivée par défaut). Voir MAIL-OAUTH-SETUP.md pour la commande exacte - sans cette étape, l'envoi échouera même une fois autorisé ici.</strong></li>
+<li><strong>Tenant : avec les réglages d'inscription par défaut (mono-tenant), ce champ est OBLIGATOIRE - collez l'ID de l'annuaire (locataire) copié à l'étape 3 (ou le nom de domaine de votre organisation, ex.: contoso.onmicrosoft.com). Le laisser vide envoie la demande à l'adresse générique « common », que Microsoft refuse pour une inscription mono-tenant avec l'erreur AADSTS50059 « No tenant-identifying information found ».</strong></li>
+</ol>
+</details>
+
+<details style="margin:1em 0;text-align:left;">
+<summary style="cursor:pointer;font-weight:bold;">Google : comment obtenir un Client ID et un Client Secret</summary>
+<ol>
+<li>Allez sur <a href="https://console.cloud.google.com/apis/credentials" target="_blank">console.cloud.google.com &rarr; Identifiants</a> (créez un projet si vous n'en avez pas).</li>
+<li>Écran de consentement OAuth : type Externe, remplissez le nom de l'app et un courriel de support, Enregistrer (le mode « Test » suffit - ajoutez votre propre adresse comme utilisateur de test).</li>
+<li>Identifiants &rarr; Créer des identifiants &rarr; ID client OAuth &rarr; type d'application « Application Web ».</li>
+<li>Dans « URI de redirection autorisés », collez EXACTEMENT cette adresse :<p><code style="user-select:all;word-break:break-all;">https://127.0.0.1/SwitchBoard/SwitchBoard/src/managementportal.php?page=mailoauth</code></p>
+</li>
+<li>Créez, puis copiez le Client ID ET le Client Secret affichés - collez-les ci-dessous.</li>
+</ol>
+</details>
+
+<form method="post" action="?page=mailoauth&amp;modifier=1" style="text-align:left;">
+	<input type='hidden' name='csrf_token' value='JETON'>	<input type="hidden" name="action" value="enregistrer_reglages">
+	<p>
+		<label><input type="radio" name="fournisseur" value="microsoft365" > Microsoft 365</label><br>
+		<label><input type="radio" name="fournisseur" value="google" > Google</label>
+	</p>
+	<p><label>Adresse courriel du compte à autoriser :<br>
+	<input name="mailbox_user" type="email" value="banc@banc.test" placeholder="exemple@domaine.com" style="width:100%;"></label></p>
+	<p><label>Client ID :<br>
+	<input name="client_id" type="text" value="" style="width:100%;"></label></p>
+	<p><label>Client Secret (Google seulement) :<br>
+	<input name="client_secret" type="password" value="" placeholder="" style="width:100%;"></label></p>
+	<p><label>Tenant (Microsoft 365 seulement - laissez vide UNIQUEMENT si votre inscription Azure est multi-tenant ; requis dans la plupart des cas, voir le guide ci-dessus) :<br>
+	<input name="tenant" type="text" value="" placeholder="ID de l'annuaire (locataire) ou contoso.onmicrosoft.com" style="width:100%;"></label></p>
+	<p><input type="submit" value="Enregistrer"></p>
+</form>
+
+
+</div>
+</section>
+	
+
+    </body>
+  </html>
+
+
+

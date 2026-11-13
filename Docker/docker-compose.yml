@@ -1,0 +1,18 @@
+# Ce fichier est un GARDE-FOU volontaire, pas une vraie configuration.
+#
+# `docker compose up` sans -f cherche automatiquement "docker-compose.yml".
+# Pour éviter de démarrer la mauvaise stack (autonome vs reverse-proxy
+# externe) après un git pull, les vraies configurations ont été renommées :
+#   - docker-compose.standalone.yml     (SwitchBoard gère son propre TLS/proxy)
+#   - docker-compose.reverse-proxy.yml  (un reverse-proxy externe existe déjà)
+#
+# Utilisez toujours ./up.sh, qui choisit le bon fichier pour vous et se
+# souvient de votre mode dans .deploy-mode (non versionné). Ne modifiez pas
+# ce fichier : le build échoue volontairement (voir Dockerfile.guard) pour
+# afficher un message d'erreur clair, de façon synchrone dans le terminal,
+# même si vous lancez `docker compose up -d`.
+services:
+  switchboard-guard:
+    build:
+      context: .
+      dockerfile: Dockerfile.guard

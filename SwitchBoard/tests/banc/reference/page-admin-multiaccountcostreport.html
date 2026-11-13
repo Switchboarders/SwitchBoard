@@ -1,0 +1,282 @@
+<br>
+<!DOCTYPE html>
+  <html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="portail/pages/utilisateur/style.css"  />
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="portail/pages/utilisateur/script.js"></script>
+    </head>
+    <body>
+		<!-- Return to Top Arrow-->
+		<a href="#pagetop" id="return-to-top"><i class="icon-chevron-up"></i></a>
+		<!-- ICON NEEDS FONT AWESOME FOR CHEVRON UP ICON -->
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+				<a href="managementportal.php?page=adminpanel" id="admin-topright-button">Console d'administration</a>
+		
+		
+		  <div class="hamburger">
+		  <div class="line"></div>
+		  <div class="line"></div>
+		  <div class="line"></div>
+		</div>
+		<div class="menu">
+		  <A href="managementportal.php"><div class="menu-item">Page Principale</div></A>
+		  <div class="menu-item has-submenu">Groupes de sonneries</div>
+		  	<div class="submenu">
+			<A href="managementportal.php?page=validatecalendar"><div class="submenu-item">Validation du calendrier</div></A>
+		  	<form class='form-action form-action-bloc' method='post' action='managementportal.php?page=refreshringgroup'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Forcer le changement des répondants</button></form>
+		  	<form class='form-action form-action-bloc' method='post' action='managementportal.php?page=remindersms'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Rappels par SMS</button></form>
+		  	<form class='form-action form-action-bloc' method='post' action='managementportal.php?page=remindersmsjustbefore'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Rappels par SMS 15 minutes avant</button></form>
+			</div>
+		  <div class="menu-item has-submenu">SwitchBoard Chat</div>
+		    <div class="submenu">
+		    <form class='form-action form-action-bloc' method='post' action='managementportal.php?page=refreshsbchat'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Rafraîchir SBChat</button></form>
+		    <form class='form-action form-action-bloc' method='post' action='managementportal.php?page=remindersbchat'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Rappels SwitchBoard Chat pour demain</button></form>
+		    <form class='form-action form-action-bloc' method='post' action='managementportal.php?page=remindersbchatjustbefore'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Rappels SwitchBoard Chat dans l&#039;heure d&#039;avant</button></form>
+		    <A href="managementportal.php?page=manageuserssbchat"><div class="submenu-item">Gérer les utilisateurs du serveur Matrix</div></A>
+		  	<A href="managementportal.php?page=sbchatmacros"><div class="submenu-item">Macros SwitchBoard Chat du compte</div></A>
+		  	<A href="managementportal.php?page=sbchatagreement"><div class="submenu-item">Entente de confidentialité des bénévoles</div></A>
+		  			  	<A href="managementportal.php?page=sbchatcertificate"><div class="submenu-item">Certificat SwitchBoard Chat / MAS</div></A>
+		  	
+		</div>
+		  <A href="managementportal.php?page=mystats"><div class="menu-item">Mes statistiques</div></A>
+		  <A href="managementportal.php?page=userinfo"><div class="menu-item">Informations du compte</div></A>
+		  <A href="managementportal.php?page=sbchatinfo"><div class="menu-item">Informations SwitchBoard Chat du compte</div></A>
+
+		  		  <div class='menu-item'><A href='managementportal.php?page=adminpanel'>Console d'administration</A></div>
+		  <A href="managementportal.php?page=mailtest"><div class="menu-item">Courriel de test</div></A>
+		  <A href="managementportal.php?page=mailoauth"><div class="menu-item">Courriel OAuth</div></A>
+		  <A href="managementportal.php?page=deadmanswitch"><div class="menu-item">Surveillance (dead-man's-switch)</div></A>
+		  		  <A href="managementportal.php?page=logout"><div class="menu-item">Se deconnecter</div></A>
+		  
+		</div>
+	<div id='pagetop'></div>
+		
+
+<section>
+<div class="login">
+<div class="login-triangle"></div>
+<a href='managementportal.php?page=adminpanel' class='backbutton'>&#8249;</a><h2 class="login-header">Comparaison des coûts entre comptes voip.ms</h2>
+
+<p>Choisissez une période et les comptes à comparer. Le coût de chaque compte est réparti mois par mois, avec son solde actuel (indépendant de la période choisie). Utile pour évaluer une consolidation de plusieurs comptes voip.ms en un seul.</p>
+
+<form id="rapport-formulaire" method="post" action="?page=multiaccountcostreport">
+	<input type='hidden' name='csrf_token' value='JETON'>	<p><label>Date de début :	<input type="date" name="dateFrom" required></label>
+	<label>Date de fin :	<input type="date" name="dateTo" required></label></p>
+
+	<p>
+	<a href="#" onclick="document.querySelectorAll('.compte-checkbox').forEach(c => c.checked = true); return false;">Tout sélectionner</a>
+	 |
+	<a href="#" onclick="document.querySelectorAll('.compte-checkbox').forEach(c => c.checked = false); return false;">Tout désélectionner</a>
+	</p>
+
+		<table style="border-collapse:collapse;">
+				<tr>
+			<td style="padding:0.2rem 0.5rem 0.2rem 0;vertical-align:middle;">
+				<input type="checkbox" class="compte-checkbox" id="compte-2" name="idusers[]" value="2">
+			</td>
+			<td style="padding:0.2rem 0;vertical-align:middle;">
+				<label for="compte-2">autonome</label>
+			</td>
+		</tr>
+				<tr>
+			<td style="padding:0.2rem 0.5rem 0.2rem 0;vertical-align:middle;">
+				<input type="checkbox" class="compte-checkbox" id="compte-3" name="idusers[]" value="3">
+			</td>
+			<td style="padding:0.2rem 0;vertical-align:middle;">
+				<label for="compte-3">region</label>
+			</td>
+		</tr>
+				<tr>
+			<td style="padding:0.2rem 0.5rem 0.2rem 0;vertical-align:middle;">
+				<input type="checkbox" class="compte-checkbox" id="compte-4" name="idusers[]" value="4">
+			</td>
+			<td style="padding:0.2rem 0;vertical-align:middle;">
+				<label for="compte-4">membre1</label>
+			</td>
+		</tr>
+				<tr>
+			<td style="padding:0.2rem 0.5rem 0.2rem 0;vertical-align:middle;">
+				<input type="checkbox" class="compte-checkbox" id="compte-5" name="idusers[]" value="5">
+			</td>
+			<td style="padding:0.2rem 0;vertical-align:middle;">
+				<label for="compte-5">membre2</label>
+			</td>
+		</tr>
+				<tr>
+			<td style="padding:0.2rem 0.5rem 0.2rem 0;vertical-align:middle;">
+				<input type="checkbox" class="compte-checkbox" id="compte-6" name="idusers[]" value="6">
+			</td>
+			<td style="padding:0.2rem 0;vertical-align:middle;">
+				<label for="compte-6">chat</label>
+			</td>
+		</tr>
+				<tr>
+			<td style="padding:0.2rem 0.5rem 0.2rem 0;vertical-align:middle;">
+				<input type="checkbox" class="compte-checkbox" id="compte-7" name="idusers[]" value="7">
+			</td>
+			<td style="padding:0.2rem 0;vertical-align:middle;">
+				<label for="compte-7">LigneProvinciale</label>
+			</td>
+		</tr>
+			</table>
+	
+	<p><input type="submit" value="Générer l'aperçu"></p>
+</form>
+
+<div id="rapport-erreur" style="color:red;"></div>
+<div id="rapport-progression"></div>
+<div id="rapport-resultat"></div>
+
+</div>
+</section>
+
+<script>
+(function() {
+	var formulaire = document.getElementById('rapport-formulaire');
+	var zoneErreur = document.getElementById('rapport-erreur');
+	var zoneProgression = document.getElementById('rapport-progression');
+	var zoneResultat = document.getElementById('rapport-resultat');
+
+	function appelJson(donnees) {
+		return fetch('?page=multiaccountcostreport', {
+			method: 'POST',
+			headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+			body: new URLSearchParams(donnees).toString()
+		}).then(function(reponse) { return reponse.json(); });
+	}
+
+	var NB_TENTATIVES_AUTOMATIQUES = 3;
+	var DELAI_ENTRE_TENTATIVES_MS = 3000;
+
+	// Chaque étape ne fait avancer le compteur $_POST['jobToken'] côté serveur QUE si elle a
+	// réussi (voir TacheComparaisonCouts::traiterEtape()) : un appel qui échoue en cours de route
+	// (panne réseau ponctuelle, ex. vers voip.ms) peut donc toujours être réessayé sans perdre le
+	// travail déjà fait ni en refaire - le serveur reprend exactement où il était rendu. D'abord
+	// quelques essais automatiques silencieux (le cas le plus fréquent : un simple ralentissement
+	// passager), puis un bouton "Reprendre" si ça persiste, plutôt que de tout faire recommencer
+	// depuis le formulaire.
+	function traiterProchaineEtape(jobToken, tentative) {
+		tentative = tentative || 0;
+		appelJson({
+			action: 'process_step',
+			csrf_token: 'JETON',
+			jobToken: jobToken
+		}).then(function(resultat) {
+			if (resultat.erreur) {
+				zoneErreur.textContent = resultat.erreur;
+				zoneProgression.textContent = '';
+				return;
+			}
+			zoneProgression.textContent = 'Calcul en cours... ' + resultat.progress + ' / ' + resultat.total;
+			if (resultat.done) {
+				afficherResultat(jobToken);
+			} else {
+				traiterProchaineEtape(jobToken, 0);
+			}
+		}).catch(function() {
+			if (tentative < NB_TENTATIVES_AUTOMATIQUES) {
+				zoneProgression.textContent = 'Communication interrompue, nouvel essai...';
+				setTimeout(function() {
+					traiterProchaineEtape(jobToken, tentative + 1);
+				}, DELAI_ENTRE_TENTATIVES_MS);
+				return;
+			}
+			zoneProgression.textContent = '';
+			zoneErreur.innerHTML = '';
+			var messageErreur = document.createTextNode('Erreur de communication avec le serveur. ');
+			var boutonReprendre = document.createElement('button');
+			boutonReprendre.type = 'button';
+			boutonReprendre.textContent = 'Reprendre';
+			boutonReprendre.onclick = function() {
+				zoneErreur.textContent = '';
+				traiterProchaineEtape(jobToken, 0);
+			};
+			zoneErreur.appendChild(messageErreur);
+			zoneErreur.appendChild(boutonReprendre);
+		});
+	}
+
+	function afficherResultat(jobToken) {
+		// Le calcul est déjà terminé côté serveur à ce stade - seul l'affichage a pu échouer -
+		// donc un simple bouton "Reprendre" (qui redemande juste l'affichage, sans rien
+		// recalculer) suffit ici, pas besoin de la boucle de tentatives automatiques.
+		appelJson({
+			action: 'render_result',
+			csrf_token: 'JETON',
+			jobToken: jobToken
+		}).then(function(resultat) {
+			zoneProgression.textContent = '';
+			if (resultat.erreur) {
+				zoneErreur.textContent = resultat.erreur;
+				return;
+			}
+			zoneResultat.innerHTML = resultat.html;
+		}).catch(function() {
+			zoneProgression.textContent = '';
+			zoneErreur.innerHTML = '';
+			var messageErreur = document.createTextNode('Erreur de communication avec le serveur. ');
+			var boutonReprendre = document.createElement('button');
+			boutonReprendre.type = 'button';
+			boutonReprendre.textContent = 'Reprendre';
+			boutonReprendre.onclick = function() {
+				zoneErreur.textContent = '';
+				afficherResultat(jobToken);
+			};
+			zoneErreur.appendChild(messageErreur);
+			zoneErreur.appendChild(boutonReprendre);
+		});
+	}
+
+	formulaire.addEventListener('submit', function(e) {
+		e.preventDefault();
+		zoneErreur.textContent = '';
+		zoneResultat.innerHTML = '';
+		zoneProgression.textContent = 'Démarrage...';
+
+		var idusers = Array.prototype.map.call(
+			formulaire.querySelectorAll('.compte-checkbox:checked'),
+			function(c) { return c.value; }
+		);
+
+		var corps = new URLSearchParams();
+		corps.append('action', 'init_job');
+		corps.append('csrf_token', 'JETON');
+		corps.append('dateFrom', formulaire.dateFrom.value);
+		corps.append('dateTo', formulaire.dateTo.value);
+		idusers.forEach(function(id) { corps.append('idusers[]', id); });
+
+		fetch('?page=multiaccountcostreport', {
+			method: 'POST',
+			headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+			body: corps.toString()
+		}).then(function(reponse) { return reponse.json(); }).then(function(resultat) {
+			if (resultat.erreur) {
+				zoneErreur.textContent = resultat.erreur;
+				zoneProgression.textContent = '';
+				return;
+			}
+			if (resultat.total === 0) {
+				zoneProgression.textContent = '';
+				zoneErreur.textContent = 'Aucune étape à traiter.';
+				return;
+			}
+			traiterProchaineEtape(resultat.token);
+		}).catch(function() {
+			zoneErreur.textContent = 'Erreur de communication avec le serveur - réessayez.';
+		});
+	});
+})();
+</script>
+	
+
+    </body>
+  </html>
+
+
+

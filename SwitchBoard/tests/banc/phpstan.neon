@@ -1,0 +1,13 @@
+# Niveau 0 : classes, fonctions et méthodes inconnues, mauvais nombre d'arguments. Rien de plus sévère : le but
+# est d'attraper ce qui planterait en production, pas de réécrire le code.
+parameters:
+	level: 0
+	tmpDir: /tmp/phpstan
+	paths:
+		- /var/www/html/SwitchBoard/SwitchBoard/src
+	bootstrapFiles:
+		- /var/www/html/SwitchBoard/SwitchBoard/src/commun/lesconstantes.php
+	scanDirectories:
+		- /var/www/html/SwitchBoard/SwitchBoard/vendor
+	# Aucune erreur ignorée : une erreur rend le banc rouge. Si l'une doit l'être un jour, elle va dans un bloc
+	# ignoreErrors, avec un commentaire qui dit pourquoi.

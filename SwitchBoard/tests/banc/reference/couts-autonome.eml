@@ -1,0 +1,23 @@
+To: autonome@banc.test
+Subject: Coûts détaillés par DID du 2026-10-01 au 2026-10-31 pour l'utilisateur: autonome
+
+Bonjour autonome,
+
+Voici la répartition des coûts par DID pour la période mentionnée:
+
+DID 5145550101 (Ligne autonome):
+	Nombre d'appels : 5 (répondus : 3)
+	Coût des appels : 0.11 $
+	Frais de location du DID : 0.85 $
+	Part des frais non attribuables à un DID en particulier : 0.30 $
+	Coût total pour ce DID : 1.26 $
+
+Détail des frais non attribuables à un DID en particulier (total : 0.30 $, réparti également entre 1 DID, soit 0.30 $ chacun) :
+	Appels non identifiables à un DID précis : 0.00 $
+	SMS - Textos : 0.30 $
+
+Coût total du compte pour la période : 1.26 $
+Solde au compte voip.ms: 25.5000
+
+Passez une bonne journée !
+

@@ -1,0 +1,4 @@
+FROM nginxproxy/nginx-proxy:1.11-alpine
+WORKDIR /
+COPY generate_self_signed_certificates.sh /generate_self_signed_certificates.sh
+RUN chmod +x /generate_self_signed_certificates.sh

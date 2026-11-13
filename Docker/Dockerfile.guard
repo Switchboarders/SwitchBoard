@@ -1,0 +1,14 @@
+# Utilisé uniquement par le docker-compose.yml factice (voir ce fichier).
+# Fait volontairement échouer le build pour que le message ci-dessous
+# s'affiche de façon synchrone dans le terminal, même avec `up -d`.
+FROM busybox
+RUN echo "" && \
+	echo "=========================================================" && \
+	echo " N'utilisez pas 'docker compose up' directement ici." && \
+	echo " Lancez plutot : ./up.sh" && \
+	echo "" && \
+	echo " (up.sh choisit automatiquement docker-compose.standalone.yml" && \
+	echo "  ou docker-compose.reverse-proxy.yml selon votre mode, et" && \
+	echo "  s'en souvient pour la prochaine fois - voir README.md)" && \
+	echo "=========================================================" && \
+	exit 1

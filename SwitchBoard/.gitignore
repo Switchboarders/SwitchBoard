@@ -1,0 +1,11 @@
+files/
+.sync.ffs_db
+error_log
+.htaccess
+.gitignore
+old/
+vendor/
+download/
+*.po~
+/logs/
+/calendarcache/

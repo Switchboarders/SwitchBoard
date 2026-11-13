@@ -1,0 +1,14 @@
+web
+.env
+.env.secret
+*.secret
+/db_data
+/logs
+# Les certificats déposés ici sont propres à chaque déploiement et ne doivent jamais être
+# versionnés (et surtout pas une clé privée déposée là par erreur).
+/certs/*
+!/certs/.gitkeep
+!/certs/README.md
+
+# Rapports de diagnostic.ps1 / diagnostic.sh
+switchboard-diagnostic-*.txt

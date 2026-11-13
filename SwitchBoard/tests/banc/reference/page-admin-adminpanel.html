@@ -1,0 +1,103 @@
+<br>
+<div class='updatemessage'>Version du code installée : ? | disponible sur GitHub : ? | version du schéma de BD : N</div>
+<!DOCTYPE html>
+  <html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="portail/pages/utilisateur/style.css"  />
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="portail/pages/utilisateur/script.js"></script>
+    </head>
+    <body>
+		<!-- Return to Top Arrow-->
+		<a href="#pagetop" id="return-to-top"><i class="icon-chevron-up"></i></a>
+		<!-- ICON NEEDS FONT AWESOME FOR CHEVRON UP ICON -->
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+				<a href="managementportal.php?page=adminpanel" id="admin-topright-button">Console d'administration</a>
+		
+		
+		  <div class="hamburger">
+		  <div class="line"></div>
+		  <div class="line"></div>
+		  <div class="line"></div>
+		</div>
+		<div class="menu">
+		  <A href="managementportal.php"><div class="menu-item">Page Principale</div></A>
+		  <div class="menu-item has-submenu">Groupes de sonneries</div>
+		  	<div class="submenu">
+			<A href="managementportal.php?page=validatecalendar"><div class="submenu-item">Validation du calendrier</div></A>
+		  	<form class='form-action form-action-bloc' method='post' action='managementportal.php?page=refreshringgroup'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Forcer le changement des répondants</button></form>
+		  	<form class='form-action form-action-bloc' method='post' action='managementportal.php?page=remindersms'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Rappels par SMS</button></form>
+		  	<form class='form-action form-action-bloc' method='post' action='managementportal.php?page=remindersmsjustbefore'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Rappels par SMS 15 minutes avant</button></form>
+			</div>
+		  <div class="menu-item has-submenu">SwitchBoard Chat</div>
+		    <div class="submenu">
+		    <form class='form-action form-action-bloc' method='post' action='managementportal.php?page=refreshsbchat'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Rafraîchir SBChat</button></form>
+		    <form class='form-action form-action-bloc' method='post' action='managementportal.php?page=remindersbchat'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Rappels SwitchBoard Chat pour demain</button></form>
+		    <form class='form-action form-action-bloc' method='post' action='managementportal.php?page=remindersbchatjustbefore'><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='submenu-item bouton-menu'>Rappels SwitchBoard Chat dans l&#039;heure d&#039;avant</button></form>
+		    <A href="managementportal.php?page=manageuserssbchat"><div class="submenu-item">Gérer les utilisateurs du serveur Matrix</div></A>
+		  	<A href="managementportal.php?page=sbchatmacros"><div class="submenu-item">Macros SwitchBoard Chat du compte</div></A>
+		  	<A href="managementportal.php?page=sbchatagreement"><div class="submenu-item">Entente de confidentialité des bénévoles</div></A>
+		  			  	<A href="managementportal.php?page=sbchatcertificate"><div class="submenu-item">Certificat SwitchBoard Chat / MAS</div></A>
+		  	
+		</div>
+		  <A href="managementportal.php?page=mystats"><div class="menu-item">Mes statistiques</div></A>
+		  <A href="managementportal.php?page=userinfo"><div class="menu-item">Informations du compte</div></A>
+		  <A href="managementportal.php?page=sbchatinfo"><div class="menu-item">Informations SwitchBoard Chat du compte</div></A>
+
+		  		  <div class='menu-item'><A href='managementportal.php?page=adminpanel'>Console d'administration</A></div>
+		  <A href="managementportal.php?page=mailtest"><div class="menu-item">Courriel de test</div></A>
+		  <A href="managementportal.php?page=mailoauth"><div class="menu-item">Courriel OAuth</div></A>
+		  <A href="managementportal.php?page=deadmanswitch"><div class="menu-item">Surveillance (dead-man's-switch)</div></A>
+		  		  <A href="managementportal.php?page=logout"><div class="menu-item">Se deconnecter</div></A>
+		  
+		</div>
+	<div id='pagetop'></div>
+		
+
+<section>
+	<div class="alert alert-warning">
+		<h2>Vérification des mises à jour impossible</h2>
+		<p>
+			GitHub n'a pas répondu à la demande de version. Le reste de l'application fonctionne normalement.		</p>
+		<p>
+			Le dépôt SwitchBoard est public : aucun jeton n'est nécessaire. Les causes habituelles sont une connexion Internet coupée, ou la limite de GitHub pour les demandes sans jeton (60 par heure et par adresse IP) : la vérification reprendra d'elle-même. Pour lever cette limite, ou pour suivre une copie privée du dépôt, fournissez un jeton GitHub en lecture seule de l'une des deux façons suivantes :		</p>
+		<ul>
+			<li>dans le fichier config/config.php, en donnant une valeur à la variable $githubtoken ;</li>
+			<li>ou par la variable d'environnement SB_GITHUB_TOKEN.</li>
+		</ul>
+		<p>
+			<strong>Important :</strong>
+			ne replacez jamais un jeton directement dans le code source, et ne le publiez jamais dans un dépôt. Un jeton qui a déjà été publié doit être révoqué sur GitHub, puis remplacé par un nouveau.		</p>
+	</div>
+</section>
+<section>
+<h1>Console d'administration</h1>
+<p><a href="managementportal.php?page=mainpage">Voir ma page principale (tableau de bord personnel)</a></p>
+
+<div class="alert alert-success">
+	<strong>Mode debug : </strong>
+	désactivé (recommandé en production).			<br>
+		<form class='form-action' method='post' action='managementportal.php?page=adminpanel'><input type='hidden' name='csrf_token' value='JETON'><input type='hidden' name='action' value='toggledebug'><button type='submit' class='bouton-lien'>Activer le mode debug</button></form>		<br><small>Le changement prendra effet à partir du prochain chargement de page.</small>
+	</div>
+
+<h2>Liste des utilisateurs :</h2>
+<h3><A href='?page=modifyuser'>Ajouter un utilisateur</A></h3>
+<h3><A href='?page=croncommands'>Suggestions de commandes Cron</A></h3>
+<h3><A href='?page=sbchatcertificate'>Certificat SwitchBoard Chat / MAS</A></h3>
+<h3><A href='?page=mailtest'>Courriel de test</A></h3>
+<h3><A href='?page=mailoauth'>Courriel OAuth</A></h3>
+<h3><A href='?page=deadmanswitch'>Surveillance (dead-man's-switch)</A></h3>
+<h3><A href='?page=multiaccountcostreport'>Comparaison des coûts entre comptes voip.ms</A></h3>
+<div class='item-list'><div class='item-card'><div class='item-card-title'>admin <span class='item-card-meta'>(ID : 1, Niveau de privilèges : -1)</span></div><div class='item-card-actions'><A href='?page=userloginandprivileges&iduser=1'>Modifier le mot de passe ou le niveau d'accès de l'utilisateur</A><A href='?page=userinfo&iduser=1'>Éditer informations utilisateur</A><A href='?page=sbchatinfo&iduser=1'>SwitchBoard Chat informations</A><A href='?page=sbchatmacros&iduser=1'>Modifier les macros SwitchBoard Chat</A><A href='?page=sbchatagreement&iduser=1'>Entente de confidentialité des bénévoles</A><A href='?page=userdiagnostic&iduser=1'>Diagnostiquer les connexions établies par l'utilisateur</A><A href='?page=userservice&iduser=1'>Définir les services utilisés par un utilisateur</A><A href='?page=userstatsreport&iduser=1'>Consulter ou envoyer les statistiques de l'utilisateur</A><form class='form-action' method='post' action='managementportal.php?page=adminpanel' onsubmit="return confirm(&quot;Voulez vous vraiment supprimer cette entrée ?&quot;)"><input type='hidden' name='csrf_token' value='JETON'><input type='hidden' name='action' value='suppressuser'><input type='hidden' name='iduser' value='1'><button type='submit' class='bouton-lien danger'>Supprimer utilisateur</button></form></div></div><div class='item-card'><div class='item-card-title'>autonome <span class='item-card-meta'>(ID : 2, Niveau de privilèges : 10)</span></div><div class='item-card-actions'><A href='?page=userloginandprivileges&iduser=2'>Modifier le mot de passe ou le niveau d'accès de l'utilisateur</A><A href='?page=userinfo&iduser=2'>Éditer informations utilisateur</A><A href='?page=sbchatinfo&iduser=2'>SwitchBoard Chat informations</A><A href='?page=sbchatmacros&iduser=2'>Modifier les macros SwitchBoard Chat</A><A href='?page=sbchatagreement&iduser=2'>Entente de confidentialité des bénévoles</A><A href='?page=userdiagnostic&iduser=2'>Diagnostiquer les connexions établies par l'utilisateur</A><form class='form-action' method='post' action='managementportal.php?page=refreshringgroup&amp;iduser=2' onsubmit="return confirm(&quot;Envoyer maintenant les répondants de l&#039;agenda de ce comité à voip.ms ?&quot;)"><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='bouton-lien'>Forcer le changement des répondants</button></form><A href='?page=userservice&iduser=2'>Définir les services utilisés par un utilisateur</A><A href='?page=userstatsreport&iduser=2'>Consulter ou envoyer les statistiques de l'utilisateur</A><form class='form-action' method='post' action='managementportal.php?page=adminpanel' onsubmit="return confirm(&quot;Voulez vous vraiment supprimer cette entrée ?&quot;)"><input type='hidden' name='csrf_token' value='JETON'><input type='hidden' name='action' value='suppressuser'><input type='hidden' name='iduser' value='2'><button type='submit' class='bouton-lien danger'>Supprimer utilisateur</button></form></div></div><div class='item-card'><div class='item-card-title'>region <span class='item-card-meta'>(ID : 3, Niveau de privilèges : 10)</span></div><div class='item-card-actions'><A href='?page=userloginandprivileges&iduser=3'>Modifier le mot de passe ou le niveau d'accès de l'utilisateur</A><A href='?page=userinfo&iduser=3'>Éditer informations utilisateur</A><A href='?page=sbchatinfo&iduser=3'>SwitchBoard Chat informations</A><A href='?page=sbchatmacros&iduser=3'>Modifier les macros SwitchBoard Chat</A><A href='?page=sbchatagreement&iduser=3'>Entente de confidentialité des bénévoles</A><A href='?page=userdiagnostic&iduser=3'>Diagnostiquer les connexions établies par l'utilisateur</A><A href='?page=userservice&iduser=3'>Définir les services utilisés par un utilisateur</A><A href='?page=userstatsreport&iduser=3'>Consulter ou envoyer les statistiques de l'utilisateur</A><form class='form-action' method='post' action='managementportal.php?page=adminpanel' onsubmit="return confirm(&quot;Voulez vous vraiment supprimer cette entrée ?&quot;)"><input type='hidden' name='csrf_token' value='JETON'><input type='hidden' name='action' value='suppressuser'><input type='hidden' name='iduser' value='3'><button type='submit' class='bouton-lien danger'>Supprimer utilisateur</button></form></div></div><div class='item-card'><div class='item-card-title'>membre1 <span class='item-card-meta'>(ID : 4, Niveau de privilèges : 10)</span></div><div class='item-card-actions'><A href='?page=userloginandprivileges&iduser=4'>Modifier le mot de passe ou le niveau d'accès de l'utilisateur</A><A href='?page=userinfo&iduser=4'>Éditer informations utilisateur</A><A href='?page=sbchatinfo&iduser=4'>SwitchBoard Chat informations</A><A href='?page=sbchatmacros&iduser=4'>Modifier les macros SwitchBoard Chat</A><A href='?page=sbchatagreement&iduser=4'>Entente de confidentialité des bénévoles</A><A href='?page=userdiagnostic&iduser=4'>Diagnostiquer les connexions établies par l'utilisateur</A><form class='form-action' method='post' action='managementportal.php?page=refreshringgroup&amp;iduser=4' onsubmit="return confirm(&quot;Envoyer maintenant les répondants de l&#039;agenda de ce comité à voip.ms ?&quot;)"><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='bouton-lien'>Forcer le changement des répondants</button></form><A href='?page=userservice&iduser=4'>Définir les services utilisés par un utilisateur</A><A href='?page=userstatsreport&iduser=4'>Consulter ou envoyer les statistiques de l'utilisateur</A><form class='form-action' method='post' action='managementportal.php?page=adminpanel' onsubmit="return confirm(&quot;Voulez vous vraiment supprimer cette entrée ?&quot;)"><input type='hidden' name='csrf_token' value='JETON'><input type='hidden' name='action' value='suppressuser'><input type='hidden' name='iduser' value='4'><button type='submit' class='bouton-lien danger'>Supprimer utilisateur</button></form></div></div><div class='item-card'><div class='item-card-title'>membre2 <span class='item-card-meta'>(ID : 5, Niveau de privilèges : 10)</span></div><div class='item-card-actions'><A href='?page=userloginandprivileges&iduser=5'>Modifier le mot de passe ou le niveau d'accès de l'utilisateur</A><A href='?page=userinfo&iduser=5'>Éditer informations utilisateur</A><A href='?page=sbchatinfo&iduser=5'>SwitchBoard Chat informations</A><A href='?page=sbchatmacros&iduser=5'>Modifier les macros SwitchBoard Chat</A><A href='?page=sbchatagreement&iduser=5'>Entente de confidentialité des bénévoles</A><A href='?page=userdiagnostic&iduser=5'>Diagnostiquer les connexions établies par l'utilisateur</A><form class='form-action' method='post' action='managementportal.php?page=refreshringgroup&amp;iduser=5' onsubmit="return confirm(&quot;Envoyer maintenant les répondants de l&#039;agenda de ce comité à voip.ms ?&quot;)"><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='bouton-lien'>Forcer le changement des répondants</button></form><A href='?page=userservice&iduser=5'>Définir les services utilisés par un utilisateur</A><A href='?page=userstatsreport&iduser=5'>Consulter ou envoyer les statistiques de l'utilisateur</A><form class='form-action' method='post' action='managementportal.php?page=adminpanel' onsubmit="return confirm(&quot;Voulez vous vraiment supprimer cette entrée ?&quot;)"><input type='hidden' name='csrf_token' value='JETON'><input type='hidden' name='action' value='suppressuser'><input type='hidden' name='iduser' value='5'><button type='submit' class='bouton-lien danger'>Supprimer utilisateur</button></form></div></div><div class='item-card'><div class='item-card-title'>chat <span class='item-card-meta'>(ID : 6, Niveau de privilèges : 10)</span></div><div class='item-card-actions'><A href='?page=userloginandprivileges&iduser=6'>Modifier le mot de passe ou le niveau d'accès de l'utilisateur</A><A href='?page=userinfo&iduser=6'>Éditer informations utilisateur</A><A href='?page=sbchatinfo&iduser=6'>SwitchBoard Chat informations</A><A href='?page=sbchatmacros&iduser=6'>Modifier les macros SwitchBoard Chat</A><A href='?page=sbchatagreement&iduser=6'>Entente de confidentialité des bénévoles</A><A href='?page=userdiagnostic&iduser=6'>Diagnostiquer les connexions établies par l'utilisateur</A><form class='form-action' method='post' action='managementportal.php?page=refreshringgroup&amp;iduser=6' onsubmit="return confirm(&quot;Envoyer maintenant les répondants de l&#039;agenda de ce comité à voip.ms ?&quot;)"><input type='hidden' name='csrf_token' value='JETON'><button type='submit' class='bouton-lien'>Forcer le changement des répondants</button></form><A href='?page=userservice&iduser=6'>Définir les services utilisés par un utilisateur</A><A href='?page=userstatsreport&iduser=6'>Consulter ou envoyer les statistiques de l'utilisateur</A><form class='form-action' method='post' action='managementportal.php?page=adminpanel' onsubmit="return confirm(&quot;Voulez vous vraiment supprimer cette entrée ?&quot;)"><input type='hidden' name='csrf_token' value='JETON'><input type='hidden' name='action' value='suppressuser'><input type='hidden' name='iduser' value='6'><button type='submit' class='bouton-lien danger'>Supprimer utilisateur</button></form></div></div><div class='item-card'><div class='item-card-title'>LigneProvinciale <span class='item-card-meta'>(ID : 7, Niveau de privilèges : 10)</span></div><div class='item-card-actions'><A href='?page=userloginandprivileges&iduser=7'>Modifier le mot de passe ou le niveau d'accès de l'utilisateur</A><A href='?page=userinfo&iduser=7'>Éditer informations utilisateur</A><A href='?page=sbchatinfo&iduser=7'>SwitchBoard Chat informations</A><A href='?page=sbchatmacros&iduser=7'>Modifier les macros SwitchBoard Chat</A><A href='?page=sbchatagreement&iduser=7'>Entente de confidentialité des bénévoles</A><A href='?page=userdiagnostic&iduser=7'>Diagnostiquer les connexions établies par l'utilisateur</A><A href='?page=userservice&iduser=7'>Définir les services utilisés par un utilisateur</A><A href='?page=userstatsreport&iduser=7'>Consulter ou envoyer les statistiques de l'utilisateur</A><form class='form-action' method='post' action='managementportal.php?page=adminpanel' onsubmit="return confirm(&quot;Voulez vous vraiment supprimer cette entrée ?&quot;)"><input type='hidden' name='csrf_token' value='JETON'><input type='hidden' name='action' value='suppressuser'><input type='hidden' name='iduser' value='7'><button type='submit' class='bouton-lien danger'>Supprimer utilisateur</button></form></div></div></div>
+</section>	
+
+    </body>
+  </html>
+
+
+
