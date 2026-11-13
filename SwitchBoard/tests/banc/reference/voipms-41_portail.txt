@@ -65,11 +65,21 @@ banc-autonome | getForwardings | method=getForwardings
 ---
 banc-autonome | getIP | method=getIP
 banc-autonome | getForwardings | method=getForwardings
+---
+banc-autonome | getIP | method=getIP
+banc-autonome | getForwardings | method=getForwardings
+---
+banc-autonome | getIP | method=getIP
+banc-autonome | getForwardings | method=getForwardings
 banc-autonome | getForwardings | method=getForwardings
 banc-autonome | setForwarding | callerid_override=5145550101&description=Groupe+autonome&forwarding=101&method=setForwarding&phone_number=5145550111
 banc-autonome | getVoicemails | method=getVoicemails
 banc-autonome | getRingGroups | method=getRingGroups&ring_group=
 banc-autonome | setRingGroup | language=fr&members=fwd%3A101%2C25%2C1%3B&method=setRingGroup&name=Groupe+autonome&ring_group=900&voicemail=0
+ | getIP | method=getIP
+ | getForwardings | method=getForwardings
+ | getIP | method=getIP
+ | getForwardings | method=getForwardings
  | getIP | method=getIP
  | getForwardings | method=getForwardings
  | getIP | method=getIP
