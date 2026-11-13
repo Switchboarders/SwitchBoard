@@ -15,7 +15,7 @@ class Routes {
 	// Les pages qui agissent (voip.ms, SwitchBoard Chat, SMS) : elles n'agissent qu'en POST, avec le jeton CSRF que
 	// managementportal.php contrôle avant l'appel (un bouton, boutonAction()). Ouvertes par un GET, elles montrent ce que
 	// la dernière action a dit, ou renvoient au tableau de bord. Aucune autre page ne modifie rien sur un GET.
-	const ACTIONS = ['refreshringgroup', 'refreshsbchat', 'remindersms', 'remindersmsjustbefore', 'remindersbchat', 'remindersbchatjustbefore', 'requestsbchattoken'];
+	const ACTIONS = ['refreshringgroup', 'refreshsbchat', 'remindersms', 'remindersmsjustbefore', 'remindersbchat', 'remindersbchatjustbefore', 'requestsbchattoken', 'sbchatlinksite', 'sbchatunlinksite'];
 
 	// page => [classe, méthode, droit]. Le nom d'une page ne change jamais : des liens et des favoris en dépendent.
 	const PAGES = [
@@ -31,6 +31,8 @@ class Routes {
 		'sbchatinfo'               => [UserAccess::class, 'sbchatinformationspage',              self::CONNECTE],
 		'sbchatagreement'          => [UserAccess::class, 'sbchatagreementpage',                 self::CONNECTE],
 		'sbchatmacros'             => [UserAccess::class, 'sbchatmacrospage',                    self::CONNECTE],
+		'sbchatlinksite'           => [UserAccess::class, 'sbchatlinksite',                      self::CONNECTE],
+		'sbchatunlinksite'         => [UserAccess::class, 'sbchatunlinksite',                    self::CONNECTE],
 		'mystats'                  => [UserAccess::class, 'displaymystatspage',                  self::CONNECTE],
 		'logout'                   => [UserAccess::class, 'logout',                              self::CONNECTE],
 

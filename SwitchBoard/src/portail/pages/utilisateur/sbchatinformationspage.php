@@ -20,8 +20,10 @@ $dbmanager = new DatabaseManager();
 			requireCsrf();
 			commencerEnregistrement();
 			$userinfo = $dbmanager->getuserinfobyid($currentuserid);
-			if(empty($userinfo['voipmsusername'])||empty($userinfo['voipmsapipassword'])||empty($userinfo['didnumber'])) {
-				echo(_("<H2 style='color: red;'>SVP configurer un Nom d'utilisateur voip.ms, un mot de passe API pour voip.ms et un numéro DID pour cette utilisateur dans la section Informations du compte</H2>"));
+			// voip.ms : les trois champs, ou aucun (comité sans voip.ms : clavardage Web seulement)
+			$sansVoipms = empty($userinfo['voipmsusername']) && empty($userinfo['voipmsapipassword']) && empty($userinfo['didnumber']);
+			if(!$sansVoipms && (empty($userinfo['voipmsusername'])||empty($userinfo['voipmsapipassword'])||empty($userinfo['didnumber']))) {
+				echo(_("<H2 style='color: red;'>SVP configurer un Nom d'utilisateur voip.ms, un mot de passe API pour voip.ms et un numéro DID pour cette utilisateur dans la section Informations du compte (ou laisser les trois vides pour un comité sans voip.ms)</H2>"));
 
 			}else{
 				if(isValidUrl($_POST['sbchatcalendarurl'])){

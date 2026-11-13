@@ -93,6 +93,32 @@
 
 			<p><input type="submit" value="<?php echo(_("Soumettre"));?>"></p>
 		  </form>
+		<?php if ($sbchatapitoken !== ''): ?>
+		<h2 class="login-header"><?php echo(_("Sites Web reliés (clavardage Web)"));?></h2>
+		<div class="login-container">
+		<?php if ($chaineJumelage): ?>
+			<div class="login-title"><?php echo(_("À coller dans le site WordPress (Réglages > WP Chat > Relier ce site à un comité), avant :"))." ".htmlspecialchars(date('H:i', $chaineJumelage['expire']));?></div>
+			<p><a href="#" class="copy-link" onclick="copyText('<?php echo htmlspecialchars(addslashes($chaineJumelage['chaine']), ENT_QUOTES);?>', this); return false;"><code><?php echo htmlspecialchars($chaineJumelage['chaine']);?></code></a></p>
+			<div class="login-title"><?php echo(_("Valide 30 minutes, une seule fois. Elle ne donne accès qu'au clavardage Web de ce comité."));?></div>
+		<?php endif; ?>
+		<?php if ($sitesWeb === null): ?>
+			<div class="login-title"><?php echo(_("La liste des sites n'est pas disponible (serveur SwitchBoard Chat injoignable ou trop ancien)."));?></div>
+		<?php elseif ($sitesWeb === []): ?>
+			<div class="login-title"><?php echo(_("Aucun site relié."));?></div>
+		<?php else: foreach ($sitesWeb as $site): ?>
+			<form method="post" action="managementportal.php?page=sbchatunlinksite&amp;iduser=<?php echo intval($iduser); ?>" style="margin:0.3em 0;">
+				<?php echo csrfField(); ?>
+				<input type="hidden" name="origine" value="<?php echo htmlspecialchars($site['origin']);?>">
+				<code><?php echo htmlspecialchars($site['origin']);?></code>
+				<button type="submit" class="bouton-lien" onclick="return confirm('<?php echo htmlspecialchars(addslashes(_("Retirer ce site? Ses visiteurs ne pourront plus clavarder.")), ENT_QUOTES);?>');"><?php echo(_("Retirer"));?></button>
+			</form>
+		<?php endforeach; endif; ?>
+			<form method="post" action="managementportal.php?page=sbchatlinksite&amp;iduser=<?php echo intval($iduser); ?>">
+				<?php echo csrfField(); ?>
+				<p><input type="submit" value="<?php echo(_("Relier un site Web"));?>"></p>
+			</form>
+		</div>
+		<?php endif; ?>
 		<?php if ($peutDemanderUnJeton): ?>
 		<form id="demande-jeton" method="post" action="managementportal.php?page=requestsbchattoken&amp;iduser=<?php echo intval($iduser); ?>"><?php echo csrfField(); ?></form>
 		<?php endif; ?>

@@ -43,8 +43,11 @@ private DatabaseManager $databasemanager;
                 $user_wanting_token = $this->databasemanager->getuserinfobyid($generate_token_for_id_user);
                 $user_wanting_token_privilege_level = $this->databasemanager->getuserbyid($generate_token_for_id_user)['privilegelevel'];
                 if($user_wanting_token){
-                    if (empty($user_wanting_token['voipmsusername'])||empty($user_wanting_token['voipmsapipassword'])||empty($user_wanting_token['didnumber'])){
-                        echo(_("Veuillez remplir votre nom d'utilisateur voip.ms ainsi que votre mot de passe API et votre DID dans la section informations du compte."));
+                    // Sans compte voip.ms (comité qui n'utilise que le clavardage Web) : les trois champs vides. À moitié
+                    // remplis, c'est une erreur de saisie.
+                    $sansVoipms = empty($user_wanting_token['voipmsusername']) && empty($user_wanting_token['voipmsapipassword']) && empty($user_wanting_token['didnumber']);
+                    if (!$sansVoipms && (empty($user_wanting_token['voipmsusername'])||empty($user_wanting_token['voipmsapipassword'])||empty($user_wanting_token['didnumber']))){
+                        echo(_("Veuillez remplir votre nom d'utilisateur voip.ms ainsi que votre mot de passe API et votre DID dans la section informations du compte (ou laissez les trois vides pour un comité sans voip.ms, clavardage Web seulement)."));
                     }else{
 
                         if($user_wanting_token_privilege_level<=0){
@@ -53,7 +56,9 @@ private DatabaseManager $databasemanager;
                             $tokenprivilege = 0;
                         }
                         echo(_("Demande d'un nouveau jeton en cours..."));
-                        $request = $this->add_new_call_center($requester_sbchat_info['sbchatapitoken'],$user_wanting_token['voipmsusername'],$user_wanting_token['voipmsapipassword'],$user_wanting_token['didnumber'],$tokenprivilege);
+                        $request = $sansVoipms
+                            ? $this->add_new_call_center($requester_sbchat_info['sbchatapitoken'],'','','',$tokenprivilege,false,self::reference_comite($generate_token_for_id_user))
+                            : $this->add_new_call_center($requester_sbchat_info['sbchatapitoken'],$user_wanting_token['voipmsusername'],$user_wanting_token['voipmsapipassword'],$user_wanting_token['didnumber'],$tokenprivilege);
                         if(!is_null($request) && array_key_exists('querystatus',$request) && $request['querystatus'] == "Success" && array_key_exists('vec_answer',$request)&& array_key_exists('0',$request['vec_answer'])){
                             echo("It worked");
                             $usersbchatinfo = $this->databasemanager->getSbchatinfobyId($generate_token_for_id_user);
@@ -489,17 +494,63 @@ private DatabaseManager $databasemanager;
         echo "<pre>" . json_encode($request_array['data'], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . "</pre>";
     }
 
-    public function add_new_call_center($callcenterapitoken,$voip_ms_username,$voip_ms_api_password,$call_center_did,$privilege_level=0,$renew_api_token=false){
+    /// Référence stable d'un comité pour SwitchBoard Chat (centre d'appel sans voip.ms) : l'identifiant de cette
+    /// installation de SwitchBoard (créé une fois dans config/) et celui du compte.
+    public static function reference_comite($iduser){
+        $fichier = CONFIG_DIRECTORY.'instance-id';
+        $id = is_readable($fichier) ? trim((string)file_get_contents($fichier)) : '';
+        if (!preg_match('/^[a-f0-9]{32}$/', $id)) {
+            $id = bin2hex(random_bytes(16));
+            @file_put_contents($fichier, $id);
+            @chmod($fichier, 0600);
+        }
+        return 'switchboard:'.$id.':'.intval($iduser);
+    }
+    public function add_new_call_center($callcenterapitoken,$voip_ms_username,$voip_ms_api_password,$call_center_did,$privilege_level=0,$renew_api_token=false,$committee_ref=''){
         $data = [
             "command" => "add_new_call_center",
             "voip_ms_username" =>  $voip_ms_username,
             "voip_ms_api_password" =>  $voip_ms_api_password,
-            "call_center_did" => $call_center_did,
+            "call_center_did" => (string)$call_center_did,
             "privilege_level" =>  $privilege_level,
             "renew_api_token" => $renew_api_token,
         ];
+        if ($committee_ref !== '') {
+            $data["committee_ref"] = $committee_ref;
+        }
         $request = self::send_api_request($callcenterapitoken,$data,$this->sbchaturl);
         return json_decode($request['response'],true);
+    }
+
+    // Sites Web reliés au comité (clavardage Web) : code de jumelage à coller dans WP Chat, liste, retrait.
+    // Le code est valide 30 minutes et ne sert qu'une fois. Retourne le tableau décodé du serveur, ou null.
+    public function create_web_pairing($callcenterapitoken){
+        $request = self::send_api_request($callcenterapitoken, ["command" => "create_web_pairing", "api_token" => $callcenterapitoken], $this->sbchaturl);
+        $r = json_decode((string)($request['response'] ?? ''), true);
+        if (!is_array($r) || ($r['querystatus'] ?? '') !== 'Success') {
+            return null;
+        }
+        return json_decode((string)$r['message'], true);
+    }
+    public function list_web_sites($callcenterapitoken){
+        $request = self::send_api_request($callcenterapitoken, ["command" => "list_web_sites", "api_token" => $callcenterapitoken], $this->sbchaturl);
+        $r = json_decode((string)($request['response'] ?? ''), true);
+        if (!is_array($r) || ($r['querystatus'] ?? '') !== 'Success') {
+            return null;
+        }
+        $liste = json_decode((string)$r['message'], true);
+        return is_array($liste) ? $liste : null;
+    }
+    public function remove_web_site($callcenterapitoken, $origin){
+        $request = self::send_api_request($callcenterapitoken, ["command" => "remove_web_site", "api_token" => $callcenterapitoken, "origin" => $origin], $this->sbchaturl);
+        $r = json_decode((string)($request['response'] ?? ''), true);
+        return is_array($r) && ($r['querystatus'] ?? '') === 'Success';
+    }
+    /// La chaîne à coller dans WP Chat : l'adresse publique du clavardage Web (celle que le serveur donne, sinon
+    /// l'adresse du serveur connue ici) et le code
+    public function chaine_jumelage($jumelage){
+        $base = !empty($jumelage['public_url']) ? $jumelage['public_url'] : substr($this->sbchaturl, 0, -strlen('/sbchat_api'));
+        return rtrim((string)$base, '/').'#'.$jumelage['code'];
     }
 
     public function update_call_center($callcenterapitoken,$voip_ms_username,$voip_ms_api_password,$call_center_did){

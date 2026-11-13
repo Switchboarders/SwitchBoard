@@ -151,6 +151,47 @@ class UserAccess{
 		$userinformationspage->addFooter('pages/utilisateur/footer.php');
 		$userinformationspage->render();
 	}
+	/**
+	 * Sites Web reliés au comité (clavardage Web) : « Relier un site Web » demande un code de jumelage à SwitchBoard
+	 * Chat et affiche la chaîne à coller dans WP Chat (valide 30 minutes, une seule fois). N'agit qu'en POST.
+	 */
+	public function sbchatlinksite(){
+		[$client, $jeton] = $this->clientSbchatDuComite();
+		if ($client === null) {
+			echo "<div class='login-title' style='color:red;'>"._("Ce compte n'a pas encore de jeton SwitchBoard Chat : demandez-en un d'abord.")."</div>";
+		} else {
+			$jumelage = $client->create_web_pairing($jeton);
+			if (empty($jumelage['code'])) {
+				echo "<div class='login-title' style='color:red;'>"._("Le serveur SwitchBoard Chat n'a pas donné de code (serveur injoignable, ou version trop ancienne).")."</div>";
+			} else {
+				$_SESSION['sbchat_chaine_jumelage'] = ['chaine' => $client->chaine_jumelage($jumelage), 'expire' => intval($jumelage['expires_at'] ?? 0)];
+			}
+		}
+		terminerEnregistrement([], 'sbchatinfo');
+	}
+	public function sbchatunlinksite(){
+		[$client, $jeton] = $this->clientSbchatDuComite();
+		$origine = (string)($_POST['origine'] ?? '');
+		if ($client !== null && $origine !== '') {
+			echo $client->remove_web_site($jeton, $origine)
+				? "<div class='updatemessage'>".htmlspecialchars(sprintf(_("Le site %s n'est plus relié."), $origine))."</div>"
+				: "<div class='login-title' style='color:red;'>"._("Le site n'a pas pu être retiré.")."</div>";
+		}
+		terminerEnregistrement([], 'sbchatinfo');
+	}
+	/// [client, jeton] du comité de la page (?iduser=, ou le compte connecté), ou [null, ''] sans jeton
+	private function clientSbchatDuComite(){
+		if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
+			redirigerVers("managementportal.php?page=sbchatinfo".(empty($_GET['iduser']) ? '' : "&iduser=".intval($_GET['iduser'])));
+		}
+		commencerEnregistrement();
+		$iduser = !empty($_GET['iduser']) ? intval($_GET['iduser']) : $this->databasemanager->getcurrentuserid();
+		$info = $this->databasemanager->getSbchatinfobyId($iduser);
+		if (empty($info['sbchatapitoken']) || empty($info['sbchatserveraddress'])) {
+			return [null, ''];
+		}
+		return [new ClientSwitchBoardChat($info['sbchatserveraddress']), $info['sbchatapitoken']];
+	}
 	public function sbchatagreementpage(){
 		$page = new Webpage($this);
 		$page->addHeader('pages/utilisateur/header.php');

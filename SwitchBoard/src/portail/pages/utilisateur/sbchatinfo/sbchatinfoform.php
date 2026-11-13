@@ -38,5 +38,14 @@ if(!empty($sbchathashedtoken)){
 	$voipmshooktest = $sbchatserveraddress. "/voip_api?to=".$userinfo['didnumber']. "&from=0000000000&message=".urlencode(_("Ceci est un test"))."&files=none&id=".random_int(1,100000)."&date=251200&sbchatapikey=".$sbchathashedtoken;
 }
 
+// Sites Web reliés au comité (clavardage Web, WP Chat) et la chaîne de jumelage qui vient d'être demandée (montrée
+// une seule fois)
+$sitesWeb = null;
+if ($sbchatapitoken !== '' && $sbchatserveraddress !== '') {
+	$sitesWeb = (new ClientSwitchBoardChat($sbchatserveraddress))->list_web_sites($sbchatapitoken);
+}
+$chaineJumelage = $_SESSION['sbchat_chaine_jumelage'] ?? null;
+unset($_SESSION['sbchat_chaine_jumelage']);
+
 // La vue : ce que la personne voit, à partir des variables ci-dessus
 include PORTAIL_DIRECTORY.'pages/utilisateur/sbchatinfo/sbchatinfoform.vue.php';

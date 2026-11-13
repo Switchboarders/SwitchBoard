@@ -3947,3 +3947,42 @@ msgstr "Reconnect"
 
 #~ msgid "test"
 #~ msgstr "test in english"
+
+msgid "Veuillez remplir votre nom d'utilisateur voip.ms ainsi que votre mot de passe API et votre DID dans la section informations du compte (ou laissez les trois vides pour un comité sans voip.ms, clavardage Web seulement)."
+msgstr "Please fill in your voip.ms username, API password and DID in the account information section (or leave all three empty for a committee without voip.ms: web chat only)."
+
+msgid "<H2 style='color: red;'>SVP configurer un Nom d'utilisateur voip.ms, un mot de passe API pour voip.ms et un numéro DID pour cette utilisateur dans la section Informations du compte (ou laisser les trois vides pour un comité sans voip.ms)</H2>"
+msgstr "<H2 style='color: red;'>Please set a voip.ms username, a voip.ms API password and a DID number for this user in the Account information section (or leave all three empty for a committee without voip.ms)</H2>"
+
+msgid "Ce compte n'a pas encore de jeton SwitchBoard Chat : demandez-en un d'abord."
+msgstr "This account has no SwitchBoard Chat token yet: request one first."
+
+msgid "Le serveur SwitchBoard Chat n'a pas donné de code (serveur injoignable, ou version trop ancienne)."
+msgstr "The SwitchBoard Chat server gave no code (unreachable, or too old a version)."
+
+msgid "Le site %s n'est plus relié."
+msgstr "The website %s is no longer linked."
+
+msgid "Le site n'a pas pu être retiré."
+msgstr "The website could not be removed."
+
+msgid "Sites Web reliés (clavardage Web)"
+msgstr "Linked websites (web chat)"
+
+msgid "À coller dans le site WordPress (Réglages > WP Chat > Relier ce site à un comité), avant :"
+msgstr "Paste into the WordPress site (Settings > WP Chat > Link this website to a committee), before:"
+
+msgid "Valide 30 minutes, une seule fois. Elle ne donne accès qu'au clavardage Web de ce comité."
+msgstr "Valid for 30 minutes, once. It only gives access to this committee's web chat."
+
+msgid "La liste des sites n'est pas disponible (serveur SwitchBoard Chat injoignable ou trop ancien)."
+msgstr "The list of websites is not available (SwitchBoard Chat server unreachable or too old)."
+
+msgid "Aucun site relié."
+msgstr "No linked website."
+
+msgid "Retirer ce site? Ses visiteurs ne pourront plus clavarder."
+msgstr "Remove this website? Its visitors will no longer be able to chat."
+
+msgid "Relier un site Web"
+msgstr "Link a website"
