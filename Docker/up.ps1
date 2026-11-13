@@ -439,7 +439,7 @@ function Write-TokenProblem([string]$State) {
 function Write-TokenHelp {
     Write-Host 'Créez un jeton sur GitHub : photo de profil > Settings > Developer settings > Personal access tokens'
     Write-Host '> Fine-grained tokens, avec l''accès en lecture à « Contents » et « Metadata » sur le dépôt'
-    Write-Host '(ou un jeton classique avec le droit « repo »). Voir README.fr.md#before-you-start.'
+    Write-Host '(ou un jeton classique avec le droit « repo »). Voir README.md#fr-before-you-start.'
 }
 # SwitchBoard déjà téléchargé (installation terminée) : le jeton ne sert plus qu'aux mises à jour.
 function Test-AlreadyInstalled {
@@ -742,7 +742,7 @@ if (-not $NoWait) {
         $ErrorActionPreference = $old
         if ($logs -match 'could not read Username|could not read Password|Authentication failed|Invalid username or (password|token)|Repository not found') {
             Write-Host 'Le téléchargement de SwitchBoard depuis GitHub est refusé : le dépôt n''est pas public.'
-            Write-Host 'Mettez un jeton GitHub valide (droit de lecture « Contents » sur le dépôt) dans .env (GITHUB_TOKEN=...), puis relancez up.cmd. Voir README.fr.md#before-you-start.'
+            Write-Host 'Mettez un jeton GitHub valide (droit de lecture « Contents » sur le dépôt) dans .env (GITHUB_TOKEN=...), puis relancez up.cmd. Voir README.md#fr-before-you-start.'
             exit 1
         }
         $old = $ErrorActionPreference; $ErrorActionPreference = 'Continue'

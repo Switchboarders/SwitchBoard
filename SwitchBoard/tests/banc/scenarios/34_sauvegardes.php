@@ -196,6 +196,7 @@ $sauvegarde = installerVersionNeuve();
 $retour = retourArriere();
 verifie($retour['code'] === 0 && str_contains($retour['sortie'], "La BD n'a pas été touchée"), "retour arrière : il réussit (".$retour['sortie'].")");
 verifierCodeRevenu("retour arrière");
+verifie(!str_contains($retour['sortie'], 'vendor/ est refait') && glob(BACKUPS.'/*/vendor') === [], "retour arrière : même zip de dépendances, vendor/ n'est pas touché");
 verifie(versionBD() === VERSION_NEUVE && tableMigree(), "retour arrière : la BD n'est pas touchée");
 $remplacee = array_values(array_diff(sauvegardesAvecSrc(), [$sauvegarde]));
 verifie(count($remplacee) === 1 && is_file(BACKUPS."/{$remplacee[0]}/src/managementportal.php"), "retour arrière : le code remplacé est gardé dans un nouveau dossier");
@@ -232,6 +233,27 @@ verifie($retour['code'] === 0, "avec vendor/ : le retour arrière réussit (".$r
 verifierCodeRevenu("avec vendor/");
 verifie(!is_file(APPLI.'/vendor/marqueur-banc') && is_file(APPLI.'/vendor/autoload.php'), "avec vendor/ : l'ancien vendor/ est en place");
 verifie(glob(BACKUPS.'/*/vendor/marqueur-banc') !== [], "avec vendor/ : le vendor/ remplacé est gardé");
+
+// --- Sans vendor/ dans la sauvegarde, mais avec un autre zip de dépendances : vendor/ est refait depuis ce zip ---
+// C'est le retour vers une version d'avant la v138 : son code a besoin d'ifsnop/mysqldump-php, que le vendor/ en place n'a plus.
+$sauvegarde = installerVersionNeuve(fn(string $racine) => changerDependances($racine));
+exec('rm -rf '.BACKUPS."/$sauvegarde/vendor");
+$retour = retourArriere("$sauvegarde --avec-bd");
+verifie($retour['code'] === 0 && str_contains($retour['sortie'], 'vendor/ est refait depuis precompileddependencies'), "autre zip, sans vendor/ : le retour arrière refait vendor/ (".$retour['sortie'].")");
+verifierCodeRevenu("autre zip, sans vendor/");
+verifie(!is_file(APPLI.'/vendor/marqueur-banc') && is_file(APPLI.'/vendor/autoload.php'), "autre zip, sans vendor/ : vendor/ est celui du zip de la sauvegarde");
+verifie(glob(BACKUPS.'/*/vendor/marqueur-banc') !== [], "autre zip, sans vendor/ : le vendor/ remplacé est gardé");
+verifie(versionBD() === $versionDepart && !tableMigree(), "autre zip, sans vendor/ : avec --avec-bd, la BD revient aussi");
+
+// Le zip de la sauvegarde est illisible : erreur avant d'avoir touché à quoi que ce soit
+$sauvegarde = installerVersionNeuve(fn(string $racine) => changerDependances($racine));
+exec('rm -rf '.BACKUPS."/$sauvegarde/vendor");
+file_put_contents(glob(BACKUPS."/$sauvegarde/src/precompileddependencies*.zip")[0], 'pas un zip');
+$avant = sauvegardes();
+$retour = retourArriere($sauvegarde);
+verifie($retour['code'] !== 0 && str_contains($retour['sortie'], 'illisible'), "zip de la sauvegarde illisible : le retour arrière le dit (".$retour['sortie'].")");
+verifie(is_file(APPLI.'/vendor/marqueur-banc'), "zip de la sauvegarde illisible : vendor/ ne bouge pas");
+verifierRienNEstRevenu("zip de la sauvegarde illisible", $avant);
 
 // --- Choix du dossier ---
 $sauvegarde = installerVersionNeuve();

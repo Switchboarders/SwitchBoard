@@ -451,7 +451,7 @@ expliquer_jeton() {
 aide_jeton() {
     echo "Créez un jeton sur GitHub : photo de profil > Settings > Developer settings > Personal access tokens"
     echo "> Fine-grained tokens, avec l'accès en lecture à « Contents » et « Metadata » sur le dépôt"
-    echo "(ou un jeton classique avec le droit « repo »). Voir README.fr.md#before-you-start."
+    echo "(ou un jeton classique avec le droit « repo »). Voir README.md#fr-before-you-start."
 }
 # SwitchBoard déjà téléchargé (installation terminée) : le jeton ne sert plus qu'aux mises à jour.
 deja_installe() {
@@ -678,7 +678,7 @@ if [ "$ATTENDRE" = "1" ]; then
             echo ""
             echo "Le téléchargement de SwitchBoard depuis GitHub est refusé : le dépôt n'est pas public."
             echo "Mettez un jeton GitHub valide (droit de lecture « Contents » sur le dépôt)"
-            echo "dans $ENV_FILE (GITHUB_TOKEN=...), puis relancez ./up.sh. Voir README.fr.md#before-you-start."
+            echo "dans $ENV_FILE (GITHUB_TOKEN=...), puis relancez ./up.sh. Voir README.md#fr-before-you-start."
             exit 1
         fi
         if ! docker info >/dev/null 2>&1; then

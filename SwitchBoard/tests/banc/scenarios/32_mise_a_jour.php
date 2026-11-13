@@ -198,7 +198,7 @@ exec("chown www-data:www-data $fichierVerrou");
 verifierRienNAChange("fichier de verrou à root");
 verifierRelance("fichier de verrou à root");
 
-// La sauvegarde échoue alors que backups/ est ouvert : une vue cassée fait planter le dump
+// La sauvegarde échoue alors que backups/ est ouvert : une vue l'arrête (elle ne copie que les tables, voir DumpBD)
 reinstaller();
 publierVersion();
 $bd = connexionBD();

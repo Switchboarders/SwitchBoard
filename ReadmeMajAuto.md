@@ -33,7 +33,7 @@ Lorsqu'une réponse positive a été reçue de l'utilisateur, la classe `MiseAJo
 
 1. **Vérifier.** PHP 8.3 minimum, extensions, droits d'écriture sur la racine, `src/`, `download/`, `backups/` et `config/locks/`, espace disque (`disk_free_space()` ignore les quotas de cPanel : les échecs d'écriture sont attrapés plus loin). `src/`, `download/` et `backups/` doivent être sur le même disque. Les restes d'un essai précédent sont vidés de `download/`.
 2. **Télécharger, extraire dans `download/` et tout vérifier.** Le code neuf, `codeVersion.json`, `dbVersion.json` (`noVersion` en ordre croissant, chaque entrée `file` présente) et le zip de dépendances. Si ce zip a changé ou si `vendor/autoload.php` est absent, il est extrait ici aussi, pour qu'une archive corrompue arrête tout avant la migration. Les tailles des fichiers extraits sont comparées à celles de l'archive.
-3. **Sauvegarder la BD** dans `backups/<date>/BD.sql`, s'il y a du SQL à exécuter. Sauvegarde impossible : arrêt, rien n'a changé.
+3. **Sauvegarder la BD** dans `backups/<date>/BD.sql`, s'il y a du SQL à exécuter (voir « Sauvegardes »). Sauvegarde impossible : arrêt, rien n'a changé.
 4. **Prendre le verrou du cron de sonnerie**, jusqu'à la fin du point 7. Occupé : arrêt, rien n'a changé, on réessaie dans quelques minutes. Un cron qui tombe pendant la mise à jour saute son passage, sans signal d'échec.
 5. **Migrer une entrée à la fois**, avec le SQL de l'archive. Le compteur `db version` avance après chaque entrée réussie. À l'échec, le message dit quelle version est atteinte et laquelle a échoué.
 6. **Remplacer `vendor/`** si le point 2 l'a extrait, par renommage. L'ancien va dans `backups/<date>/vendor`, et revient si ça échoue.
@@ -51,6 +51,8 @@ Une panne après le point 5 laisse une BD en avance sur le code, ce qui est sans
 
 Une mise à jour laisse un dossier `backups/<date>/` qui contient `src/`, plus `BD.sql` s'il y avait du SQL à exécuter, plus `vendor/` si les dépendances ont changé. `src/utils/jobBackup.php` fait une sauvegarde complète : toute la racine et un `BD.sql` neuf, sans `logs/`, `calendarcache/`, `download/` ni un `BD.sql` oublié à la racine.
 
+Le `BD.sql` est écrit par `DumpBD` (`src/modules/donnees/`, depuis la v138 ; avant, par la bibliothèque `ifsnop/mysqldump-php`) : les tables, leur création et leurs lignes, lues dans une seule transaction. Il se relit avec `jobRestore.php --avec-bd`, ou à la main avec le client de la BD (`mariadb <base> < BD.sql`). Une vue, une séquence ou un déclencheur arrête la sauvegarde, et donc une mise à jour qui a du SQL à exécuter : SwitchBoard n'en crée pas, et la copie les perdrait. Au retour arrière, `restoreDatabase()` envoie le fichier entier en une seule requête : il doit rester sous `max_allowed_packet` du serveur de BD (16 Mo par défaut avec MariaDB), sinon il se relit avec le client de la BD.
+
 Après une mise à jour réussie, **les 5 dossiers les plus récents qui contiennent un `src/` sont gardés**. Les plus vieux partent, comme les dossiers sans `src/` : ce sont des essais ratés. Une mise à jour ratée n'efface rien. Seuls les dossiers dont le nom commence par une date sont regardés : un dossier nommé autrement, posé à la main, reste.
 
 # Retour arrière:
@@ -59,7 +61,7 @@ Après une mise à jour réussie, **les 5 dossiers les plus récents qui contien
 
     php src/utils/jobRestore.php 2026-11-06a
 
-Il remet `src/`, et `vendor/` s'il est dans la sauvegarde, sans toucher à la BD : ça marche parce qu'une migration reste compatible avec l'ancien code. `config/` n'est jamais restauré. Le code remplacé est gardé dans un nouveau dossier de `backups/`, donc sans argument, un second retour arrière revient à la version qu'on vient de quitter. La sauvegarde choisie est copiée, pas déplacée : elle reste entière.
+Il remet `src/`, et `vendor/` s'il est dans la sauvegarde, sans toucher à la BD : ça marche parce qu'une migration reste compatible avec l'ancien code. Une sauvegarde sans `vendor/` dont le zip de dépendances (`src/precompileddependencies*.zip`) n'est pas celui du code en place reçoit le `vendor/` de son zip : le code d'avant la v138 a besoin d'`ifsnop/mysqldump-php`, retiré en v138. `config/` n'est jamais restauré. Le code remplacé est gardé dans un nouveau dossier de `backups/`, donc sans argument, un second retour arrière revient à la version qu'on vient de quitter. La sauvegarde choisie est copiée, pas déplacée : elle reste entière.
 
 Le script tourne en ligne de commande seulement, et il refuse les mêmes cas que `src/miseajour.php` (root, autre compte que celui de `src/`, PHP trop ancien). Il prend les mêmes verrous qu'une mise à jour : si le cron de sonnerie tourne, il s'arrête sans rien changer, et on réessaie dans quelques minutes.
 
@@ -79,6 +81,11 @@ Une sauvegarde faite avant cette version contient l'ancien `jobRestore.php`, qui
 
     mv src src.casse
     mv backups/2026-11-06a/src src
+
+Le `jobRestore.php` d'une sauvegarde d'avant la v138 ne refait pas `vendor/`, la remise à la main non plus. Si le code remis date d'avant la v138 et que la sauvegarde n'avait pas de `vendor/`, remettez ensuite les dépendances de son zip, à la racine :
+
+    mv vendor vendor.remplace
+    unzip -q src/precompileddependencies*.zip
 
 Le serveur web peut garder l'ancien code en mémoire quelques secondes : voir la remarque sur `opcache_reset()` ci-dessous.
 

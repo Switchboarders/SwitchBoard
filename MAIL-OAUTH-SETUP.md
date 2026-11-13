@@ -17,7 +17,7 @@ one-time thing you never touch again.
 ### 1. Prérequis
 
 Si vous préférez un simple mot de passe (compte Google avec mot de passe d'application, par
-exemple), OAuth n'est pas nécessaire — voir la section courriel de [Docker/README.fr.md](Docker/README.fr.md#mail).
+exemple), OAuth n'est pas nécessaire — voir la section courriel de [Docker/README.md](Docker/README.md#fr-mail).
 Utilisez ce guide seulement si votre fournisseur l'exige (Microsoft 365, de plus en plus) ou si
 vous préférez OAuth.
 
