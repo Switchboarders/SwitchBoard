@@ -184,3 +184,15 @@ banc-autonome | getVoicemails | method=getVoicemails
 banc-autonome | getRingGroups | method=getRingGroups&ring_group=
 banc-autonome | setRingGroup | language=fr&members=fwd%3A101%2C25%2C1%3B&method=setRingGroup&name=Groupe+autonome&voicemail=0
 ---
+banc-autonome | getForwardings | method=getForwardings
+banc-autonome | setForwarding | callerid_override=5145550101&description=Groupe+autonome&method=setForwarding&phone_number=5145550111
+banc-autonome | getVoicemails | method=getVoicemails
+banc-autonome | getRingGroups | method=getRingGroups&ring_group=
+banc-autonome | setRingGroup | language=fr&members=fwd%3A101%2C25%2C1%3B&method=setRingGroup&name=Groupe+autonome&voicemail=0
+---
+banc-autonome | getForwardings | method=getForwardings
+banc-autonome | setForwarding | callerid_override=5145550101&description=Groupe+autonome&method=setForwarding&phone_number=5145550111
+banc-autonome | getVoicemails | method=getVoicemails
+banc-autonome | getRingGroups | method=getRingGroups&ring_group=
+banc-autonome | setRingGroup | language=fr&members=fwd%3A101%2C25%2C1%3B&method=setRingGroup&name=Groupe+autonome&voicemail=0
+---

@@ -12,7 +12,8 @@
  */
 class MiseAJour {
 	const VERSION_PHP_MINIMALE = '8.3.0'; // plancher réel de composer.lock et du zip des dépendances
-	const EXTENSIONS_REQUISES = ['curl', 'gettext', 'json', 'mbstring', 'mysqli', 'mysqlnd', 'openssl', 'pdo_mysql', 'zip'];
+	// pdo_mysql n'est plus requise depuis la v138 : elle ne servait qu'à ifsnop/mysqldump-php (voir DumpBD)
+	const EXTENSIONS_REQUISES = ['curl', 'gettext', 'json', 'mbstring', 'mysqli', 'mysqlnd', 'openssl', 'zip'];
 	const ESPACE_LIBRE_MINIMAL = 100 * 1024 * 1024;
 	const SAUVEGARDES_GARDEES = 5;
 

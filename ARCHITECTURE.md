@@ -42,7 +42,7 @@ l'extérieur (`echo`, `$_GET`, `$_POST`) ; le SQL reste dans `DatabaseManager`.
   jamais à la main, et la déplacer d'un module à l'autre ne change rien pour ses appelants.
 - **Les modules** : `telephonie/` (client voip.ms, groupe de sonnerie, rappels SMS), `agenda/` (lecture de l'agenda,
   répondants, `TraitementComite` : le passage d'un comité), `chat/` (client SwitchBoard Chat et MAS, rappels, noms Matrix),
-  `donnees/` (`DatabaseManager`, la seule classe qui parle SQL), `rapports/` (statistiques, coûts des DID, comparaison des coûts
+  `donnees/` (`DatabaseManager`, et `DumpBD` qui écrit la sauvegarde de la BD : les seules classes qui parlent SQL), `rapports/` (statistiques, coûts des DID, comparaison des coûts
   entre comptes, taux de change), `systeme/` (mise à jour, journaux, alertes, bilan d'un passage, chiffrement, fichiers, courriel,
   signal de vie), `portail/` (la table des routes, la langue et les informations de l'utilisateur).
 - **Les anciens noms** (v134) : `CryptoManager` → `Chiffrement`, `FileManager` → `Fichiers`, `LogManager` → `JournalDeTache`,

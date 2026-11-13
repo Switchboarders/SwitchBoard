@@ -17,10 +17,11 @@ installations en double). Celui qui prend la main ajoute une ligne ici, dans un 
 | 2026-11-12 | Dossier de la refonte fermé après la revue du plan : v136 publiée (le dernier GET qui agissait). Serveur principal en v135, serveur pilote en v124. Personne n'a la main |
 | 2026-11-12 | Préparation de la publication du code : v137 (la mise à jour suit `main`, sans jeton GitHub). Voir « Passage au dépôt public » |
 | 2026-11-12 | **Code publié** : dépôt public `Switchboarders/SwitchBoard`, branche `main`, v137. L'ancien dépôt privé est devenu `SwitchBoard-archive` (privé, figé, avec ses issues). Les 2 serveurs en v137. Personne n'a la main |
+| 2026-11-13 | v138 publiée : la sauvegarde de la BD n'utilise plus `ifsnop/mysqldump-php` (GPL-3.0). Les 2 serveurs en v137 : **la v138 reste à installer**. Personne n'a la main |
 
-## Où on en est (2026-11-12, publication)
+## Où on en est (2026-11-13)
 
-Le code est en **v137**, sur `main` du dépôt public. L'ancien dépôt privé, `SwitchBoard-archive`, est figé : on n'y pousse plus rien.
+Le code est en **v138**, sur `main` du dépôt public (les serveurs sont en v137). L'ancien dépôt privé, `SwitchBoard-archive`, est figé : on n'y pousse plus rien.
 Dernier état connu des serveurs :
 - **Serveur pilote** (cPanel, MariaDB 10.11, aucun comité actif) : **v137 installée le 2026-11-12** par un mainteneur. Les crons appellent le PHP par son chemin
   complet : ils marchent sans changement.
@@ -33,7 +34,7 @@ Dernier état connu des serveurs :
   modification faite dans leur agenda après la panne n'est pas vue. Les courriels sortants (alertes, rapports) échouent. À voir avec l'hébergeur ; à régler avant le
   1er décembre (rapports mensuels).
 
-Toutes les versions jusqu'à la v137 sont installées sur les deux serveurs. Ce qu'on vérifie après chacune, s'il reste à le faire :
+Toutes les versions jusqu'à la v137 sont installées sur les deux serveurs ; **la v138 reste à installer**, pilote d'abord. Ce qu'on vérifie après chacune, s'il reste à le faire :
 
 | Version | Contenu | À vérifier après l'installation |
 |---|---|---|
@@ -50,6 +51,7 @@ Toutes les versions jusqu'à la v137 sont installées sur les deux serveurs. Ce 
 | 135 | La validation de l'agenda (`TraitementComite::validerAgenda()`) et l'affichage d'un journal (`JournalDeTache::texteDuJournal()`) ne produisent plus de HTML : les pages le font | La page de validation de l'agenda, le lien de validation sans connexion (`token.php`) et les journaux au bas de la page principale : mêmes textes qu'avant |
 | 136 | **« Envoyer ce rapport par courriel »** (« Mes statistiques », et le rapport d'un comité dans la console) devient un bouton POST avec jeton, suivi d'une redirection : c'était le dernier GET qui agissait, oublié en v132. Les commentaires disent maintenant les bons numéros d'issues (#77 : redirection ; #78 : « Forcer » par comité) | Ouvrir « Mes statistiques » : mêmes rapports, même aspect ; envoyer un rapport : « Courriel envoyé » s'affiche une fois, F5 ne renvoie rien ; dans la console, pour un comité membre d'un compte principal, le courriel ne contient que son DID |
 | 137 | **Préparation du dépôt public.** La mise à jour suit la branche `main` et marche sans jeton GitHub ; un jeton refusé (révoqué, expiré) est ignoré : la demande se refait sans lui, et la console le dit. `up.sh`, `up.ps1` et `prepare_switchboard.sh` installent sans jeton depuis le dépôt public. `SECURITY.md` (signalement privé), `CONTRIBUTING.md`, `AUTHORS.md` ; données de test sans numéro ni adresse réels | La console montre « disponible sur GitHub » avec un numéro (sinon, la raison s'affiche) ; avec un jeton révoqué : « GitHub refuse le jeton configuré », et la vérification se fait quand même |
+| 138 | **La sauvegarde de la BD n'utilise plus `ifsnop/mysqldump-php`** (GPL-3.0, qui ne s'accorde pas avec la licence) : la classe `DumpBD` (mysqli seulement) écrit le même `BD.sql`, lu dans une seule transaction, en utf8mb4 (rien ne change pour les tables actuelles, toutes en latin1). Elle refuse une base qui contient une vue ou un déclencheur. Nouveau zip de dépendances `precompileddependenciesv2.0.4.zip`, sans ce paquet : **la mise à jour remplace `vendor/`** (l'ancien est gardé dans `backups/<date>/vendor`). Le retour arrière vers une sauvegarde sans `vendor/` dont le zip diffère refait `vendor/` depuis ce zip (sinon, le code d'avant la v138 n'aurait plus de quoi sauvegarder la BD). L'extension `pdo_mysql` n'est plus exigée. **Mises à jour de sécurité** dans le même zip : `phpoffice/phpspreadsheet` 2.4.7 → 2.4.9 (3 failles, dans la lecture de fichiers et le chargement d'images externes, que SwitchBoard n'utilise pas ; le .xlsx produit est identique) et `symfony/http-client` 7.2.2 → 7.4.23 (2 failles, dans deux classes que SwitchBoard n'utilise pas ; la branche 7.2 n'est plus suivie). `composer.json` fixe la plateforme à PHP 8.3 : une mise à jour des dépendances ne peut plus exiger un PHP plus récent | Après l'installation : la console montre encore « disponible sur GitHub » (le client HTTP de la mise à jour a changé) ; `backups/<date>/vendor` existe ; les crons tournent ; lancer `php src/utils/jobBackup.php` (sous Docker : `docker exec -u www-data -w <racine> <conteneur php> php src/utils/jobBackup.php`) : son `BD.sql` commence par « Sauvegarde de la base de données de SwitchBoard », finit par « -- Dump completed » et a une ligne `DROP TABLE IF EXISTS` par table ; le rapport de comparaison des coûts se télécharge en Excel |
 
 Un point à connaître : la v130 déplace les fichiers. L'installation par le moteur de mise à jour remplace `src/` d'un bloc, donc rien
 de l'ancienne disposition ne reste. Si un navigateur garde une ancienne feuille de style en cache, un rechargement complet règle l'affaire.
@@ -59,7 +61,7 @@ licence demande en principe l'accord de chaque titulaire de droits : le courriel
 deux autres contributeurs n'ont pas été contactés. Si l'un d'eux s'y oppose, `git revert` de la fusion remet l'ancienne licence ; les copies déjà obtenues gardent leurs conditions (c'est dit dans le README).
 
 **Restent sans date** : la liste complète, relevée à la revue de fin en reprenant le plan point par point, est à la fin de `archives/REFONTE-2026-11.md`
-(dans le code, sur les serveurs, les vérifications réelles, ce qui revient aux mainteneurs). Les plus proches : installer les v125 à v136 sur le pilote et y retirer le vieux
+(dans le code, sur les serveurs, les vérifications réelles, ce qui revient aux mainteneurs). Les plus proches : installer la v138 (pilote d'abord) ; retirer du pilote le vieux
 `BD.sql` s'il existe ; relire les rapports du 1er décembre ; fermer, dans l'archive, les issues #28, #55, #68, #72, #77 et #78 (réglées dans le code).
 
 ## Passage au dépôt public
@@ -76,8 +78,8 @@ archive. Ordre à suivre, chaque étape faite avant la suivante :
 4. **Révoquer et changer les secrets** qui ont figuré dans l'historique du dépôt privé (la liste est remise aux mainteneurs, hors dépôt).
    À faire même si le passage est retardé.
 5. **Accords** : celui des contributeurs sur la licence et sur leur nom dans `AUTHORS.md`. `ifsnop/mysqldump-php` (GPL-3.0, dans le
-   zip des dépendances, qui sert à la sauvegarde de la BD) ne s'accorde pas avec une licence non commerciale : **décidé le 2026-11-12,
-   publier tel quel et la remplacer ensuite** (tâche ouverte : remplacer la sauvegarde de la BD, refaire le zip, banc), ou demander un avis.
+   zip des dépendances, qui servait à la sauvegarde de la BD) ne s'accordait pas avec une licence non commerciale : publié tel quel le 2026-11-12,
+   **remplacé en v138** par `DumpBD`. Les v137 et d'avant, dans l'historique du dépôt public, contiennent encore le zip qui l'inclut.
 6. **Renommer le dépôt privé** en `SwitchBoard-archive` ; il garde ses issues et reste privé.
 7. **Créer le dépôt public** `Switchboarders/SwitchBoard`, vide, et y pousser le dépôt préparé (`main`). Branche par défaut : `main`.
 8. **Réglages du dépôt public**, posés avant la première poussée : `main` ne peut être ni supprimée ni écrasée (poussée forcée), et

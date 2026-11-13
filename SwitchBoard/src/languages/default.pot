@@ -811,6 +811,25 @@ msgstr ""
 msgid "La sauvegarde de la base de données est vide : %s."
 msgstr ""
 
+#: modules/donnees/DumpBD.php:39 modules/donnees/DumpBD.php:49
+#: modules/donnees/DumpBD.php:58
+#, php-format
+msgid "Impossible d'écrire la sauvegarde de la base de données : %s."
+msgstr ""
+
+#: modules/donnees/DumpBD.php:91
+#, php-format
+msgid "La base de données contient autre chose que des tables : %s. La sauvegarde ne copie que les tables : retirez ces éléments, ou sauvegardez la base à la main."
+msgstr ""
+
+#: modules/donnees/DumpBD.php:94
+msgid "La base de données n'a aucune table : il n'y a rien à sauvegarder."
+msgstr ""
+
+#: modules/donnees/DumpBD.php:211
+msgid "La sauvegarde de la base de données est incomplète : le disque est peut-être plein."
+msgstr ""
+
 #: modules/systeme/MiseAJour.php:265
 msgid "Sauvegarde de la base de données terminée : "
 msgstr ""

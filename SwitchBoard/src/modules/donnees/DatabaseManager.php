@@ -1,6 +1,5 @@
-<?php 
+<?php
 // version 2025-11-16: avec vraies constantes et try-catch
-use Ifsnop\Mysqldump\Mysqldump as IMysqldump;
 
 class DatabaseManager {
 	// Types de compte, pour les rapports mensuels (voir getTypeCompte())
@@ -101,26 +100,28 @@ class DatabaseManager {
 	}
 
 	/**
-	 * Prise de backup de la BD
-	 * utilise une dépendance de composer: Ifsnop\Mysqldump\Mysqldump qui se charge de prendre
-	 * une BD en backup
-	 * paramètres: $backupPath contient le chemin et le nom du fichier sql dans lequel 
-	 * sera placé le script (ex: /var/www/html/switchboard/backups/date du jour/BD.sql) 
-	 * 
+	 * Sauvegarde la BD dans le fichier $backupPath (ex. backups/<date>/BD.sql) avec DumpBD, sur une connexion à part.
+	 * Le fichier se relit avec restoreDatabase().
+	 *
+	 * @throws Exception « Backup error: ... » si la sauvegarde échoue ; le fichier commencé est alors effacé.
 	 */
 	public function backupDatabase($backupPath){
+		$connexion = null;
 		try {
-				$dump = new IMysqldump(
-						"mysql:host={$this->servername};dbname={$this->dbname}",
-						$this->username,
-						$this->password,
-						['add-drop-table' => true]
-				);
-				$dump->start($backupPath);
-				return true;
-		} 
+			$connexion = $this->create_new_conn();
+			if ($connexion->connect_errno) {
+				throw new RuntimeException($connexion->connect_error);
+			}
+			(new DumpBD($connexion))->ecrire($backupPath);
+			return true;
+		}
 		catch (\Throwable $e) {
 			throw new \Exception("Backup error: " . $e->getMessage());
+		}
+		finally {
+			if ($connexion instanceof mysqli && !$connexion->connect_errno) {
+				$connexion->close();
+			}
 		}
 	}
 	

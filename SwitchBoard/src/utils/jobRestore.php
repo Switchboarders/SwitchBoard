@@ -7,9 +7,10 @@
 // Si src/ est cassé ou absent, le même script se lance depuis une sauvegarde, avec les mêmes arguments :
 //   php backups/2026-11-06a/src/utils/jobRestore.php 2026-11-06a
 //
-// Il remet src/, et vendor/ s'il est dans la sauvegarde, sans toucher à la BD : les migrations restent
-// compatibles avec l'ancien code. Le code remplacé est gardé dans un nouveau dossier de backups/. config/ n'est
-// jamais restauré : la mise à jour n'y touche pas, et une vieille copie pourrait écraser une clé.
+// Il remet src/, et vendor/ s'il est dans la sauvegarde (sinon, s'il le faut, vendor/ est refait depuis le zip de
+// dépendances de la sauvegarde), sans toucher à la BD : les migrations restent compatibles avec l'ancien code. Le
+// code remplacé est gardé dans un nouveau dossier de backups/. config/ n'est jamais restauré : la mise à jour n'y
+// touche pas, et une vieille copie pourrait écraser une clé.
 //
 // La sauvegarde est copiée, pas déplacée : elle doit rester entière pour qu'on puisse y revenir, par exemple
 // avec --avec-bd après un premier retour arrière du code seul.
@@ -44,6 +45,7 @@ date_default_timezone_set('America/New_York');
 
 const MOTIF_DOSSIER_DATE = '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]*';
 const FICHIER_BD = 'BD.sql';
+const PREFIXE_ZIP_DEPENDANCES = 'precompileddependencies'; // SUFFIXE_FICHIER_DEPENDANCES de lesconstantes.php
 
 // Deux emplacements possibles : <racine>/src/utils ou <racine>/backups/<date>/src/utils
 function trouverRacine(): string {
@@ -235,12 +237,71 @@ function lireVersion(string $src): string {
 	return is_array($contenu) ? (string)($contenu['codeVersion'] ?? '?') : '?';
 }
 
+function zipDeDependances(string $src): ?string {
+	$zips = glob("$src/".PREFIXE_ZIP_DEPENDANCES.'*.zip') ?: [];
+	return count($zips) === 1 ? $zips[0] : null;
+}
+
+// Le code d'une sauvegarde tourne avec les dépendances de son propre zip (src/precompileddependencies*.zip). Une sauvegarde
+// sans vendor/ vient d'une mise à jour qui n'a pas changé les dépendances : si son zip n'est pas celui du code en place,
+// les dépendances ont changé depuis, et vendor/ est refait depuis son zip. Sans ça, le code d'avant la v138 tournerait
+// sans ifsnop/mysqldump-php, retiré en v138, et sa sauvegarde de la BD échouerait.
+function zipAExtraire(string $racine, string $sauvegarde): ?string {
+	$zipDeLaSauvegarde = zipDeDependances("$sauvegarde/src");
+	if ($zipDeLaSauvegarde === null) {
+		return null;
+	}
+	$zipEnPlace = zipDeDependances("$racine/src");
+	$memeZip = $zipEnPlace !== null && hash_file('sha256', $zipEnPlace) === hash_file('sha256', $zipDeLaSauvegarde);
+	return $memeZip && is_file("$racine/vendor/autoload.php") ? null : $zipDeLaSauvegarde;
+}
+
+// Comme la mise à jour : aucun chemin ne sort du dossier, et les tailles sont comparées (un disque plein coupe un fichier
+// sans que l'extraction le dise)
+function extraireDependances(string $zip, string $destination): void {
+	$archive = new ZipArchive();
+	if ($archive->open($zip) !== true) {
+		throw new RuntimeException("Le zip de dépendances ".basename($zip)." est illisible. Rien n'a changé.");
+	}
+	for ($i = 0; $i < $archive->numFiles; $i++) {
+		$nom = (string)$archive->getNameIndex($i);
+		if ($nom === '' || $nom[0] === '/' || strpos($nom, '\\') !== false || in_array('..', explode('/', $nom), true)) {
+			throw new RuntimeException("Le zip de dépendances ".basename($zip)." contient un chemin refusé : $nom. Rien n'a changé.");
+		}
+	}
+	if (!@mkdir($destination, 0775, true) || !$archive->extractTo($destination)) {
+		throw new RuntimeException("Extraction impossible de ".basename($zip)." (disque plein ?). Rien n'a changé.");
+	}
+	for ($i = 0; $i < $archive->numFiles; $i++) {
+		$entree = $archive->statIndex($i);
+		$chemin = "$destination/".$entree['name'];
+		$estBienExtraite = substr($entree['name'], -1) === '/' ? is_dir($chemin) : @filesize($chemin) === $entree['size'];
+		if (!$estBienExtraite) {
+			throw new RuntimeException("Extraction incomplète de ".basename($zip)." : ".$entree['name']." (disque plein ?). Rien n'a changé.");
+		}
+	}
+	$archive->close();
+	if (!is_file("$destination/vendor/autoload.php")) {
+		throw new RuntimeException("Le zip de dépendances ".basename($zip)." ne contient pas vendor/autoload.php. Rien n'a changé.");
+	}
+}
+
 function remettreLeCode(string $racine, string $sauvegarde, string $garde): void {
-	$dossiers = is_dir("$sauvegarde/vendor") ? ['vendor', 'src'] : ['src'];
 	$preparation = "$garde/preparation";
+	$zip = is_dir("$sauvegarde/vendor") ? null : zipAExtraire($racine, $sauvegarde);
+	$dossiers = is_dir("$sauvegarde/vendor") || $zip !== null ? ['vendor', 'src'] : ['src'];
 	try {
+		if ($zip !== null) {
+			extraireDependances($zip, "$preparation/zip");
+			if (!@rename("$preparation/zip/vendor", "$preparation/vendor")) {
+				throw new RuntimeException("Impossible de préparer vendor/ dans $preparation. Rien n'a changé.");
+			}
+			echo "Les dépendances de cette sauvegarde ne sont pas celles du code en place : vendor/ est refait depuis ".basename($zip).".\n";
+		}
 		foreach ($dossiers as $dossier) {
-			copierDossier("$sauvegarde/$dossier", "$preparation/$dossier");
+			if (!is_dir("$preparation/$dossier")) {
+				copierDossier("$sauvegarde/$dossier", "$preparation/$dossier");
+			}
 		}
 		remettreDossiers($racine, $preparation, $garde, $dossiers);
 	} finally {
